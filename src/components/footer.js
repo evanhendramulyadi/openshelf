@@ -94,6 +94,16 @@ export function renderFooter(container) {
           <p class="text-[11px] text-stone-500 dark:text-stone-400 leading-relaxed max-w-2xl">
             Website design, original code, layout, and branding are protected by copyright. E-book contents, digital texts, and historical metadata belong to their respective public-domain or original author licenses via Project Gutenberg.
           </p>
+          <div class="pt-1.5 flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1 text-xs text-stone-500 dark:text-stone-400">
+            <span class="text-stone-400 dark:text-stone-600 font-medium">Creator:</span>
+            <a href="https://about-evan.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors inline-flex items-center gap-1 font-medium">Portfolio</a>
+            <span class="text-stone-300 dark:text-stone-700">•</span>
+            <a href="https://www.instagram.com/evanhendraa" target="_blank" rel="noopener noreferrer" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors font-medium">Instagram</a>
+            <span class="text-stone-300 dark:text-stone-700">•</span>
+            <a href="https://www.youtube.com/@evanhendraa" target="_blank" rel="noopener noreferrer" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors font-medium">YouTube</a>
+            <span class="text-stone-300 dark:text-stone-700">•</span>
+            <a href="https://www.tiktok.com/@evanhendraa" target="_blank" rel="noopener noreferrer" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors font-medium">TikTok</a>
+          </div>
         </div>
 
         <button 

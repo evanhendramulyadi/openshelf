@@ -105,9 +105,109 @@ export function renderAbout(root) {
         <div class="p-4 rounded-xl bg-stone-100 dark:bg-stone-800 text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
           <strong>International Disclaimer:</strong> Project Gutenberg is based in the United States. Copyright laws vary between nations. If you reside outside the United States, please verify the copyright status of specific works before downloading.
         </div>
+      <!-- Creator & Connect Section -->
+      <section class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-sm space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-5 border-b border-stone-200 dark:border-stone-800 pb-6">
+          <div class="space-y-1.5">
+            <div class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+              ${renderIcon('sparkles', 'w-3.5 h-3.5')}
+              <span>Creator & Developer</span>
+            </div>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100">
+              Evan Hendra Mulyadi
+            </h2>
+            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 max-w-xl leading-relaxed">
+              Creator and developer of OpenShelf. Dedicated to building elegant digital reader experiences and accessible tools for the open-web community.
+            </p>
+          </div>
+          
+          <a 
+            href="https://about-evan.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs sm:text-sm transition-all shadow-sm hover:shadow-md self-start sm:self-center flex-shrink-0">
+            ${renderIcon('globe', 'w-4 h-4')}
+            <span>Portfolio Website</span>
+            ${renderIcon('arrow-up-right', 'w-3.5 h-3.5 opacity-80')}
+          </a>
+        </div>
+
+        <!-- Social Media Profiles -->
+        <div class="space-y-3">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
+            Connect & Follow
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+            <!-- Instagram -->
+            <a 
+              href="https://www.instagram.com/evanhendraa" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="group flex items-center gap-3.5 p-3.5 rounded-2xl border border-stone-200 dark:border-stone-800 bg-stone-50/70 dark:bg-stone-800/40 hover:bg-stone-100 dark:hover:bg-stone-800 hover:border-amber-500/30 dark:hover:border-amber-500/30 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+              </div>
+              <div class="min-w-0 flex-grow">
+                <div class="text-xs font-bold text-stone-900 dark:text-stone-100 flex items-center justify-between">
+                  <span>Instagram</span>
+                  ${renderIcon('arrow-up-right', 'w-3 h-3 text-stone-400 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors')}
+                </div>
+                <div class="text-[11px] text-stone-500 dark:text-stone-400 truncate">
+                  @evanhendraa
+                </div>
+              </div>
+            </a>
+
+            <!-- YouTube -->
+            <a 
+              href="https://www.youtube.com/@evanhendraa" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="group flex items-center gap-3.5 p-3.5 rounded-2xl border border-stone-200 dark:border-stone-800 bg-stone-50/70 dark:bg-stone-800/40 hover:bg-stone-100 dark:hover:bg-stone-800 hover:border-amber-500/30 dark:hover:border-amber-500/30 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </div>
+              <div class="min-w-0 flex-grow">
+                <div class="text-xs font-bold text-stone-900 dark:text-stone-100 flex items-center justify-between">
+                  <span>YouTube</span>
+                  ${renderIcon('arrow-up-right', 'w-3 h-3 text-stone-400 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors')}
+                </div>
+                <div class="text-[11px] text-stone-500 dark:text-stone-400 truncate">
+                  @evanhendraa
+                </div>
+              </div>
+            </a>
+
+            <!-- TikTok -->
+            <a 
+              href="https://www.tiktok.com/@evanhendraa" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="group flex items-center gap-3.5 p-3.5 rounded-2xl border border-stone-200 dark:border-stone-800 bg-stone-50/70 dark:bg-stone-800/40 hover:bg-stone-100 dark:hover:bg-stone-800 hover:border-amber-500/30 dark:hover:border-amber-500/30 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-stone-900 dark:bg-stone-800 text-white flex items-center justify-center flex-shrink-0 shadow-xs border border-stone-700/40">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.49 6.27 6.27 0 0 0 1.95-4.48V8.59a8.27 8.27 0 0 0 4.82 1.54V6.69z"/>
+                </svg>
+              </div>
+              <div class="min-w-0 flex-grow">
+                <div class="text-xs font-bold text-stone-900 dark:text-stone-100 flex items-center justify-between">
+                  <span>TikTok</span>
+                  ${renderIcon('arrow-up-right', 'w-3 h-3 text-stone-400 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors')}
+                </div>
+                <div class="text-[11px] text-stone-500 dark:text-stone-400 truncate">
+                  @evanhendraa
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
       </section>
-
-
 
       <!-- FAQ Section -->
       <section class="space-y-6">

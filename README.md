@@ -5,7 +5,8 @@
 <h1 align="center">OpenShelf</h1>
 
 <p align="center">
-  <strong>Discover More. Read More.</strong>
+  <strong>Digital Library</strong><br>
+  <em>Discover, read online, and collect timeless public-domain literature.</em>
 </p>
 
 <p align="center">
@@ -15,13 +16,13 @@
 ## 🌐 Live Demo
 
 Experience the live application here:  
-👉 **[OpenShelf](https://openshelf-site.vercel.app/)**
+👉 **[OpenShelf](https://openshelf-library.vercel.app/)**
 
 ## ✨ Key Features
 
-- **Catalog Search & Discovery**: Instant search across 70,000+ classic e-books by title, author, or keyword using the Gutendex API with debounced queries.
-- **Subject & Language Filtering**: Explore classical collections (Fiction, Mystery, Sci-Fi, Philosophy, History, Poetry, etc.) across multiple languages.
-- **In-Browser Reading Experience**: Read complete HTML books directly in a distraction-free reader with Day, Sepia, Night, and OLED themes, progress logging, and fullscreen mode.
+- **Catalog Search & Discovery**: High-speed, instant search across 70,000+ classic e-books by title, author, or keyword using the Gutendex API with debounced queries and fast caching.
+- **Subject & Language Filtering**: Explore classical collections and genres (Fiction, Mystery, Sci-Fi, Philosophy, History, Poetry, etc.) across multiple languages.
+- **In-Browser Reading Experience**: Read complete HTML books directly in an edge-to-edge, distraction-free reader seamlessly synchronized with the global Light/Dark theme, reading progress tracking, and fullscreen mode.
 - **Direct Format Downloads**: One-click downloads for verified EPUB (Apple Books, Kobo), Kindle (MOBI/KF8), and plain text formats sourced directly from Project Gutenberg.
 - **Personal Library & Tracking**: Maintain local Want to Read, Currently Reading, and Finished lists with percentage progress tracking and JSON backup/restore.
 - **Dynamic Fallback Covers**: Automatically generates tasteful typographic book covers with debossed borders when historical scans lack original cover images.
@@ -66,6 +67,11 @@ Experience the live application here:
 © 2026–Present Evan Hendra Mulyadi. All Rights Reserved.
 
 This project is an original work created by **Evan Hendra Mulyadi**.
+
+- 🌐 **Portfolio**: [about-evan.vercel.app](https://about-evan.vercel.app)
+- 📸 **Instagram**: [@evanhendraa](https://www.instagram.com/evanhendraa)
+- 🎬 **YouTube**: [@evanhendraa](https://www.youtube.com/@evanhendraa)
+- 🎵 **TikTok**: [@evanhendraa](https://www.tiktok.com/@evanhendraa)
 
 This repository is publicly accessible solely for viewing, studying, and reviewing the source code. Public access does **not** grant permission to copy the entire project, rebrand or rename it, remove attribution, or claim it as your own creation. Re-use or distribution without explicit permission from the author is strictly prohibited.
 
