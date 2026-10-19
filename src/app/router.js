@@ -121,13 +121,10 @@ export async function handleRouting() {
       break;
   }
 
-  // Ensure scroll is pinned to the very top on every page navigation
+  // Ensure smooth animated scroll to top on page navigation
   requestAnimationFrame(() => {
-    scrollToTop(false);
+    scrollToTop(true);
   });
-  setTimeout(() => {
-    scrollToTop(false);
-  }, 50);
 }
 
 /**

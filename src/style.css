@@ -13,6 +13,10 @@
     color-scheme: dark;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -168,17 +172,9 @@
   color: #a8a29e;
 }
 
-/* Reader Container & Iframe - Synchronized with Global Website Theme */
+/* Reader Viewport & Iframe - Edge-to-edge seamless canvas synchronized with theme */
 #reader-viewport {
-  background-color: #eae5d9; /* Distinct tactile book desk in light mode */
-}
-
-#reader-book-container {
   background-color: #ffffff;
-  box-shadow: 
-    0 12px 32px -4px rgba(40, 30, 20, 0.16),
-    0 4px 12px -2px rgba(40, 30, 20, 0.1);
-  border: 1px solid #d5cebf;
 }
 
 #reader-iframe {
@@ -188,17 +184,11 @@
 }
 
 .dark #reader-viewport {
-  background-color: #0c0a09; /* Deep obsidian backdrop in dark mode */
-}
-
-.dark #reader-book-container {
-  background-color: #141416;
-  border-color: #27272a;
-  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.6);
+  background-color: #121214;
 }
 
 .dark #reader-iframe {
-  background-color: #141416;
+  background-color: #121214;
   /* Pure inversion with contrast & brightness boost for crystal-clear sharp text */
   filter: invert(1) hue-rotate(180deg) contrast(1.25) brightness(1.08);
 }

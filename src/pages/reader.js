@@ -182,25 +182,22 @@ export async function renderReader(root, bookId) {
         </header>
 
         <!-- Reading Frame Viewport -->
-        <div id="reader-viewport" class="relative flex-grow w-full overflow-hidden flex flex-col items-center justify-center p-0 sm:p-4 lg:p-6 transition-colors">
+        <div id="reader-viewport" class="relative flex-grow w-full h-full overflow-hidden flex flex-col items-center justify-center p-0 transition-colors">
           <!-- Frame Loading Spinner -->
           <div id="reader-frame-loading" class="absolute inset-0 flex flex-col items-center justify-center bg-stone-100/95 dark:bg-stone-950/95 z-10 transition-opacity duration-300 backdrop-blur-xs">
             <div class="w-9 h-9 border-3 border-stone-300 border-t-amber-600 rounded-full animate-spin mb-3"></div>
             <p class="text-xs text-stone-800 dark:text-stone-200 font-bold tracking-wide">Connecting to Project Gutenberg reader stream…</p>
           </div>
 
-          <!-- Reader Book Sheet Container (Elevated book canvas) -->
-          <div id="reader-book-container" class="relative w-full max-w-5xl h-full flex flex-col rounded-none sm:rounded-2xl overflow-hidden transition-all">
-            <!-- Embedded Reader Iframe -->
-            <iframe 
-              id="reader-iframe"
-              src="${readUrl}" 
-              title="Reading ${escapeHTML(book.title)}"
-              class="w-full h-full border-0 transition-all duration-300"
-              loading="eager"
-              referrerpolicy="no-referrer"
-            ></iframe>
-          </div>
+          <!-- Embedded Reader Iframe (Edge-to-edge seamless view) -->
+          <iframe 
+            id="reader-iframe"
+            src="${readUrl}" 
+            title="Reading ${escapeHTML(book.title)}"
+            class="w-full h-full border-0 transition-all duration-300"
+            loading="eager"
+            referrerpolicy="no-referrer"
+          ></iframe>
 
           <!-- Fallback Alert Banner (displayed if browser or extension blocks embedded frames) -->
           <div id="reader-frame-fallback" class="hidden absolute bottom-4 inset-x-4 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 z-20 max-w-md w-full p-3.5 rounded-2xl bg-stone-900 text-stone-100 dark:bg-stone-100 dark:text-stone-900 shadow-2xl border border-stone-700 dark:border-stone-300 flex items-center justify-between gap-3 text-xs">
