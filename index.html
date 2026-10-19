@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenShelf — Discover More. Read More.</title>
+    <meta name="description" content="OpenShelf — Discover More. Read More. A modern digital library platform to discover, read online, and download free e-books legally accessible from public-domain archives." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" type="image/png" href="/images/logo-openshelf.png" />
+    <link rel="apple-touch-icon" href="/favicon-192.png" />
+    <!-- Editorial & Modern Sans Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    
+    <!-- Theme pre-init to avoid light/dark flicker -->
+    <script>
+      (function() {
+        try {
+          const storedTheme = localStorage.getItem('openshelf_theme');
+          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (storedTheme === 'dark' || (!storedTheme && systemDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="bg-stone-50 text-stone-900 dark:bg-stone-950 dark:text-stone-100 transition-colors duration-200">
+    <div id="header-container" class="sticky top-0 z-40 w-full backdrop-blur-md bg-stone-50/90 dark:bg-stone-950/90 border-b border-stone-200 dark:border-stone-800 transition-colors"></div>
+    
+    <main id="app-main" class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 focus:outline-none" tabindex="-1" role="main"></main>
+    
+    <div id="footer-container" class="mt-auto border-t border-stone-200 dark:border-stone-800 bg-stone-100/60 dark:bg-stone-900/60"></div>
+    
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none max-w-md w-full px-4" aria-live="polite" role="status"></div>
+    
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+
