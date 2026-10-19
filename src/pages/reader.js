@@ -49,8 +49,20 @@ export async function renderReader(root, bookId) {
     const libItem = storage.getLibraryItem(book.id);
     let currentProgress = libItem ? (libItem.progressPercent || 0) : 0;
 
-    // Reading URL: prefer HTML format, otherwise Plain Text
-    const readUrl = book.formats.html || book.formats.txt;
+    // Reading URL: always resolve to direct HTTPS cache URL to avoid Gutenberg's insecure 302 redirect to http://
+    let readUrl = book.formats?.html;
+    if (book.id) {
+      readUrl = `https://www.gutenberg.org/cache/epub/${book.id}/pg${book.id}-images.html`;
+    } else if (readUrl) {
+      const match = readUrl.match(/gutenberg\.org\/ebooks\/(\d+)\.html\.images/);
+      if (match) {
+        readUrl = `https://www.gutenberg.org/cache/epub/${match[1]}/pg${match[1]}-images.html`;
+      } else {
+        readUrl = readUrl.replace(/^http:\/\//i, 'https://');
+      }
+    } else {
+      readUrl = book.formats?.txt || book.readUrl;
+    }
 
     root.innerHTML = `
       <div id="reader-wrapper" class="flex flex-col h-[calc(100vh-4.5rem)] -my-6 -mx-4 sm:-mx-6 lg:-mx-8 transition-colors duration-200">
@@ -185,8 +197,20 @@ export async function renderReader(root, bookId) {
             class="w-full h-full border-0 transition-all duration-300"
             loading="eager"
             referrerpolicy="no-referrer"
-            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
           ></iframe>
+
+          <!-- Fallback Alert Banner (displayed if browser or extension blocks embedded frames) -->
+          <div id="reader-frame-fallback" class="hidden absolute bottom-3 inset-x-3 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 z-20 max-w-md w-full p-3 rounded-2xl bg-stone-900/90 dark:bg-stone-100/95 text-stone-100 dark:text-stone-900 shadow-xl backdrop-blur-md flex items-center justify-between gap-3 text-xs">
+            <span class="truncate">Need full window or external reader?</span>
+            <a 
+              href="${readUrl}" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="px-3 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-semibold transition-colors flex-shrink-0 flex items-center gap-1 shadow-sm">
+              <span>Open in New Tab</span>
+              ${renderIcon('external-link', 'w-3.5 h-3.5')}
+            </a>
+          </div>
         </div>
       </div>
     `;
@@ -243,18 +267,27 @@ export async function renderReader(root, bookId) {
     window.addEventListener('openshelf:theme-changed', onGlobalThemeChange);
 
     // Handle Iframe Load
+    const fallbackBanner = root.querySelector('#reader-frame-fallback');
     if (iframe && loadingOverlay) {
       iframe.addEventListener('load', () => {
         loadingOverlay.classList.add('opacity-0', 'pointer-events-none');
-        setTimeout(() => loadingOverlay.remove(), 400);
+        setTimeout(() => {
+          if (loadingOverlay.parentNode) loadingOverlay.remove();
+        }, 300);
         injectIframeStyles();
       });
+
+      iframe.addEventListener('error', () => {
+        if (loadingOverlay) loadingOverlay.classList.add('opacity-0', 'pointer-events-none');
+        if (fallbackBanner) fallbackBanner.classList.remove('hidden');
+      });
+
       setTimeout(() => {
-        if (loadingOverlay) {
+        if (loadingOverlay && loadingOverlay.parentNode) {
           loadingOverlay.classList.add('opacity-0', 'pointer-events-none');
         }
         injectIframeStyles();
-      }, 3500);
+      }, 2500);
     }
 
     // Toggle Progress Popover

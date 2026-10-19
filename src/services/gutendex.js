@@ -113,6 +113,26 @@ export function normalizeBook(raw) {
   // Download count
   const downloadCount = typeof raw.download_count === 'number' ? raw.download_count : 0;
 
+  // For Project Gutenberg books, ensure direct HTTPS cache URLs to prevent 302 redirects to insecure http://
+  if (raw.id) {
+    const directHtml = `https://www.gutenberg.org/cache/epub/${raw.id}/pg${raw.id}-images.html`;
+    const directTxt = `https://www.gutenberg.org/cache/epub/${raw.id}/pg${raw.id}.txt.utf-8`;
+    if (!htmlUrl || htmlUrl.includes('/ebooks/')) {
+      htmlUrl = directHtml;
+    }
+    if (!txtUrl || txtUrl.includes('/ebooks/')) {
+      txtUrl = directTxt;
+    }
+  }
+
+  // Force HTTPS on all format URLs
+  const ensureHttps = (u) => (u && typeof u === 'string') ? u.replace(/^http:\/\//i, 'https://') : u;
+  htmlUrl = ensureHttps(htmlUrl);
+  epubUrl = ensureHttps(epubUrl);
+  kindleUrl = ensureHttps(kindleUrl);
+  txtUrl = ensureHttps(txtUrl);
+  coverUrl = ensureHttps(coverUrl);
+
   const normalized = {
     id: raw.id,
     title: raw.title || 'Untitled Book',
@@ -387,15 +407,15 @@ export async function fetchOpenLibraryGutenbergBooks(query) {
         coverUrl,
         hasCover: Boolean(coverUrl),
         formats: {
-          html: `https://www.gutenberg.org/ebooks/${gutenbergId}.html.images`,
+          html: `https://www.gutenberg.org/cache/epub/${gutenbergId}/pg${gutenbergId}-images.html`,
           epub: `https://www.gutenberg.org/ebooks/${gutenbergId}.epub3.images`,
           kindle: `https://www.gutenberg.org/ebooks/${gutenbergId}.kf8.images`,
-          txt: `https://www.gutenberg.org/ebooks/${gutenbergId}.txt.utf-8`,
+          txt: `https://www.gutenberg.org/cache/epub/${gutenbergId}/pg${gutenbergId}.txt.utf-8`,
           cover: coverUrl,
           all: {}
         },
         canReadOnline: true,
-        readUrl: `https://www.gutenberg.org/ebooks/${gutenbergId}.html.images`,
+        readUrl: `https://www.gutenberg.org/cache/epub/${gutenbergId}/pg${gutenbergId}-images.html`,
         gutenbergUrl: `https://www.gutenberg.org/ebooks/${gutenbergId}`
       };
 
@@ -599,15 +619,15 @@ export async function getBookById(id) {
       coverUrl: `https://www.gutenberg.org/cache/epub/${id}/pg${id}.cover.medium.jpg`,
       hasCover: true,
       formats: {
-        html: `https://www.gutenberg.org/ebooks/${id}.html.images`,
+        html: `https://www.gutenberg.org/cache/epub/${id}/pg${id}-images.html`,
         epub: `https://www.gutenberg.org/ebooks/${id}.epub3.images`,
         kindle: `https://www.gutenberg.org/ebooks/${id}.kf8.images`,
-        txt: `https://www.gutenberg.org/ebooks/${id}.txt.utf-8`,
+        txt: `https://www.gutenberg.org/cache/epub/${id}/pg${id}.txt.utf-8`,
         cover: `https://www.gutenberg.org/cache/epub/${id}/pg${id}.cover.medium.jpg`,
         all: {}
       },
       canReadOnline: true,
-      readUrl: `https://www.gutenberg.org/ebooks/${id}.html.images`,
+      readUrl: `https://www.gutenberg.org/cache/epub/${id}/pg${id}-images.html`,
       gutenbergUrl: `https://www.gutenberg.org/ebooks/${id}`
     };
 

@@ -50,23 +50,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/1342.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
       "epub": "https://www.gutenberg.org/ebooks/1342.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/1342.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/1342.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/1342/pg1342.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/1342.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/1342.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1342.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/1342.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/1342/pg1342-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1342.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/1342/pg1342.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/1342.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/1342"
   },
   {
@@ -117,23 +117,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/2701/pg2701.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/2701.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/2701/pg2701-images.html",
       "epub": "https://www.gutenberg.org/ebooks/2701.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/2701.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/2701.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/2701/pg2701.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/2701/pg2701.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/2701.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/2701/pg2701-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/2701.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2701.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/2701.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/2701/pg2701.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/2701/pg2701-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/2701.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/2701/pg2701.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/2701.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/2701/pg2701-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/2701"
   },
   {
@@ -185,23 +185,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/84.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/84/pg84-images.html",
       "epub": "https://www.gutenberg.org/ebooks/84.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/84.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/84.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/84/pg84.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/84.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/84/pg84-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/84.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/84.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/84.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/84/pg84-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/84.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/84/pg84.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/84.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/84/pg84-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/84"
   },
   {
@@ -247,24 +247,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/11/pg11.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/11.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/11/pg11-images.html",
       "epub": "https://www.gutenberg.org/ebooks/11.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/11.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/11.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/11/pg11.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/11/pg11.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/11.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/11/pg11-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/11.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/11.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/11.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/11/pg11.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/11/pg11-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/11.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/11/pg11.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/11/11-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/11.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/11/pg11-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/11"
   },
   {
@@ -310,24 +310,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/1661/pg1661.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/1661.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/1661/pg1661-images.html",
       "epub": "https://www.gutenberg.org/ebooks/1661.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/1661.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/1661.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/1661/pg1661.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/1661/pg1661.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/1661.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/1661/pg1661-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/1661.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1661.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/1661.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/1661/pg1661.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/1661/pg1661-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1661.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/1661/pg1661.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1661/1661-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/1661.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/1661/pg1661-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/1661"
   },
   {
@@ -358,15 +358,15 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/37683/pg37683.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/37683.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/37683/pg37683-images.html",
       "epub": "https://www.gutenberg.org/ebooks/37683.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/37683.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/37683.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/37683/pg37683.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/37683/pg37683.cover.medium.jpg",
       "all": {
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/37683.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/37683/pg37683.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/37683/37683-8.txt",
-        "text/html": "https://www.gutenberg.org/ebooks/37683.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/37683/pg37683-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/37683.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/37683.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/37683.rdf",
@@ -375,7 +375,7 @@ export const CURATED_CATALOG = [
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/37683.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/37683/pg37683-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/37683"
   },
   {
@@ -423,24 +423,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/1513/pg1513.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/1513.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/1513/pg1513-images.html",
       "epub": "https://www.gutenberg.org/ebooks/1513.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/1513.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/1513.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/1513/pg1513.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/1513/pg1513.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/1513.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/1513/pg1513-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/1513.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1513.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/1513.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/1513/pg1513.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/1513/pg1513-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1513.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/1513/pg1513.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1513/1513-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/1513.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/1513/pg1513-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/1513"
   },
   {
@@ -493,24 +493,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/345.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/345/pg345-images.html",
       "epub": "https://www.gutenberg.org/ebooks/345.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/345.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/345.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/345/pg345.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/345.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/345/pg345-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/345.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/345.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/345.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/345/pg345-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/345.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/345/pg345.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/345/345-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/345.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/345/pg345-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/345"
   },
   {
@@ -553,23 +553,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/100/pg100.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/100.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/100/pg100-images.html",
       "epub": "https://www.gutenberg.org/ebooks/100.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/100.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/100.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/100/pg100.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/100/pg100.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/100.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/100/pg100-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/100.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/100.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/100.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/100/pg100.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/100/pg100-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/100.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/100/pg100.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/100.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/100/pg100-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/100"
   },
   {
@@ -620,23 +620,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/43/pg43.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/43.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/43/pg43-images.html",
       "epub": "https://www.gutenberg.org/ebooks/43.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/43.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/43.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/43/pg43.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/43/pg43.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/43.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/43/pg43-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/43.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/43.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/43.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/43/pg43.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/43/43-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/43.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/43/pg43.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/43.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/43/pg43-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/43"
   },
   {
@@ -682,24 +682,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/2641/pg2641.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/2641.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/2641/pg2641-images.html",
       "epub": "https://www.gutenberg.org/ebooks/2641.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/2641.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/2641.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/2641/pg2641.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/2641/pg2641.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/2641.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/2641/pg2641-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/2641.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2641.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/2641.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/2641/pg2641.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/2641/pg2641-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/2641.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/2641/pg2641.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/2641/2641-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/2641.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/2641/pg2641-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/2641"
   },
   {
@@ -749,23 +749,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/145/pg145.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/145.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/145/pg145-images.html",
       "epub": "https://www.gutenberg.org/ebooks/145.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/145.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/145.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/145/pg145.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/145/pg145.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/145.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/145/pg145-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/145.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/145.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/145.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/145/pg145.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/145/pg145-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/145.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/145/pg145.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/145.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/145/pg145-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/145"
   },
   {
@@ -810,24 +810,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/1727/pg1727.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/1727.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
       "epub": "https://www.gutenberg.org/ebooks/1727.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/1727.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/1727.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/1727/pg1727.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/1727/pg1727.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/1727.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/1727.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1727.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/1727.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/1727/pg1727.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/1727/pg1727-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1727.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/1727/pg1727.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1727/1727-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/1727.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/1727"
   },
   {
@@ -873,23 +873,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/67979/pg67979.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/67979.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/67979/pg67979-images.html",
       "epub": "https://www.gutenberg.org/ebooks/67979.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/67979.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/67979.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/67979/pg67979.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/67979/pg67979.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/67979.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/67979/pg67979-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/67979.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/67979.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/67979.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/67979/pg67979.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/67979/pg67979-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/67979.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/67979/pg67979.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/67979.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/67979/pg67979-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/67979"
   },
   {
@@ -938,23 +938,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/2554/pg2554.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/2554.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/2554/pg2554-images.html",
       "epub": "https://www.gutenberg.org/ebooks/2554.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/2554.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/2554.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/2554/pg2554.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/2554/pg2554.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/2554.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/2554/pg2554-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/2554.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2554.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/2554.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/2554/pg2554.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/2554/pg2554-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/2554.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/2554/pg2554.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/2554.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/2554/pg2554-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/2554"
   },
   {
@@ -1006,24 +1006,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/1260/pg1260.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/1260.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/1260/pg1260-images.html",
       "epub": "https://www.gutenberg.org/ebooks/1260.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/1260.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/1260.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/1260/pg1260.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/1260/pg1260.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/1260.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/1260/pg1260-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/1260.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1260.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/1260.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/1260/pg1260.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/1260/pg1260-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1260.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/1260/pg1260.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1260/1260-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/1260.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/1260/pg1260-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/1260"
   },
   {
@@ -1073,15 +1073,15 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/37106/pg37106.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/37106.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/37106/pg37106-images.html",
       "epub": "https://www.gutenberg.org/ebooks/37106.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/37106.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/37106.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/37106/pg37106.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/37106/pg37106.cover.medium.jpg",
       "all": {
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/37106.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/37106/pg37106.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/37106/37106-0.txt",
-        "text/html": "https://www.gutenberg.org/ebooks/37106.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/37106/pg37106-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/37106.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/37106.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/37106.rdf",
@@ -1090,7 +1090,7 @@ export const CURATED_CATALOG = [
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/37106.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/37106/pg37106-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/37106"
   },
   {
@@ -1140,24 +1140,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/174/pg174.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/174.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/174/pg174-images.html",
       "epub": "https://www.gutenberg.org/ebooks/174.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/174.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/174.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/174/pg174.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/174/pg174.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/174.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/174/pg174-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/174.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/174.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/174.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/174/pg174.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/174/pg174-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/174.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/174/pg174.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/174/174-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/174.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/174/pg174-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/174"
   },
   {
@@ -1213,23 +1213,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/1184/pg1184.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/1184.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/1184/pg1184-images.html",
       "epub": "https://www.gutenberg.org/ebooks/1184.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/1184.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/1184.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/1184/pg1184.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/1184/pg1184.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/1184.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/1184/pg1184-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/1184.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1184.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/1184.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/1184/pg1184.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/1184/pg1184-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1184.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/1184/pg1184.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/1184.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/1184/pg1184-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/1184"
   },
   {
@@ -1279,23 +1279,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/98/pg98.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/98.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/98/pg98-images.html",
       "epub": "https://www.gutenberg.org/ebooks/98.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/98.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/98.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/98/pg98.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/98/pg98.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/98.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/98/pg98-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/98.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/98.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/98.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/98/pg98.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/98/pg98-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/98.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/98/pg98.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/98.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/98/pg98-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/98"
   },
   {
@@ -1340,15 +1340,15 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/64317/pg64317.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/64317.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/64317/pg64317-images.html",
       "epub": "https://www.gutenberg.org/ebooks/64317.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/64317.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/64317.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/64317/pg64317.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/64317/pg64317.cover.medium.jpg",
       "all": {
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/64317.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/64317/pg64317.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/64317/64317-0.txt",
-        "text/html": "https://www.gutenberg.org/ebooks/64317.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/64317/pg64317-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/64317.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/64317.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/64317.rdf",
@@ -1357,7 +1357,7 @@ export const CURATED_CATALOG = [
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/64317.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/64317/pg64317-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/64317"
   },
   {
@@ -1401,23 +1401,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/2680/pg2680.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/2680.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/2680/pg2680-images.html",
       "epub": "https://www.gutenberg.org/ebooks/2680.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/2680.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/2680.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/2680/pg2680.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/2680/pg2680.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/2680.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/2680/pg2680-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/2680.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2680.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/2680.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/2680/pg2680.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/2680/2680-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/2680.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/2680/pg2680.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/2680.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/2680/pg2680-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/2680"
   },
   {
@@ -1453,24 +1453,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/16328/pg16328.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/16328.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/16328/pg16328-images.html",
       "epub": "https://www.gutenberg.org/ebooks/16328.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/16328.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/16328.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/16328/pg16328.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/16328/pg16328.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/16328.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/16328/pg16328-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/16328.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/16328.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/16328.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/16328/pg16328.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/16328/pg16328-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/16328.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/16328/pg16328.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/16328/16328-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/16328.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/16328/pg16328-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/16328"
   },
   {
@@ -1515,15 +1515,15 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/65238/pg65238.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/65238.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/65238/pg65238-images.html",
       "epub": "https://www.gutenberg.org/ebooks/65238.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/65238.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/65238.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/65238/pg65238.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/65238/pg65238.cover.medium.jpg",
       "all": {
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/65238.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/65238/pg65238.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/65238/65238-0.txt",
-        "text/html": "https://www.gutenberg.org/ebooks/65238.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/65238/pg65238-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/65238.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/65238.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/65238.rdf",
@@ -1532,7 +1532,7 @@ export const CURATED_CATALOG = [
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/65238.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/65238/pg65238-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/65238"
   },
   {
@@ -1573,23 +1573,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/5197/pg5197.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/5197.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/5197/pg5197-images.html",
       "epub": "https://www.gutenberg.org/ebooks/5197.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/5197.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/5197.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/5197/pg5197.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/5197/pg5197.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/5197.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/5197/pg5197-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/5197.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/5197.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/5197.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/5197/pg5197.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/5197/5197-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/5197.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/5197/pg5197.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/5197.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/5197/pg5197-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/5197"
   },
   {
@@ -1632,23 +1632,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/5200/pg5200.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/5200.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/5200/pg5200-images.html",
       "epub": "https://www.gutenberg.org/ebooks/5200.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/5200.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/5200.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/5200/pg5200.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/5200/pg5200.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/5200.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/5200/pg5200-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/5200.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/5200.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/5200.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/5200/pg5200.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/5200/5200-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/5200.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/5200/pg5200.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/5200.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/5200/pg5200-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/5200"
   },
   {
@@ -1693,24 +1693,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/16389/pg16389.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/16389.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/16389/pg16389-images.html",
       "epub": "https://www.gutenberg.org/ebooks/16389.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/16389.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/16389.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/16389/pg16389.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/16389/pg16389.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/16389.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/16389/pg16389-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/16389.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/16389.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/16389.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/16389/pg16389.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/16389/pg16389-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/16389.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/16389/pg16389.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/16389/16389-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/16389.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/16389/pg16389-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/16389"
   },
   {
@@ -1740,15 +1740,15 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/62383/pg62383.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/62383.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/62383/pg62383-images.html",
       "epub": "https://www.gutenberg.org/ebooks/62383.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/62383.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/62383.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/62383/pg62383.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/62383/pg62383.cover.medium.jpg",
       "all": {
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/62383.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/62383/pg62383.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/62383/62383-0.txt",
-        "text/html": "https://www.gutenberg.org/ebooks/62383.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/62383/pg62383-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/62383.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/62383.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/62383.rdf",
@@ -1757,7 +1757,7 @@ export const CURATED_CATALOG = [
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/62383.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/62383/pg62383-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/62383"
   },
   {
@@ -1794,23 +1794,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/78027/pg78027.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/78027.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/78027/pg78027-images.html",
       "epub": "https://www.gutenberg.org/ebooks/78027.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/78027.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/78027.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/78027/pg78027.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/78027/pg78027.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/78027.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/78027/pg78027-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/78027.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/78027.kf8.images",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/78027.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/78027/pg78027.txt.utf-8",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/78027.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/78027/pg78027.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/78027/pg78027-h.zip"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/78027.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/78027/pg78027-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/78027"
   },
   {
@@ -1855,23 +1855,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/1952/pg1952.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/1952.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/1952/pg1952-images.html",
       "epub": "https://www.gutenberg.org/ebooks/1952.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/1952.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/1952.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/1952/pg1952.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/1952/pg1952.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/1952.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/1952/pg1952-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/1952.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1952.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/1952.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/1952/pg1952.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/1952/pg1952-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1952.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/1952/pg1952.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/1952.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/1952/pg1952-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/1952"
   },
   {
@@ -1922,24 +1922,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/1259/pg1259.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/1259.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/1259/pg1259-images.html",
       "epub": "https://www.gutenberg.org/ebooks/1259.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/1259.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/1259.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/1259/pg1259.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/1259/pg1259.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/1259.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/1259/pg1259-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/1259.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1259.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/1259.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/1259/pg1259.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/1259/pg1259-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1259.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/1259/pg1259.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1259/1259-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/1259.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/1259/pg1259-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/1259"
   },
   {
@@ -1986,23 +1986,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/1232/pg1232.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/1232.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/1232/pg1232-images.html",
       "epub": "https://www.gutenberg.org/ebooks/1232.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/1232.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/1232.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/1232/pg1232.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/1232/pg1232.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/1232.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/1232/pg1232-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/1232.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1232.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/1232.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/1232/pg1232.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/1232/pg1232-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1232.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/1232/pg1232.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/1232.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/1232/pg1232-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/1232"
   },
   {
@@ -2053,24 +2053,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/2600/pg2600.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/2600.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/2600/pg2600-images.html",
       "epub": "https://www.gutenberg.org/ebooks/2600.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/2600.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/2600.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/2600/pg2600.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/2600/pg2600.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/2600.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/2600/pg2600-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/2600.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2600.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/2600.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/2600/pg2600.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/2600/2600-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/2600.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/2600/pg2600.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/2600/2600-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/2600.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/2600/pg2600-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/2600"
   },
   {
@@ -2115,23 +2115,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/394/pg394.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/394.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/394/pg394-images.html",
       "epub": "https://www.gutenberg.org/ebooks/394.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/394.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/394.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/394/pg394.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/394/pg394.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/394.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/394/pg394-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/394.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/394.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/394.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/394/pg394.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/394/pg394-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/394.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/394/pg394.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/394.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/394/pg394-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/394"
   },
   {
@@ -2176,23 +2176,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/8492/pg8492.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/8492.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/8492/pg8492-images.html",
       "epub": "https://www.gutenberg.org/ebooks/8492.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/8492.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/8492.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/8492/pg8492.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/8492/pg8492.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/8492.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/8492/pg8492-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/8492.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/8492.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/8492.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/8492/pg8492.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/8492/pg8492-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/8492.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/8492/pg8492.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/8492.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/8492/pg8492-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/8492"
   },
   {
@@ -2240,24 +2240,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/2160/pg2160.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/2160.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/2160/pg2160-images.html",
       "epub": "https://www.gutenberg.org/ebooks/2160.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/2160.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/2160.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/2160/pg2160.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/2160/pg2160.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/2160.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/2160/pg2160-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/2160.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2160.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/2160.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/2160/pg2160.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/2160/pg2160-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/2160.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/2160/pg2160.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/2160/2160-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/2160.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/2160/pg2160-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/2160"
   },
   {
@@ -2299,24 +2299,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/6761/pg6761.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/6761.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/6761/pg6761-images.html",
       "epub": "https://www.gutenberg.org/ebooks/6761.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/6761.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/6761.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/6761/pg6761.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/6761/pg6761.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/6761.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/6761/pg6761-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/6761.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/6761.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/6761.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/6761/pg6761.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/6761/pg6761-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/6761.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/6761/pg6761.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/6761/6761-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/6761.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/6761/pg6761-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/6761"
   },
   {
@@ -2366,23 +2366,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/6593/pg6593.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/6593.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/6593/pg6593-images.html",
       "epub": "https://www.gutenberg.org/ebooks/6593.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/6593.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/6593.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/6593/pg6593.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/6593/pg6593.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/6593.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/6593/pg6593-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/6593.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/6593.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/6593.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/6593/pg6593.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/6593/pg6593-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/6593.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/6593/pg6593.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/6593.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/6593/pg6593-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/6593"
   },
   {
@@ -2435,24 +2435,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/74/pg74.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/74.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/74/pg74-images.html",
       "epub": "https://www.gutenberg.org/ebooks/74.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/74.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/74.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/74/pg74.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/74/pg74.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/74.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/74/pg74-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/74.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/74.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/74.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/74/pg74.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/74/74-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/74.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/74/pg74.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/74/74-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/74.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/74/pg74-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/74"
   },
   {
@@ -2501,23 +2501,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/4085/pg4085.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/4085.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/4085/pg4085-images.html",
       "epub": "https://www.gutenberg.org/ebooks/4085.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/4085.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/4085.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/4085/pg4085.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/4085/pg4085.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/4085.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/4085/pg4085-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/4085.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/4085.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/4085.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/4085/pg4085.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/4085/pg4085-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/4085.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/4085/pg4085.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/4085.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/4085/pg4085-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/4085"
   },
   {
@@ -2562,23 +2562,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/23/pg23.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/23.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/23/pg23-images.html",
       "epub": "https://www.gutenberg.org/ebooks/23.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/23.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/23.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/23/pg23.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/23/pg23.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/23.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/23/pg23-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/23.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/23.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/23.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/23/pg23.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/23/pg23-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/23.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/23/pg23.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/23.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/23/pg23-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/23"
   },
   {
@@ -2625,24 +2625,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/47530/pg47530.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/47530.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/47530/pg47530-images.html",
       "epub": "https://www.gutenberg.org/ebooks/47530.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/47530.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/47530.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/47530/pg47530.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/47530/pg47530.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/47530.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/47530/pg47530-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/47530.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/47530.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/47530.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/47530/pg47530.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/47530/pg47530-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/47530.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/47530/pg47530.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/47530/47530-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/47530.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/47530/pg47530-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/47530"
   },
   {
@@ -2704,24 +2704,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/59828/pg59828.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/59828.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/59828/pg59828-images.html",
       "epub": "https://www.gutenberg.org/ebooks/59828.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/59828.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/59828.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/59828/pg59828.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/59828/pg59828.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/59828.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/59828/pg59828-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/59828.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/59828.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/59828.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/59828/pg59828.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/59828/59828-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/59828.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/59828/pg59828.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/59828/59828-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/59828.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/59828/pg59828-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/59828"
   },
   {
@@ -2773,24 +2773,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/25344/pg25344.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/25344.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/25344/pg25344-images.html",
       "epub": "https://www.gutenberg.org/ebooks/25344.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/25344.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/25344.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/25344/pg25344.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/25344/pg25344.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/25344.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/25344/pg25344-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/25344.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/25344.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/25344.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/25344/pg25344.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/25344/pg25344-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/25344.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/25344/pg25344.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/25344/25344-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/25344.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/25344/pg25344-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/25344"
   },
   {
@@ -2838,23 +2838,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/3296/pg3296.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/3296.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/3296/pg3296-images.html",
       "epub": "https://www.gutenberg.org/ebooks/3296.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/3296.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/3296.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/3296/pg3296.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/3296/pg3296.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/3296.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/3296/pg3296-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/3296.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/3296.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/3296.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/3296/pg3296.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/3296/3296-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/3296.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/3296/pg3296.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/3296.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/3296/pg3296-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/3296"
   },
   {
@@ -2911,24 +2911,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/55/pg55.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/55.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/55/pg55-images.html",
       "epub": "https://www.gutenberg.org/ebooks/55.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/55.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/55.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/55/pg55.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/55/pg55.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/55.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/55/pg55-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/55.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/55.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/55.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/55/pg55.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/55/55-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/55.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/55/pg55.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/55/55-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/55.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/55/pg55-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/55"
   },
   {
@@ -2977,24 +2977,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/1400/pg1400.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/1400.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/1400/pg1400-images.html",
       "epub": "https://www.gutenberg.org/ebooks/1400.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/1400.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/1400.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/1400/pg1400.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/1400/pg1400.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/1400.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/1400/pg1400-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/1400.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1400.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/1400.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/1400/pg1400.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/1400/pg1400-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1400.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/1400/pg1400.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1400/1400-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/1400.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/1400/pg1400-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/1400"
   },
   {
@@ -3044,24 +3044,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/62215/pg62215.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/62215.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/62215/pg62215-images.html",
       "epub": "https://www.gutenberg.org/ebooks/62215.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/62215.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/62215.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/62215/pg62215.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/62215/pg62215.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/62215.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/62215/pg62215-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/62215.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/62215.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/62215.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/62215/pg62215.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/62215/pg62215-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/62215.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/62215/pg62215.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/62215/62215-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/62215.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/62215/pg62215-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/62215"
   },
   {
@@ -3109,24 +3109,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/2591/pg2591.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/2591.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/2591/pg2591-images.html",
       "epub": "https://www.gutenberg.org/ebooks/2591.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/2591.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/2591.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/2591/pg2591.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/2591/pg2591.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/2591.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/2591/pg2591-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/2591.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2591.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/2591.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/2591/pg2591.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/2591/pg2591-h.zip",
         "text/html; charset=utf-8": "https://www.gutenberg.org/files/2591/2591-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/2591.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/2591/pg2591.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/2591.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/2591/pg2591-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/2591"
   },
   {
@@ -3169,24 +3169,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/1080/pg1080.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/1080.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/1080/pg1080-images.html",
       "epub": "https://www.gutenberg.org/ebooks/1080.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/1080.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/1080.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/1080/pg1080.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/1080/pg1080.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/1080.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/1080/pg1080-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/1080.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1080.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/1080.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/1080/pg1080.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/1080/pg1080-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1080.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/1080/pg1080.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1080/1080-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/1080.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/1080/pg1080-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/1080"
   },
   {
@@ -3223,23 +3223,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/78033/pg78033.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/78033.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/78033/pg78033-images.html",
       "epub": "https://www.gutenberg.org/ebooks/78033.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/78033.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/78033.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/78033/pg78033.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/78033/pg78033.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/78033.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/78033/pg78033-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/78033.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/78033.kf8.images",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/78033.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/78033/pg78033.txt.utf-8",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/78033.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/78033/pg78033.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/78033/pg78033-h.zip"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/78033.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/78033/pg78033-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/78033"
   },
   {
@@ -3284,23 +3284,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/244/pg244.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/244.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/244/pg244-images.html",
       "epub": "https://www.gutenberg.org/ebooks/244.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/244.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/244.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/244/pg244.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/244/pg244.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/244.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/244/pg244-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/244.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/244.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/244.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/244/pg244.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/244/244-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/244.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/244/pg244.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/244.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/244/pg244-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/244"
   },
   {
@@ -3343,24 +3343,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/3207/pg3207.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/3207.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/3207/pg3207-images.html",
       "epub": "https://www.gutenberg.org/ebooks/3207.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/3207.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/3207.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/3207/pg3207.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/3207/pg3207.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/3207.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/3207/pg3207-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/3207.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/3207.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/3207.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/3207/pg3207.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/3207/pg3207-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/3207.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/3207/pg3207.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/3207/3207-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/3207.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/3207/pg3207-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/3207"
   },
   {
@@ -3415,23 +3415,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/76/pg76.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/76.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/76/pg76-images.html",
       "epub": "https://www.gutenberg.org/ebooks/76.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/76.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/76.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/76/pg76.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/76/pg76.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/76.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/76/pg76-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/76.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/76.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/76.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/76/pg76.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/76/pg76-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/76.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/76/pg76.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/76.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/76/pg76-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/76"
   },
   {
@@ -3465,24 +3465,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/51252/pg51252.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/51252.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/51252/pg51252-images.html",
       "epub": "https://www.gutenberg.org/ebooks/51252.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/51252.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/51252.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/51252/pg51252.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/51252/pg51252.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/51252.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/51252/pg51252-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/51252.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/51252.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/51252.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/51252/pg51252.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/51252/pg51252-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/51252.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/51252/pg51252.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/51252/51252-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/51252.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/51252/pg51252-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/51252"
   },
   {
@@ -3535,23 +3535,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/768/pg768.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/768.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/768/pg768-images.html",
       "epub": "https://www.gutenberg.org/ebooks/768.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/768.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/768.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/768/pg768.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/768/pg768.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/768.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/768/pg768-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/768.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/768.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/768.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/768/pg768.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/768/pg768-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/768.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/768/pg768.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/768.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/768/pg768-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/768"
   },
   {
@@ -3594,24 +3594,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/48320/pg48320.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/48320.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/48320/pg48320-images.html",
       "epub": "https://www.gutenberg.org/ebooks/48320.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/48320.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/48320.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/48320/pg48320.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/48320/pg48320.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/48320.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/48320/pg48320-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/48320.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/48320.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/48320.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/48320/pg48320.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/48320/pg48320-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/48320.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/48320/pg48320.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/48320/48320-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/48320.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/48320/pg48320-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/48320"
   },
   {
@@ -3649,23 +3649,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/78118/pg78118.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/78118.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/78118/pg78118-images.html",
       "epub": "https://www.gutenberg.org/ebooks/78118.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/78118.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/78118.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/78118/pg78118.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/78118/pg78118.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/78118.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/78118/pg78118-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/78118.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/78118.kf8.images",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/78118.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/78118/pg78118.txt.utf-8",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/78118.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/78118/pg78118.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/78118/pg78118-h.zip"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/78118.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/78118/pg78118-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/78118"
   },
   {
@@ -3766,23 +3766,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/205/pg205.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/205.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/205/pg205-images.html",
       "epub": "https://www.gutenberg.org/ebooks/205.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/205.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/205.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/205/pg205.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/205/pg205.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/205.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/205/pg205-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/205.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/205.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/205.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/205/pg205.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/205/pg205-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/205.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/205/pg205.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/205.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/205/pg205-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/205"
   },
   {
@@ -3825,15 +3825,15 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/43063/pg43063.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/43063.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/43063/pg43063-images.html",
       "epub": "https://www.gutenberg.org/ebooks/43063.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/43063.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/43063.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/43063/pg43063.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/43063/pg43063.cover.medium.jpg",
       "all": {
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/43063.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/43063/pg43063.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/43063/43063-0.txt",
-        "text/html": "https://www.gutenberg.org/ebooks/43063.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/43063/pg43063-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/43063.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/43063.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/43063.rdf",
@@ -3842,7 +3842,7 @@ export const CURATED_CATALOG = [
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/43063.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/43063/pg43063-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/43063"
   },
   {
@@ -3896,24 +3896,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/4300/pg4300.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/4300.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/4300/pg4300-images.html",
       "epub": "https://www.gutenberg.org/ebooks/4300.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/4300.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/4300.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/4300/pg4300.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/4300/pg4300.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/4300.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/4300/pg4300-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/4300.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/4300.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/4300.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/4300/pg4300.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/4300/pg4300-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/4300.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/4300/pg4300.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/4300/4300-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/4300.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/4300/pg4300-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/4300"
   },
   {
@@ -3957,23 +3957,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/2542/pg2542.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/2542.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/2542/pg2542-images.html",
       "epub": "https://www.gutenberg.org/ebooks/2542.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/2542.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/2542.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/2542/pg2542.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/2542/pg2542.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/2542.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/2542/pg2542-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/2542.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2542.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/2542.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/2542/pg2542.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/2542/pg2542-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/2542.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/2542/pg2542.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/2542.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/2542/pg2542-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/2542"
   },
   {
@@ -4015,24 +4015,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/47642/pg47642.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/47642.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/47642/pg47642-images.html",
       "epub": "https://www.gutenberg.org/ebooks/47642.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/47642.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/47642.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/47642/pg47642.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/47642/pg47642.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/47642.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/47642/pg47642-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/47642.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/47642.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/47642.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/47642/pg47642.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/47642/47642-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/47642.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/47642/pg47642.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/47642/47642-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/47642.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/47642/pg47642-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/47642"
   },
   {
@@ -4084,24 +4084,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/161/pg161.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/161.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/161/pg161-images.html",
       "epub": "https://www.gutenberg.org/ebooks/161.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/161.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/161.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/161/pg161.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/161/pg161.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/161.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/161/pg161-images.html",
         "text/html; charset=iso-8859-1": "https://www.gutenberg.org/files/161/161-h/161-h.htm",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/161.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/161.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/161.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/161/pg161.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/161/pg161-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/161.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/161/pg161.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/161.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/161/pg161-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/161"
   },
   {
@@ -4146,24 +4146,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/50133/pg50133.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/50133.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/50133/pg50133-images.html",
       "epub": "https://www.gutenberg.org/ebooks/50133.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/50133.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/50133.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/50133/pg50133.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/50133/pg50133.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/50133.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/50133/pg50133-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/50133.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/50133.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/50133.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/50133/pg50133.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/50133/pg50133-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/50133.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/50133/pg50133.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/50133/50133-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/50133.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/50133/pg50133-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/50133"
   },
   {
@@ -4207,23 +4207,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/41/pg41.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/41.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/41/pg41-images.html",
       "epub": "https://www.gutenberg.org/ebooks/41.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/41.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/41.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/41/pg41.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/41/pg41.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/41.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/41/pg41-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/41.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/41.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/41.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/41/pg41.cover.medium.jpg",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/41.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/41/pg41.txt.utf-8",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/41/pg41-h.zip"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/41.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/41/pg41-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/41"
   },
   {
@@ -4267,24 +4267,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/844/pg844.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/844.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/844/pg844-images.html",
       "epub": "https://www.gutenberg.org/ebooks/844.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/844.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/844.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/844/pg844.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/844/pg844.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/844.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/844/pg844-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/844.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/844.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/844.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/844/pg844.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/844/844-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/844.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/844/pg844.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/844/844-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/844.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/844/pg844-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/844"
   },
   {
@@ -4333,23 +4333,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/120/pg120.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/120.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/120/pg120-images.html",
       "epub": "https://www.gutenberg.org/ebooks/120.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/120.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/120.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/120/pg120.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/120/pg120.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/120.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/120/pg120-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/120.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/120.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/120.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/120/pg120.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/120/pg120-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/120.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/120/pg120.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/120.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/120/pg120-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/120"
   },
   {
@@ -4394,24 +4394,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/50285/pg50285.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/50285.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/50285/pg50285-images.html",
       "epub": "https://www.gutenberg.org/ebooks/50285.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/50285.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/50285.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/50285/pg50285.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/50285/pg50285.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/50285.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/50285/pg50285-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/50285.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/50285.kf8.images",
         "application/octet-stream": "https://www.gutenberg.org/files/50285/50285-page-images/p0001.png",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/50285.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/50285/pg50285.cover.medium.jpg",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/50285.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/50285/pg50285.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/50285/50285-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/50285.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/50285/pg50285-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/50285"
   },
   {
@@ -4460,24 +4460,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/2852/pg2852.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/2852.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/2852/pg2852-images.html",
       "epub": "https://www.gutenberg.org/ebooks/2852.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/2852.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/2852.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/2852/pg2852.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/2852/pg2852.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/2852.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/2852/pg2852-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/2852.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2852.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/2852.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/2852/pg2852.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/2852/pg2852-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/2852.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/2852/pg2852.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/2852/2852-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/2852.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/2852/pg2852-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/2852"
   },
   {
@@ -4528,24 +4528,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/45/pg45.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/45.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/45/pg45-images.html",
       "epub": "https://www.gutenberg.org/ebooks/45.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/45.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/45.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/45/pg45.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/45/pg45.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/45.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/45/pg45-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/45.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/45.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/45.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/45/pg45.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/45/pg45-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/45.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/45/pg45.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/45/45-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/45.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/45/pg45-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/45"
   },
   {
@@ -4590,23 +4590,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/7370/pg7370.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/7370.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/7370/pg7370-images.html",
       "epub": "https://www.gutenberg.org/ebooks/7370.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/7370.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/7370.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/7370/pg7370.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/7370/pg7370.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/7370.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/7370/pg7370-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/7370.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/7370.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/7370.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/7370/pg7370.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/7370/7370-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/7370.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/7370/pg7370.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/7370.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/7370/pg7370-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/7370"
   },
   {
@@ -4639,24 +4639,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/53419/pg53419.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/53419.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/53419/pg53419-images.html",
       "epub": "https://www.gutenberg.org/ebooks/53419.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/53419.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/53419.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/53419/pg53419.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/53419/pg53419.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/53419.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/53419/pg53419-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/53419.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/53419.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/53419.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/53419/pg53419.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/53419/pg53419-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/53419.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/53419/pg53419.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/53419/53419-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/53419.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/53419/pg53419-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/53419"
   },
   {
@@ -4704,23 +4704,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/2148/pg2148.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/2148.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/2148/pg2148-images.html",
       "epub": "https://www.gutenberg.org/ebooks/2148.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/2148.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/2148.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/2148/pg2148.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/2148/pg2148.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/2148.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/2148/pg2148-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/2148.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2148.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/2148.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/2148/pg2148.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/2148/pg2148-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/2148.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/2148/pg2148.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/2148.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/2148/pg2148-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/2148"
   },
   {
@@ -4772,24 +4772,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/3268/pg3268.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/3268.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/3268/pg3268-images.html",
       "epub": "https://www.gutenberg.org/ebooks/3268.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/3268.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/3268.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/3268/pg3268.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/3268/pg3268.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/3268.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/3268/pg3268-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/3268.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/3268.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/3268.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/3268/pg3268.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/3268/3268-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/3268.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/3268/pg3268.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/3268/3268-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/3268.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/3268/pg3268-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/3268"
   },
   {
@@ -4834,23 +4834,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/28054/pg28054.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/28054.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/28054/pg28054-images.html",
       "epub": "https://www.gutenberg.org/ebooks/28054.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/28054.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/28054.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/28054/pg28054.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/28054/pg28054.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/28054.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/28054/pg28054-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/28054.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/28054.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/28054.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/28054/pg28054.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/28054/28054-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/28054.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/28054/pg28054.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/28054.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/28054/pg28054-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/28054"
   },
   {
@@ -4895,24 +4895,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/50290/pg50290.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/50290.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/50290/pg50290-images.html",
       "epub": "https://www.gutenberg.org/ebooks/50290.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/50290.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/50290.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/50290/pg50290.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/50290/pg50290.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/50290.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/50290/pg50290-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/50290.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/50290.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/50290.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/50290/pg50290.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/50290/pg50290-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/50290.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/50290/pg50290.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/50290/50290-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/50290.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/50290/pg50290-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/50290"
   },
   {
@@ -4957,24 +4957,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/69087/pg69087.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/69087.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/69087/pg69087-images.html",
       "epub": "https://www.gutenberg.org/ebooks/69087.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/69087.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/69087.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/69087/pg69087.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/69087/pg69087.cover.medium.jpg",
       "all": {
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/69087.rdf",
-        "text/html": "https://www.gutenberg.org/ebooks/69087.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/69087/pg69087-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/69087.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/69087.kf8.images",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/69087/pg69087.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/69087/pg69087-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/69087.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/69087/pg69087.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/69087/69087-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/69087.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/69087/pg69087-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/69087"
   },
   {
@@ -5017,24 +5017,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/68283/pg68283.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/68283.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/68283/pg68283-images.html",
       "epub": "https://www.gutenberg.org/ebooks/68283.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/68283.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/68283.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/68283/pg68283.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/68283/pg68283.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/68283.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/68283/pg68283-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/68283.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/68283.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/68283.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/68283/pg68283.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/68283/pg68283-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/68283.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/68283/pg68283.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/68283/68283-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/68283.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/68283/pg68283-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/68283"
   },
   {
@@ -5077,24 +5077,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/408/pg408.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/408.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/408/pg408-images.html",
       "epub": "https://www.gutenberg.org/ebooks/408.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/408.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/408.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/408/pg408.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/408/pg408.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/408.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/408/pg408-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/408.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/408.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/408.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/408/pg408.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/408/pg408-h.zip",
         "text/html; charset=utf-8": "https://www.gutenberg.org/files/408/408-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/408.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/408/pg408.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/408.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/408/pg408-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/408"
   },
   {
@@ -5140,24 +5140,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/61851/pg61851.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/61851.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/61851/pg61851-images.html",
       "epub": "https://www.gutenberg.org/ebooks/61851.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/61851.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/61851.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/61851/pg61851.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/61851/pg61851.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/61851.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/61851/pg61851-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/61851.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/61851.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/61851.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/61851/pg61851.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/61851/pg61851-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/61851.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/61851/pg61851.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/61851/61851-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/61851.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/61851/pg61851-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/61851"
   },
   {
@@ -5202,24 +5202,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/61262/pg61262.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/61262.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/61262/pg61262-images.html",
       "epub": "https://www.gutenberg.org/ebooks/61262.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/61262.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/61262.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/61262/pg61262.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/61262/pg61262.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/61262.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/61262/pg61262-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/61262.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/61262.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/61262.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/61262/pg61262.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/61262/pg61262-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/61262.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/61262/pg61262.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/61262/61262-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/61262.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/61262/pg61262-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/61262"
   },
   {
@@ -5262,15 +5262,15 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/20203/pg20203.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/20203.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/20203/pg20203-images.html",
       "epub": "https://www.gutenberg.org/ebooks/20203.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/20203.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/20203.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/20203/pg20203.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/20203/pg20203.cover.medium.jpg",
       "all": {
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/20203.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/20203/pg20203.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/20203/20203-8.txt",
-        "text/html": "https://www.gutenberg.org/ebooks/20203.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/20203/pg20203-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/20203.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/20203.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/20203.rdf",
@@ -5279,7 +5279,7 @@ export const CURATED_CATALOG = [
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/20203.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/20203/pg20203-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/20203"
   },
   {
@@ -5320,24 +5320,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/53874/pg53874.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/53874.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/53874/pg53874-images.html",
       "epub": "https://www.gutenberg.org/ebooks/53874.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/53874.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/53874.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/53874/pg53874.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/53874/pg53874.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/53874.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/53874/pg53874-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/53874.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/53874.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/53874.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/53874/pg53874.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/53874/pg53874-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/53874.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/53874/pg53874.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/53874/53874-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/53874.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/53874/pg53874-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/53874"
   },
   {
@@ -5381,24 +5381,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/58866/pg58866.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/58866.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/58866/pg58866-images.html",
       "epub": "https://www.gutenberg.org/ebooks/58866.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/58866.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/58866.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/58866/pg58866.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/58866/pg58866.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/58866.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/58866/pg58866-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/58866.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/58866.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/58866.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/58866/pg58866.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/58866/58866-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/58866.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/58866/pg58866.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/58866/58866-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/58866.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/58866/pg58866-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/58866"
   },
   {
@@ -5447,23 +5447,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/209/pg209.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/209.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/209/pg209-images.html",
       "epub": "https://www.gutenberg.org/ebooks/209.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/209.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/209.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/209/pg209.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/209/pg209.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/209.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/209/pg209-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/209.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/209.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/209.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/209/pg209.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/209/pg209-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/209.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/209/pg209.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/209.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/209/pg209-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/209"
   },
   {
@@ -5510,24 +5510,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/61168/pg61168.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/61168.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/61168/pg61168-images.html",
       "epub": "https://www.gutenberg.org/ebooks/61168.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/61168.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/61168.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/61168/pg61168.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/61168/pg61168.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/61168.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/61168/pg61168-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/61168.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/61168.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/61168.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/61168/pg61168.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/61168/pg61168-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/61168.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/61168/pg61168.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/61168/61168-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/61168.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/61168/pg61168-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/61168"
   },
   {
@@ -5568,24 +5568,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/50603/pg50603.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/50603.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/50603/pg50603-images.html",
       "epub": "https://www.gutenberg.org/ebooks/50603.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/50603.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/50603.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/50603/pg50603.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/50603/pg50603.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/50603.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/50603/pg50603-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/50603.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/50603.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/50603.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/50603/pg50603.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/50603/pg50603-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/50603.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/50603/pg50603.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/50603/50603-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/50603.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/50603/pg50603-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/50603"
   },
   {
@@ -5634,24 +5634,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/46/pg46.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/46.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
       "epub": "https://www.gutenberg.org/ebooks/46.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/46.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/46.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/46/pg46.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/46/pg46.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/46.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/46.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/46.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/46.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/46/pg46.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/46/pg46-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/46.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/46/pg46.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/46/46-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/46.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/46"
   },
   {
@@ -5693,24 +5693,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/51649/pg51649.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/51649.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/51649/pg51649-images.html",
       "epub": "https://www.gutenberg.org/ebooks/51649.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/51649.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/51649.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/51649/pg51649.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/51649/pg51649.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/51649.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/51649/pg51649-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/51649.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/51649.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/51649.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/51649/pg51649.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/51649/pg51649-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/51649.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/51649/pg51649.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/51649/51649-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/51649.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/51649/pg51649-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/51649"
   },
   {
@@ -5753,23 +5753,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/1998/pg1998.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/1998.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/1998/pg1998-images.html",
       "epub": "https://www.gutenberg.org/ebooks/1998.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/1998.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/1998.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/1998/pg1998.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/1998/pg1998.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/1998.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/1998/pg1998-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/1998.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1998.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/1998.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/1998/pg1998.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/1998/1998-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/1998.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/1998/pg1998.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/1998.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/1998/pg1998-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/1998"
   },
   {
@@ -5812,24 +5812,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/57669/pg57669.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/57669.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/57669/pg57669-images.html",
       "epub": "https://www.gutenberg.org/ebooks/57669.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/57669.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/57669.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/57669/pg57669.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/57669/pg57669.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/57669.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/57669/pg57669-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/57669.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/57669.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/57669.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/57669/pg57669.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/57669/57669-8.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/57669.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/57669/pg57669.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/57669/57669-8.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/57669.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/57669/pg57669-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/57669"
   },
   {
@@ -5874,23 +5874,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/35/pg35.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/35.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/35/pg35-images.html",
       "epub": "https://www.gutenberg.org/ebooks/35.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/35.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/35.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/35/pg35.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/35/pg35.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/35.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/35/pg35-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/35.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/35.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/35.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/35/pg35.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/35/pg35-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/35.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/35/pg35.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/35.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/35/pg35-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/35"
   },
   {
@@ -5934,23 +5934,23 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/2465/pg2465.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/2465.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/2465/pg2465-images.html",
       "epub": "https://www.gutenberg.org/ebooks/2465.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/2465.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/2465.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/2465/pg2465.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/2465/pg2465.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/2465.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/2465/pg2465-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/2465.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/2465.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/2465.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/2465/pg2465.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/cache/epub/2465/pg2465-h.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/2465.txt.utf-8"
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/2465/pg2465.txt.utf-8"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/2465.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/2465/pg2465-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/2465"
   },
   {
@@ -5995,24 +5995,24 @@ export const CURATED_CATALOG = [
     "coverUrl": "https://www.gutenberg.org/cache/epub/58820/pg58820.cover.medium.jpg",
     "hasCover": true,
     "formats": {
-      "html": "https://www.gutenberg.org/ebooks/58820.html.images",
+      "html": "https://www.gutenberg.org/cache/epub/58820/pg58820-images.html",
       "epub": "https://www.gutenberg.org/ebooks/58820.epub3.images",
       "kindle": "https://www.gutenberg.org/ebooks/58820.kf8.images",
-      "txt": "https://www.gutenberg.org/ebooks/58820.txt.utf-8",
+      "txt": "https://www.gutenberg.org/cache/epub/58820/pg58820.txt.utf-8",
       "cover": "https://www.gutenberg.org/cache/epub/58820/pg58820.cover.medium.jpg",
       "all": {
-        "text/html": "https://www.gutenberg.org/ebooks/58820.html.images",
+        "text/html": "https://www.gutenberg.org/cache/epub/58820/pg58820-images.html",
         "application/epub+zip": "https://www.gutenberg.org/ebooks/58820.epub3.images",
         "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/58820.kf8.images",
         "application/rdf+xml": "https://www.gutenberg.org/ebooks/58820.rdf",
         "image/jpeg": "https://www.gutenberg.org/cache/epub/58820/pg58820.cover.medium.jpg",
         "application/octet-stream": "https://www.gutenberg.org/files/58820/58820-0.zip",
-        "text/plain; charset=utf-8": "https://www.gutenberg.org/ebooks/58820.txt.utf-8",
+        "text/plain; charset=utf-8": "https://www.gutenberg.org/cache/epub/58820/pg58820.txt.utf-8",
         "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/58820/58820-0.txt"
       }
     },
     "canReadOnline": true,
-    "readUrl": "https://www.gutenberg.org/ebooks/58820.html.images",
+    "readUrl": "https://www.gutenberg.org/cache/epub/58820/pg58820-images.html",
     "gutenbergUrl": "https://www.gutenberg.org/ebooks/58820"
   }
 ];
