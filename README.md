@@ -68,11 +68,6 @@ Experience the live application here:
 
 This project is an original work created by **Evan Hendra Mulyadi**.
 
-- 🌐 **Portfolio**: [about-evan.vercel.app](https://about-evan.vercel.app)
-- 📸 **Instagram**: [@evanhendraa](https://www.instagram.com/evanhendraa)
-- 🎬 **YouTube**: [@evanhendraa](https://www.youtube.com/@evanhendraa)
-- 🎵 **TikTok**: [@evanhendraa](https://www.tiktok.com/@evanhendraa)
-
 This repository is publicly accessible solely for viewing, studying, and reviewing the source code. Public access does **not** grant permission to copy the entire project, rebrand or rename it, remove attribution, or claim it as your own creation. Re-use or distribution without explicit permission from the author is strictly prohibited.
 
 *Note: E-book texts, illustrations, scans, and historical metadata belong to their respective original authors, translators, and publishers, and are accessed in accordance with their public-domain status or Project Gutenberg licenses.*
