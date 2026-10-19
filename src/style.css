@@ -90,6 +90,69 @@
   background: linear-gradient(90deg, rgba(255,255,255,0.12) 0%, rgba(0,0,0,0.25) 70%, transparent 100%);
 }
 
+/* Universal Light Mode High Contrast Rules (prevents text & cards washing out / nyatu) */
+:root:not(.dark) body {
+  background-color: #f7f5ef; /* Distinct warm paper canvas */
+  color: #171614; /* Deep rich ink */
+}
+
+:root:not(.dark) #header-container {
+  background-color: rgba(247, 245, 239, 0.94);
+  border-bottom-color: #d6d0c2;
+}
+
+:root:not(.dark) #footer-container {
+  background-color: #eee9dc;
+  border-top-color: #d6d0c2;
+}
+
+/* Elevate card visibility and crispness in Light Mode */
+:root:not(.dark) .bg-white {
+  background-color: #ffffff;
+  border-color: #dcd6c8;
+  box-shadow: 0 1px 3px 0 rgba(40, 30, 20, 0.08), 0 1px 2px -1px rgba(40, 30, 20, 0.06);
+}
+
+:root:not(.dark) .bg-stone-50 {
+  background-color: #f1ebde;
+}
+
+:root:not(.dark) .border-stone-100 {
+  border-color: #e5dfd2;
+}
+
+:root:not(.dark) .border-stone-200,
+:root:not(.dark) .border-stone-200\/90,
+:root:not(.dark) .border-stone-200\/80 {
+  border-color: #d3ccbd; /* Crisp visible card and section borders */
+}
+
+:root:not(.dark) .border-stone-300 {
+  border-color: #beb7a5;
+}
+
+/* High Legibility Text Contrast in Light Mode */
+:root:not(.dark) .text-stone-400 {
+  color: #595245; /* High-contrast legible charcoal */
+}
+
+:root:not(.dark) .text-stone-500 {
+  color: #454035; /* Deep legible muted tone */
+}
+
+:root:not(.dark) .text-stone-600 {
+  color: #332f26; /* Strong rich ink */
+}
+
+:root:not(.dark) .text-stone-700 {
+  color: #211e19;
+}
+
+:root:not(.dark) input::placeholder,
+:root:not(.dark) textarea::placeholder {
+  color: #7d7565;
+}
+
 /* Universal Dark Mode High Contrast Rules (prevents text blending/nyaruh) */
 .dark .text-stone-600,
 .dark .text-stone-500 {
@@ -107,23 +170,37 @@
 
 /* Reader Container & Iframe - Synchronized with Global Website Theme */
 #reader-viewport {
+  background-color: #eae5d9; /* Distinct tactile book desk in light mode */
+}
+
+#reader-book-container {
   background-color: #ffffff;
+  box-shadow: 
+    0 12px 32px -4px rgba(40, 30, 20, 0.16),
+    0 4px 12px -2px rgba(40, 30, 20, 0.1);
+  border: 1px solid #d5cebf;
 }
 
 #reader-iframe {
   background-color: #ffffff;
-  /* Crystal-clear contrast on light paper */
-  filter: contrast(1.08);
+  /* Deep, sharp ink contrast so Gutenberg texts never look washed out */
+  filter: contrast(1.18) brightness(0.97);
 }
 
 .dark #reader-viewport {
-  background-color: #121214;
+  background-color: #0c0a09; /* Deep obsidian backdrop in dark mode */
+}
+
+.dark #reader-book-container {
+  background-color: #141416;
+  border-color: #27272a;
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.6);
 }
 
 .dark #reader-iframe {
-  background-color: #121214;
+  background-color: #141416;
   /* Pure inversion with contrast & brightness boost for crystal-clear sharp text */
-  filter: invert(1) hue-rotate(180deg) contrast(1.25) brightness(1.1);
+  filter: invert(1) hue-rotate(180deg) contrast(1.25) brightness(1.08);
 }
 
 /* Skeleton animation */

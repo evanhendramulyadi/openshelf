@@ -182,26 +182,29 @@ export async function renderReader(root, bookId) {
         </header>
 
         <!-- Reading Frame Viewport -->
-        <div id="reader-viewport" class="relative flex-grow w-full overflow-hidden flex flex-col items-center justify-center transition-colors">
+        <div id="reader-viewport" class="relative flex-grow w-full overflow-hidden flex flex-col items-center justify-center p-0 sm:p-4 lg:p-6 transition-colors">
           <!-- Frame Loading Spinner -->
-          <div id="reader-frame-loading" class="absolute inset-0 flex flex-col items-center justify-center bg-stone-50/90 dark:bg-stone-950/90 z-10 transition-opacity duration-300">
-            <div class="w-8 h-8 border-3 border-stone-300 border-t-amber-600 rounded-full animate-spin mb-3"></div>
-            <p class="text-xs text-stone-600 dark:text-stone-300 font-medium">Connecting to Project Gutenberg reader stream…</p>
+          <div id="reader-frame-loading" class="absolute inset-0 flex flex-col items-center justify-center bg-stone-100/95 dark:bg-stone-950/95 z-10 transition-opacity duration-300 backdrop-blur-xs">
+            <div class="w-9 h-9 border-3 border-stone-300 border-t-amber-600 rounded-full animate-spin mb-3"></div>
+            <p class="text-xs text-stone-800 dark:text-stone-200 font-bold tracking-wide">Connecting to Project Gutenberg reader stream…</p>
           </div>
 
-          <!-- Embedded Reader Iframe -->
-          <iframe 
-            id="reader-iframe"
-            src="${readUrl}" 
-            title="Reading ${escapeHTML(book.title)}"
-            class="w-full h-full border-0 transition-all duration-300"
-            loading="eager"
-            referrerpolicy="no-referrer"
-          ></iframe>
+          <!-- Reader Book Sheet Container (Elevated book canvas) -->
+          <div id="reader-book-container" class="relative w-full max-w-5xl h-full flex flex-col rounded-none sm:rounded-2xl overflow-hidden transition-all">
+            <!-- Embedded Reader Iframe -->
+            <iframe 
+              id="reader-iframe"
+              src="${readUrl}" 
+              title="Reading ${escapeHTML(book.title)}"
+              class="w-full h-full border-0 transition-all duration-300"
+              loading="eager"
+              referrerpolicy="no-referrer"
+            ></iframe>
+          </div>
 
           <!-- Fallback Alert Banner (displayed if browser or extension blocks embedded frames) -->
-          <div id="reader-frame-fallback" class="hidden absolute bottom-3 inset-x-3 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 z-20 max-w-md w-full p-3 rounded-2xl bg-stone-900/90 dark:bg-stone-100/95 text-stone-100 dark:text-stone-900 shadow-xl backdrop-blur-md flex items-center justify-between gap-3 text-xs">
-            <span class="truncate">Need full window or external reader?</span>
+          <div id="reader-frame-fallback" class="hidden absolute bottom-4 inset-x-4 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 z-20 max-w-md w-full p-3.5 rounded-2xl bg-stone-900 text-stone-100 dark:bg-stone-100 dark:text-stone-900 shadow-2xl border border-stone-700 dark:border-stone-300 flex items-center justify-between gap-3 text-xs">
+            <span class="truncate font-medium">Need full window or external reader?</span>
             <a 
               href="${readUrl}" 
               target="_blank" 
