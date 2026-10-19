@@ -111,6 +111,6 @@ export function renderFooter(container) {
 
   const topBtn = container.querySelector('#btn-footer-back-to-top');
   if (topBtn) {
-    topBtn.addEventListener('click', scrollToTop);
+    topBtn.addEventListener('click', () => scrollToTop(true));
   }
 }

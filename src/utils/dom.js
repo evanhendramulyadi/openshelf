@@ -56,9 +56,20 @@ export function debounce(func, wait = 300) {
 }
 
 /**
- * Scroll smoothly to top of the page
+ * Scroll reliably to the very top of the document
+ * @param {boolean} [smooth=false]
  */
-export function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+export function scrollToTop(smooth = false) {
+  try {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: smooth ? 'smooth' : 'instant'
+    });
+  } catch (e) {
+    window.scrollTo(0, 0);
+  }
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
 }
 

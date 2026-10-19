@@ -90,25 +90,40 @@
   background: linear-gradient(90deg, rgba(255,255,255,0.12) 0%, rgba(0,0,0,0.25) 70%, transparent 100%);
 }
 
-/* Reader themes */
-.reader-theme-day {
-  background-color: #faf9f6;
-  color: #1f1f23;
+/* Universal Dark Mode High Contrast Rules (prevents text blending/nyaruh) */
+.dark .text-stone-600,
+.dark .text-stone-500 {
+  color: #d6d3d1; /* High legibility contrast against dark backgrounds */
 }
 
-.reader-theme-sepia {
-  background-color: #f6edd9;
-  color: #3b2f20;
+.dark .text-stone-400 {
+  color: #e2e8f0; /* Crisp readable contrast */
 }
 
-.reader-theme-dark {
-  background-color: #1c1c21;
-  color: #dfdfe6;
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #a8a29e;
 }
 
-.reader-theme-oled {
-  background-color: #000000;
-  color: #e4e4e7;
+/* Reader Container & Iframe - Synchronized with Global Website Theme */
+#reader-viewport {
+  background-color: #ffffff;
+}
+
+#reader-iframe {
+  background-color: #ffffff;
+  /* Crystal-clear contrast on light paper */
+  filter: contrast(1.08);
+}
+
+.dark #reader-viewport {
+  background-color: #121214;
+}
+
+.dark #reader-iframe {
+  background-color: #121214;
+  /* Pure inversion with contrast & brightness boost for crystal-clear sharp text */
+  filter: invert(1) hue-rotate(180deg) contrast(1.25) brightness(1.1);
 }
 
 /* Skeleton animation */

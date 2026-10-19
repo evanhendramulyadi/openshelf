@@ -157,39 +157,38 @@ export async function renderBookDetails(root, bookId) {
             </div>
 
             <!-- Metadata Highlights Table -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-2xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200 dark:border-stone-800 text-xs">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-2xl bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-xs">
               <div>
-                <span class="block text-stone-500 dark:text-stone-400 uppercase tracking-wider text-[10px] font-semibold">Gutenberg ID</span>
+                <span class="block text-stone-600 dark:text-stone-300 uppercase tracking-wider text-[10px] font-semibold">Gutenberg ID</span>
                 <span class="font-mono font-medium text-stone-900 dark:text-stone-100">#${book.id}</span>
               </div>
               <div>
-                <span class="block text-stone-500 dark:text-stone-400 uppercase tracking-wider text-[10px] font-semibold">Language</span>
+                <span class="block text-stone-600 dark:text-stone-300 uppercase tracking-wider text-[10px] font-semibold">Language</span>
                 <span class="font-medium text-stone-900 dark:text-stone-100">${escapeHTML(book.languageFormatted)}</span>
               </div>
               <div>
-                <span class="block text-stone-500 dark:text-stone-400 uppercase tracking-wider text-[10px] font-semibold">Total Downloads</span>
+                <span class="block text-stone-600 dark:text-stone-300 uppercase tracking-wider text-[10px] font-semibold">Total Downloads</span>
                 <span class="font-medium text-stone-900 dark:text-stone-100">${escapeHTML(book.downloadCountFormatted)}</span>
               </div>
               <div id="col-first-published">
-                <span class="block text-stone-500 dark:text-stone-400 uppercase tracking-wider text-[10px] font-semibold">First Published</span>
-                <span id="val-first-published" class="font-medium text-stone-900 dark:text-stone-100 italic text-stone-400">Loading…</span>
+                <span class="block text-stone-600 dark:text-stone-300 uppercase tracking-wider text-[10px] font-semibold">First Published</span>
+                <span id="val-first-published" class="font-medium text-stone-900 dark:text-stone-100 italic text-stone-500 dark:text-stone-300">Loading…</span>
               </div>
             </div>
 
             <!-- Subjects & Tags -->
             ${book.subjects && book.subjects.length > 0 ? `
               <div class="space-y-2">
-                <h3 class="text-xs uppercase font-semibold tracking-wider text-stone-500 dark:text-stone-400 flex items-center gap-1.5">
+                <h3 class="text-xs uppercase font-bold tracking-wider text-stone-700 dark:text-stone-200 flex items-center gap-1.5">
                   ${renderIcon('tag', 'w-3.5 h-3.5')}
                   <span>Subjects & Classification</span>
                 </h3>
                 <div class="flex flex-wrap gap-1.5">
                   ${book.subjects.map(subj => `
-                    <a 
-                      href="#/explore?topic=${encodeURIComponent(subj)}" 
-                      class="px-2.5 py-1 rounded-lg text-xs bg-stone-100 dark:bg-stone-800 hover:bg-amber-100 dark:hover:bg-amber-950/60 text-stone-700 dark:text-stone-300 hover:text-amber-800 dark:hover:text-amber-400 border border-stone-200 dark:border-stone-700 transition-colors">
+                    <span 
+                      class="px-2.5 py-1 rounded-lg text-xs bg-stone-100 dark:bg-stone-800/90 text-stone-800 dark:text-stone-100 border border-stone-200 dark:border-stone-700 font-medium select-none">
                       ${escapeHTML(subj)}
-                    </a>
+                    </span>
                   `).join('')}
                 </div>
               </div>
@@ -198,17 +197,16 @@ export async function renderBookDetails(root, bookId) {
             <!-- Bookshelves Tags -->
             ${book.bookshelves && book.bookshelves.length > 0 ? `
               <div class="space-y-2">
-                <h3 class="text-xs uppercase font-semibold tracking-wider text-stone-500 dark:text-stone-400 flex items-center gap-1.5">
+                <h3 class="text-xs uppercase font-bold tracking-wider text-stone-700 dark:text-stone-200 flex items-center gap-1.5">
                   ${renderIcon('layers', 'w-3.5 h-3.5')}
                   <span>Project Gutenberg Bookshelves</span>
                 </h3>
                 <div class="flex flex-wrap gap-1.5">
                   ${book.bookshelves.map(shelf => `
-                    <a 
-                      href="#/explore?topic=${encodeURIComponent(shelf)}" 
-                      class="px-2.5 py-1 rounded-lg text-xs bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 transition-colors">
+                    <span 
+                      class="px-2.5 py-1 rounded-lg text-xs bg-stone-100 dark:bg-stone-800/90 text-stone-800 dark:text-stone-100 border border-stone-200 dark:border-stone-700 font-medium select-none">
                       ${escapeHTML(shelf)}
-                    </a>
+                    </span>
                   `).join('')}
                 </div>
               </div>
@@ -216,7 +214,7 @@ export async function renderBookDetails(root, bookId) {
 
             <!-- Download Formats Section -->
             <div class="space-y-3 pt-2">
-              <h3 class="text-xs uppercase font-semibold tracking-wider text-stone-500 dark:text-stone-400 flex items-center gap-1.5">
+              <h3 class="text-xs uppercase font-bold tracking-wider text-stone-700 dark:text-stone-200 flex items-center gap-1.5">
                 ${renderIcon('download', 'w-3.5 h-3.5')}
                 <span>Authorized Download Formats</span>
               </h3>

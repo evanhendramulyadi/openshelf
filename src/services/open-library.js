@@ -32,7 +32,10 @@ export async function getSupplementaryMetadata(title, author = '') {
     }
 
     const url = `${BASE_URL}/search.json?${params.toString()}`;
-    const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+    const res = await fetch(url, { 
+      headers: { 'Accept': 'application/json' },
+      signal: AbortSignal.timeout ? AbortSignal.timeout(2500) : undefined
+    });
     
     if (!res.ok) return null;
     const data = await res.json();

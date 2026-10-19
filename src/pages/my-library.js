@@ -70,22 +70,22 @@ export function renderMyLibrary(root, queryParams = {}) {
       <!-- Quick Metrics Ribbon -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <div class="p-4 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs">
-          <span class="text-[10px] uppercase font-semibold text-stone-500 tracking-wider">Want to Read</span>
+          <span class="text-[10px] uppercase font-semibold text-stone-600 dark:text-stone-300 tracking-wider">Want to Read</span>
           <div class="text-2xl font-serif font-bold text-stone-900 dark:text-stone-100 mt-1">${totalWantToRead}</div>
         </div>
 
         <div class="p-4 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs">
-          <span class="text-[10px] uppercase font-semibold text-amber-600 dark:text-amber-400 tracking-wider">Currently Reading</span>
+          <span class="text-[10px] uppercase font-semibold text-amber-700 dark:text-amber-400 tracking-wider">Currently Reading</span>
           <div class="text-2xl font-serif font-bold text-amber-700 dark:text-amber-400 mt-1">${totalReading}</div>
         </div>
 
         <div class="p-4 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs">
-          <span class="text-[10px] uppercase font-semibold text-emerald-600 dark:text-emerald-400 tracking-wider">Finished</span>
+          <span class="text-[10px] uppercase font-semibold text-emerald-700 dark:text-emerald-400 tracking-wider">Finished</span>
           <div class="text-2xl font-serif font-bold text-emerald-700 dark:text-emerald-400 mt-1">${totalFinished}</div>
         </div>
 
         <div class="p-4 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-xs">
-          <span class="text-[10px] uppercase font-semibold text-rose-600 dark:text-rose-400 tracking-wider">Favorites</span>
+          <span class="text-[10px] uppercase font-semibold text-rose-700 dark:text-rose-400 tracking-wider">Favorites</span>
           <div class="text-2xl font-serif font-bold text-rose-700 dark:text-rose-400 mt-1">${totalFavorites}</div>
         </div>
       </div>
@@ -98,7 +98,7 @@ export function renderMyLibrary(root, queryParams = {}) {
             class="py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors flex items-center gap-1.5 ${
               currentTab === 'reading_list' 
                 ? 'border-amber-700 text-amber-800 dark:text-amber-400 dark:border-amber-400' 
-                : 'border-transparent text-stone-500 hover:text-stone-800 dark:hover:text-stone-200'
+                : 'border-transparent text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white'
             }">
             ${renderIcon('book-open', 'w-4 h-4')}
             <span>Reading List (${readingListItems.length})</span>
@@ -109,7 +109,7 @@ export function renderMyLibrary(root, queryParams = {}) {
             class="py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors flex items-center gap-1.5 ${
               currentTab === 'favorites' 
                 ? 'border-rose-600 text-rose-700 dark:text-rose-400 dark:border-rose-400' 
-                : 'border-transparent text-stone-500 hover:text-stone-800 dark:hover:text-stone-200'
+                : 'border-transparent text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white'
             }">
             ${renderIcon('heart', 'w-4 h-4')}
             <span>Favorites (${favoritesList.length})</span>
@@ -120,7 +120,7 @@ export function renderMyLibrary(root, queryParams = {}) {
             class="py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors flex items-center gap-1.5 ${
               currentTab === 'finished' 
                 ? 'border-emerald-600 text-emerald-700 dark:text-emerald-400 dark:border-emerald-400' 
-                : 'border-transparent text-stone-500 hover:text-stone-800 dark:hover:text-stone-200'
+                : 'border-transparent text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white'
             }">
             ${renderIcon('check', 'w-4 h-4')}
             <span>Finished (${finishedItems.length})</span>
@@ -132,17 +132,17 @@ export function renderMyLibrary(root, queryParams = {}) {
           <div class="hidden sm:flex items-center gap-1 text-xs">
             <a 
               href="#/library?tab=reading_list&sub=all" 
-              class="px-2.5 py-1 rounded-lg ${subFilter === 'all' ? 'bg-stone-200 dark:bg-stone-800 font-semibold' : 'text-stone-500 hover:text-stone-800'}">
+              class="px-2.5 py-1 rounded-lg ${subFilter === 'all' ? 'bg-stone-200 dark:bg-stone-800 font-bold text-stone-900 dark:text-stone-100' : 'text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white'}">
               All
             </a>
             <a 
               href="#/library?tab=reading_list&sub=reading" 
-              class="px-2.5 py-1 rounded-lg ${subFilter === 'reading' ? 'bg-stone-200 dark:bg-stone-800 font-semibold text-amber-700 dark:text-amber-400' : 'text-stone-500 hover:text-stone-800'}">
+              class="px-2.5 py-1 rounded-lg ${subFilter === 'reading' ? 'bg-stone-200 dark:bg-stone-800 font-bold text-amber-700 dark:text-amber-400' : 'text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white'}">
               Reading
             </a>
             <a 
               href="#/library?tab=reading_list&sub=want_to_read" 
-              class="px-2.5 py-1 rounded-lg ${subFilter === 'want_to_read' ? 'bg-stone-200 dark:bg-stone-800 font-semibold' : 'text-stone-500 hover:text-stone-800'}">
+              class="px-2.5 py-1 rounded-lg ${subFilter === 'want_to_read' ? 'bg-stone-200 dark:bg-stone-800 font-bold text-stone-900 dark:text-stone-100' : 'text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white'}">
               Want to Read
             </a>
           </div>

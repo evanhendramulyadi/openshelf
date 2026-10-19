@@ -104,16 +104,16 @@ export function attachSearchListeners(formElement, onSearch, liveDebounce = true
     }
   };
 
-  const triggerSearch = (query) => {
+  const triggerSearch = (query, isLive = false) => {
     updateClearVisibility();
     if (typeof onSearch === 'function') {
-      onSearch(query.trim());
+      onSearch(query.trim(), isLive);
     }
   };
 
   const debouncedSearch = debounce((q) => {
-    triggerSearch(q);
-  }, 400);
+    triggerSearch(q, true);
+  }, 200);
 
   if (input) {
     input.addEventListener('input', (e) => {
@@ -126,10 +126,10 @@ export function attachSearchListeners(formElement, onSearch, liveDebounce = true
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
-        triggerSearch(input.value);
+        triggerSearch(input.value, false);
       } else if (e.key === 'Escape') {
         input.value = '';
-        triggerSearch('');
+        triggerSearch('', false);
       }
     });
   }

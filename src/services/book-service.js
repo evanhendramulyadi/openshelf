@@ -156,6 +156,8 @@ export const {
   getBooksByIds,
   getFeaturedBooks,
   getRecentAdditions,
+  searchCuratedCatalog,
+  fetchOpenLibraryGutenbergBooks,
   normalizeBook
 } = gutendex;
 

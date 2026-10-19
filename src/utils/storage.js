@@ -194,25 +194,42 @@ export function removeLibraryItem(bookId) {
 }
 
 /**
- * Update reading progress (0-100)
- * @param {number|string} bookId 
+ * Update reading progress (0-100) and save book to library
+ * @param {Object|number|string} bookOrId 
  * @param {number} percent 
+ * @returns {Object} updated library item
  */
-export function updateReadingProgress(bookId, percent) {
+export function updateReadingProgress(bookOrId, percent) {
   const lib = getLibrary();
-  const idStr = String(bookId);
-  if (!lib[idStr]) return;
-  
-  const p = Math.min(100, Math.max(0, Math.round(percent)));
-  lib[idStr].progressPercent = p;
-  lib[idStr].lastReadAt = Date.now();
-  if (p === 100) {
-    lib[idStr].status = 'finished';
-  } else if (p > 0 && lib[idStr].status === 'want_to_read') {
-    lib[idStr].status = 'reading';
+  let bookId;
+  let bookObj = null;
+
+  if (bookOrId && typeof bookOrId === 'object') {
+    bookId = Number(bookOrId.id);
+    bookObj = bookOrId;
+  } else {
+    bookId = Number(bookOrId);
   }
-  
+
+  const idStr = String(bookId);
+  const existing = lib[idStr] || {};
+  const p = Math.min(100, Math.max(0, Math.round(Number(percent) || 0)));
+  const status = p === 100 ? 'finished' : (p > 0 ? 'reading' : (existing.status || 'want_to_read'));
+
+  lib[idStr] = {
+    id: bookId,
+    title: bookObj?.title || existing.title || `Book #${bookId}`,
+    authorNames: bookObj?.authorNames || existing.authorNames || 'Unknown',
+    coverUrl: bookObj?.coverUrl !== undefined ? bookObj.coverUrl : (existing.coverUrl || null),
+    status: status,
+    progressPercent: p,
+    addedAt: existing.addedAt || Date.now(),
+    updatedAt: Date.now(),
+    lastReadAt: Date.now()
+  };
+
   setItem(STORAGE_KEYS.LIBRARY, lib);
+  return lib[idStr];
 }
 
 // ------------------- Reader Preferences -------------------

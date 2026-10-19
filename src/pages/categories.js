@@ -2,7 +2,7 @@ import { renderIcon, initIcons } from '../utils/icons.js';
 import { escapeHTML } from '../utils/dom.js';
 import { renderBookCard, attachBookCardListeners } from '../components/book-card.js';
 import { renderBookSkeletons, renderErrorState } from '../components/loading-state.js';
-import { CATEGORIES, getBooks } from '../services/book-service.js';
+import { CATEGORIES, getBooks, searchCuratedCatalog } from '../services/book-service.js';
 
 /**
  * Render Categories Discovery Page
@@ -14,6 +14,11 @@ export async function renderCategories(root, queryParams = {}) {
 
   const selectedCategoryId = queryParams.cat || CATEGORIES[0].id;
   const currentCategory = CATEGORIES.find(c => c.id === selectedCategoryId) || CATEGORIES[0];
+
+  // 0ms instant local match for current category
+  const instantCat = searchCuratedCatalog({ topic: currentCategory.query });
+  const hasInstant = instantCat.books.length > 0;
+  const instant8 = instantCat.books.slice(0, 8);
 
   root.innerHTML = `
     <div class="space-y-12 pb-16">
@@ -87,13 +92,18 @@ export async function renderCategories(root, queryParams = {}) {
 
         <!-- Books Grid for Selected Category -->
         <div id="category-books-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          ${renderBookSkeletons(8)}
+          ${hasInstant ? instant8.map(renderBookCard).join('') : renderBookSkeletons(8)}
         </div>
       </section>
     </div>
   `;
 
   initIcons(root);
+
+  const grid = root.querySelector('#category-books-grid');
+  if (hasInstant && grid) {
+    attachBookCardListeners(grid, instant8);
+  }
 
   // Setup click listeners for category buttons
   root.querySelectorAll('.cat-selector-btn').forEach(btn => {
@@ -105,27 +115,17 @@ export async function renderCategories(root, queryParams = {}) {
     });
   });
 
-  // Fetch real books for the current category
+  // Fetch real books for the current category in background
   try {
     const data = await getBooks({ topic: currentCategory.query, page: 1 });
-    const grid = root.querySelector('#category-books-grid');
-    if (grid) {
-      if (data.books.length === 0) {
-        grid.innerHTML = `
-          <div class="col-span-full py-12 text-center text-stone-500">
-            No titles currently available for this category.
-          </div>
-        `;
-      } else {
-        const top8 = data.books.slice(0, 8);
-        grid.innerHTML = top8.map(renderBookCard).join('');
-        attachBookCardListeners(grid, top8);
-      }
+    if (grid && data.books && data.books.length > 0) {
+      const top8 = data.books.slice(0, 8);
+      grid.innerHTML = top8.map(renderBookCard).join('');
+      attachBookCardListeners(grid, top8);
     }
   } catch (err) {
-    console.error('Category load error:', err);
-    const grid = root.querySelector('#category-books-grid');
-    if (grid) {
+    console.warn('Category background load notice:', err);
+    if (!hasInstant && grid) {
       grid.innerHTML = renderErrorState({
         title: 'Could Not Load Category Books',
         message: 'Could not connect to the Gutendex service. Please check your connection.',

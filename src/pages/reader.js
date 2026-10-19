@@ -45,87 +45,107 @@ export async function renderReader(root, bookId) {
       return;
     }
 
-    // Get current reader preferences & saved progress
-    const prefs = storage.getReaderPrefs();
+    // Get saved reading progress
     const libItem = storage.getLibraryItem(book.id);
-    const initialProgress = libItem ? (libItem.progressPercent || 0) : 0;
+    let currentProgress = libItem ? (libItem.progressPercent || 0) : 0;
 
     // Reading URL: prefer HTML format, otherwise Plain Text
     const readUrl = book.formats.html || book.formats.txt;
 
     root.innerHTML = `
-      <div id="reader-wrapper" class="flex flex-col h-[calc(100vh-5rem)] -my-6 -mx-4 sm:-mx-6 lg:-mx-8 transition-colors duration-200 ${
-        prefs.theme === 'sepia' 
-          ? 'reader-theme-sepia' 
-          : prefs.theme === 'dark' 
-          ? 'reader-theme-dark' 
-          : prefs.theme === 'oled' 
-          ? 'reader-theme-oled' 
-          : 'reader-theme-day'
-      }">
+      <div id="reader-wrapper" class="flex flex-col h-[calc(100vh-4.5rem)] -my-6 -mx-4 sm:-mx-6 lg:-mx-8 transition-colors duration-200">
+        <!-- Top Thin Accent Progress Bar -->
+        <div class="w-full h-1 bg-stone-300/40 dark:bg-stone-700/40 overflow-hidden relative z-30">
+          <div id="reader-top-progress-bar" class="h-full bg-amber-600 transition-all duration-300" style="width: ${currentProgress}%"></div>
+        </div>
+
         <!-- Reader Navigation & Control Bar -->
-        <header class="flex-shrink-0 px-4 py-3 border-b border-stone-200/60 dark:border-stone-800/80 bg-white/70 dark:bg-stone-900/70 backdrop-blur-md flex items-center justify-between gap-4 z-20 select-none">
-          <!-- Left: Return to details -->
-          <div class="flex items-center gap-3 min-w-0">
+        <header class="reader-toolbar flex-shrink-0 px-3 sm:px-6 py-2.5 border-b border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 shadow-sm flex items-center justify-between gap-3 z-20 select-none transition-colors">
+          <!-- Left: Return to details & Book Title -->
+          <div class="flex items-center gap-2 sm:gap-4 min-w-0">
             <a 
               href="#/book/${book.id}" 
               title="Return to Book Details"
-              class="flex-shrink-0 p-2 rounded-xl text-stone-700 dark:text-stone-300 hover:bg-stone-200/60 dark:hover:bg-stone-800 transition-colors flex items-center gap-1.5 text-xs font-medium">
-              ${renderIcon('arrow-left', 'w-4 h-4')}
+              class="reader-nav-back flex-shrink-0 px-2.5 py-1.5 rounded-xl transition-colors flex items-center gap-1.5 text-xs font-semibold border border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-700 shadow-xs">
+              ${renderIcon('arrow-left', 'w-3.5 h-3.5')}
               <span class="hidden sm:inline">Details</span>
             </a>
 
             <div class="min-w-0">
-              <h2 class="font-serif font-bold text-xs sm:text-sm text-stone-900 dark:text-stone-100 truncate">
+              <h2 class="font-serif font-bold text-xs sm:text-sm truncate leading-snug">
                 ${escapeHTML(book.title)}
               </h2>
-              <p class="text-[11px] text-stone-500 dark:text-stone-400 truncate">
+              <p class="text-[11px] font-medium text-stone-600 dark:text-stone-300 truncate leading-none mt-0.5">
                 ${escapeHTML(book.authorNames)}
               </p>
             </div>
           </div>
 
-          <!-- Center/Right: Reader Controls -->
+          <!-- Right: Progress Control & Actions -->
           <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-            <!-- Theme Selector -->
-            <div class="flex items-center p-1 rounded-xl bg-stone-200/60 dark:bg-stone-800 border border-stone-300/50 dark:border-stone-700/50 text-xs">
+            <!-- Reading Progress Widget with Dropdown Modal -->
+            <div class="relative">
               <button 
+                id="btn-toggle-progress-panel" 
                 type="button" 
-                data-theme="day" 
-                class="reader-theme-btn px-2.5 py-1 rounded-lg font-medium transition-colors ${prefs.theme === 'day' ? 'bg-white dark:bg-stone-700 shadow-xs' : 'opacity-70 hover:opacity-100'}"
-                title="Light Theme">
-                Day
+                class="reader-progress-btn px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 border border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-700 transition-all shadow-xs"
+                title="Set reading progress">
+                ${renderIcon('bookmark', 'w-3.5 h-3.5 text-amber-600')}
+                <span id="reader-progress-label">${currentProgress}% Read</span>
+                ${renderIcon('chevron-down', 'w-3 h-3 opacity-80')}
               </button>
-              <button 
-                type="button" 
-                data-theme="sepia" 
-                class="reader-theme-btn px-2.5 py-1 rounded-lg font-medium transition-colors ${prefs.theme === 'sepia' ? 'bg-[#f6edd9] text-[#3b2f20] font-bold shadow-xs' : 'opacity-70 hover:opacity-100'}"
-                title="Sepia Warm Theme">
-                Sepia
-              </button>
-              <button 
-                type="button" 
-                data-theme="dark" 
-                class="reader-theme-btn px-2.5 py-1 rounded-lg font-medium transition-colors ${prefs.theme === 'dark' ? 'bg-stone-900 text-stone-100 shadow-xs' : 'opacity-70 hover:opacity-100'}"
-                title="Night Theme">
-                Night
-              </button>
-            </div>
 
-            <!-- Reading Progress Dropdown / Logger -->
-            <div class="relative flex items-center gap-1.5 text-xs">
-              <label for="reader-progress-input" class="hidden md:inline text-stone-500 dark:text-stone-400">
-                Progress:
-              </label>
-              <select 
-                id="reader-progress-input" 
-                class="py-1 px-2 rounded-xl bg-stone-100 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-xs font-semibold focus:outline-none">
-                <option value="0" ${initialProgress === 0 ? 'selected' : ''}>0% (Started)</option>
-                <option value="25" ${initialProgress === 25 ? 'selected' : ''}>25%</option>
-                <option value="50" ${initialProgress === 50 ? 'selected' : ''}>50% (Halfway)</option>
-                <option value="75" ${initialProgress === 75 ? 'selected' : ''}>75%</option>
-                <option value="100" ${initialProgress === 100 ? 'selected' : ''}>100% (Finished)</option>
-              </select>
+              <!-- Progress Popover Panel -->
+              <div 
+                id="reader-progress-panel" 
+                class="hidden absolute right-0 top-full mt-2 w-72 p-4 rounded-2xl shadow-xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 z-50 animate-in fade-in zoom-in-95 duration-150">
+                <div class="flex items-center justify-between mb-3 border-b border-stone-100 dark:border-stone-800 pb-2">
+                  <span class="font-serif font-bold text-xs uppercase tracking-wider text-stone-800 dark:text-stone-100">
+                    Reading Progress
+                  </span>
+                  <span id="popover-progress-val" class="font-bold text-sm text-amber-700 dark:text-amber-400">
+                    ${currentProgress}%
+                  </span>
+                </div>
+
+                <!-- Range Slider -->
+                <div class="space-y-2 mb-4">
+                  <input 
+                    type="range" 
+                    id="reader-range-slider" 
+                    min="0" 
+                    max="100" 
+                    step="5" 
+                    value="${currentProgress}" 
+                    class="w-full accent-amber-600 cursor-pointer"
+                  />
+                  <div class="flex justify-between text-[10px] text-stone-600 dark:text-stone-200 font-semibold">
+                    <span>0% (Start)</span>
+                    <span>50% (Halfway)</span>
+                    <span>100% (Finished)</span>
+                  </div>
+                </div>
+
+                <!-- Quick Presets -->
+                <div class="grid grid-cols-4 gap-1.5 mb-3">
+                  <button type="button" data-set-percent="0" class="btn-quick-percent px-2 py-1 text-[11px] rounded-lg border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-900 dark:text-stone-100 font-semibold transition-colors">0%</button>
+                  <button type="button" data-set-percent="25" class="btn-quick-percent px-2 py-1 text-[11px] rounded-lg border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-900 dark:text-stone-100 font-semibold transition-colors">25%</button>
+                  <button type="button" data-set-percent="50" class="btn-quick-percent px-2 py-1 text-[11px] rounded-lg border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-900 dark:text-stone-100 font-semibold transition-colors">50%</button>
+                  <button type="button" data-set-percent="75" class="btn-quick-percent px-2 py-1 text-[11px] rounded-lg border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-900 dark:text-stone-100 font-semibold transition-colors">75%</button>
+                </div>
+
+                <button 
+                  type="button" 
+                  data-set-percent="100" 
+                  class="btn-quick-percent w-full py-1.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs mb-3">
+                  ${renderIcon('check', 'w-3.5 h-3.5')}
+                  <span>Mark as Finished (100%)</span>
+                </button>
+
+                <p class="text-[10px] text-stone-600 dark:text-stone-300 text-center font-medium">
+                  Progress is saved automatically to your Personal Library.
+                </p>
+              </div>
             </div>
 
             <!-- External Open in New Window Button -->
@@ -133,8 +153,8 @@ export async function renderReader(root, bookId) {
               href="${readUrl}" 
               target="_blank" 
               rel="noopener noreferrer" 
-              title="Open full page in external tab"
-              class="p-2 rounded-xl text-stone-700 dark:text-stone-300 hover:bg-stone-200/60 dark:hover:bg-stone-800 transition-colors">
+              title="Open raw book in new tab"
+              class="reader-icon-btn p-2 rounded-xl border border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-700 transition-colors shadow-xs">
               ${renderIcon('external-link', 'w-4 h-4')}
             </a>
 
@@ -143,18 +163,18 @@ export async function renderReader(root, bookId) {
               id="btn-reader-fullscreen" 
               type="button" 
               title="Toggle Fullscreen"
-              class="p-2 rounded-xl text-stone-700 dark:text-stone-300 hover:bg-stone-200/60 dark:hover:bg-stone-800 transition-colors">
+              class="reader-icon-btn p-2 rounded-xl border border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-700 transition-colors shadow-xs">
               ${renderIcon('maximize-2', 'w-4 h-4')}
             </button>
           </div>
         </header>
 
         <!-- Reading Frame Viewport -->
-        <div class="relative flex-grow w-full overflow-hidden flex flex-col items-center justify-center">
+        <div id="reader-viewport" class="relative flex-grow w-full overflow-hidden flex flex-col items-center justify-center transition-colors">
           <!-- Frame Loading Spinner -->
-          <div id="reader-frame-loading" class="absolute inset-0 flex flex-col items-center justify-center bg-stone-50/80 dark:bg-stone-950/80 z-10 transition-opacity duration-300">
+          <div id="reader-frame-loading" class="absolute inset-0 flex flex-col items-center justify-center bg-stone-50/90 dark:bg-stone-950/90 z-10 transition-opacity duration-300">
             <div class="w-8 h-8 border-3 border-stone-300 border-t-amber-600 rounded-full animate-spin mb-3"></div>
-            <p class="text-xs text-stone-500 font-medium">Connecting to Project Gutenberg book stream…</p>
+            <p class="text-xs text-stone-600 dark:text-stone-300 font-medium">Connecting to Project Gutenberg reader stream…</p>
           </div>
 
           <!-- Embedded Reader Iframe -->
@@ -162,7 +182,7 @@ export async function renderReader(root, bookId) {
             id="reader-iframe"
             src="${readUrl}" 
             title="Reading ${escapeHTML(book.title)}"
-            class="w-full h-full border-0 bg-white"
+            class="w-full h-full border-0 transition-all duration-300"
             loading="eager"
             referrerpolicy="no-referrer"
             sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
@@ -176,64 +196,124 @@ export async function renderReader(root, bookId) {
     const wrapper = root.querySelector('#reader-wrapper');
     const iframe = root.querySelector('#reader-iframe');
     const loadingOverlay = root.querySelector('#reader-frame-loading');
+    const topProgressBar = root.querySelector('#reader-top-progress-bar');
+    const progressLabel = root.querySelector('#reader-progress-label');
+    const progressPanel = root.querySelector('#reader-progress-panel');
+    const progressBtn = root.querySelector('#btn-toggle-progress-panel');
+    const rangeSlider = root.querySelector('#reader-range-slider');
+    const popoverVal = root.querySelector('#popover-progress-val');
+
+    // Attempt to inject high-contrast typography directly into iframe if accessible
+    const injectIframeStyles = () => {
+      try {
+        const isDark = document.documentElement.classList.contains('dark');
+        const doc = iframe.contentDocument || iframe.contentWindow?.document;
+        if (doc && doc.body) {
+          let styleTag = doc.getElementById('openshelf-injected-theme');
+          if (!styleTag) {
+            styleTag = doc.createElement('style');
+            styleTag.id = 'openshelf-injected-theme';
+            (doc.head || doc.body).appendChild(styleTag);
+          }
+          if (isDark) {
+            styleTag.textContent = `
+              body, p, div, span, h1, h2, h3, h4, h5, h6, pre, table, td, th {
+                color: #ffffff !important;
+              }
+              body { background-color: #121214 !important; }
+            `;
+          } else {
+            styleTag.textContent = `
+              body, p, div, span, h1, h2, h3, h4, h5, h6, pre, table, td, th {
+                color: #000000 !important;
+              }
+              body { background-color: #ffffff !important; }
+            `;
+          }
+        }
+      } catch (e) {
+        // Cross-origin iframe is styled via CSS filter on the iframe element
+      }
+    };
+
+    // Auto sync when global website theme toggles
+    const onGlobalThemeChange = () => {
+      injectIframeStyles();
+    };
+    window.addEventListener('openshelf:theme-changed', onGlobalThemeChange);
 
     // Handle Iframe Load
     if (iframe && loadingOverlay) {
       iframe.addEventListener('load', () => {
         loadingOverlay.classList.add('opacity-0', 'pointer-events-none');
         setTimeout(() => loadingOverlay.remove(), 400);
+        injectIframeStyles();
       });
-      // Fallback timeout in case iframe onload doesn't fire
       setTimeout(() => {
         if (loadingOverlay) {
           loadingOverlay.classList.add('opacity-0', 'pointer-events-none');
         }
+        injectIframeStyles();
       }, 3500);
     }
 
-    // Theme Switcher Buttons
-    root.querySelectorAll('.reader-theme-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const selectedTheme = btn.getAttribute('data-theme');
-        storage.setReaderPrefs({ theme: selectedTheme });
-        
-        wrapper.className = `flex flex-col h-[calc(100vh-5rem)] -my-6 -mx-4 sm:-mx-6 lg:-mx-8 transition-colors duration-200 ${
-          selectedTheme === 'sepia' 
-            ? 'reader-theme-sepia' 
-            : selectedTheme === 'dark' 
-            ? 'reader-theme-dark' 
-            : selectedTheme === 'oled' 
-            ? 'reader-theme-oled' 
-            : 'reader-theme-day'
-        }`;
-
-        // Re-render reader controls active state
-        root.querySelectorAll('.reader-theme-btn').forEach(b => {
-          const t = b.getAttribute('data-theme');
-          if (t === selectedTheme) {
-            b.classList.remove('opacity-70');
-            b.classList.add('shadow-xs', 'font-bold');
-          } else {
-            b.classList.add('opacity-70');
-            b.classList.remove('shadow-xs', 'font-bold');
-          }
-        });
+    // Toggle Progress Popover
+    if (progressBtn && progressPanel) {
+      progressBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        progressPanel.classList.toggle('hidden');
       });
-    });
 
-    // Progress Logger
-    const progressSelect = root.querySelector('#reader-progress-input');
-    if (progressSelect) {
-      progressSelect.addEventListener('change', (e) => {
-        const percent = Number(e.target.value);
-        storage.updateReadingProgress(book.id, percent);
-        if (percent === 100) {
-          showToast(`Congratulations! Marked "${book.title}" as Finished.`, 'success');
-        } else {
-          showToast(`Saved reading progress: ${percent}%`, 'info');
+      // Close popover when clicked outside
+      document.addEventListener('click', (e) => {
+        if (!progressPanel.contains(e.target) && !progressBtn.contains(e.target)) {
+          progressPanel.classList.add('hidden');
         }
       });
     }
+
+    // Save and update progress
+    const saveProgress = (val) => {
+      currentProgress = Math.min(100, Math.max(0, Math.round(Number(val) || 0)));
+      
+      // Auto-save to library storage
+      storage.updateReadingProgress(book, currentProgress);
+
+      // Update UI elements
+      if (topProgressBar) topProgressBar.style.width = `${currentProgress}%`;
+      if (progressLabel) progressLabel.textContent = `${currentProgress}% Read`;
+      if (popoverVal) popoverVal.textContent = `${currentProgress}%`;
+      if (rangeSlider) rangeSlider.value = currentProgress;
+
+      if (currentProgress === 100) {
+        showToast(`Congratulations! Marked "${book.title}" as Finished in your Library.`, 'success');
+      } else {
+        showToast(`Updated reading progress to ${currentProgress}%.`, 'info');
+      }
+    };
+
+    // Range slider input listener (live update)
+    if (rangeSlider) {
+      rangeSlider.addEventListener('input', (e) => {
+        const val = Number(e.target.value);
+        if (popoverVal) popoverVal.textContent = `${val}%`;
+        if (topProgressBar) topProgressBar.style.width = `${val}%`;
+        if (progressLabel) progressLabel.textContent = `${val}% Read`;
+      });
+
+      rangeSlider.addEventListener('change', (e) => {
+        saveProgress(e.target.value);
+      });
+    }
+
+    // Quick percentage preset buttons
+    root.querySelectorAll('.btn-quick-percent').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetPercent = Number(btn.getAttribute('data-set-percent'));
+        saveProgress(targetPercent);
+        if (progressPanel) progressPanel.classList.add('hidden');
+      });
+    });
 
     // Fullscreen Toggle
     const fsBtn = root.querySelector('#btn-reader-fullscreen');
@@ -263,4 +343,3 @@ export async function renderReader(root, bookId) {
     }
   }
 }
-

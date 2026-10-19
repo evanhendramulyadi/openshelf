@@ -3,7 +3,7 @@ import { escapeHTML } from '../utils/dom.js';
 import { renderSearchBar, attachSearchListeners } from '../components/search-bar.js';
 import { renderBookCard, attachBookCardListeners } from '../components/book-card.js';
 import { renderBookSkeletons, renderErrorState } from '../components/loading-state.js';
-import { getFeaturedBooks, getBooks, getRecentAdditions, CATEGORIES } from '../services/book-service.js';
+import { getFeaturedBooks, getBooks, getRecentAdditions, searchCuratedCatalog, CATEGORIES } from '../services/book-service.js';
 
 /**
  * Render Home Page
@@ -240,55 +240,67 @@ export async function renderHome(root) {
     }
   }, false);
 
-  // Fetch and populate Featured Books
-  try {
-    const featuredBooks = await getFeaturedBooks();
-    const featuredGrid = root.querySelector('#home-featured-grid');
-    if (featuredGrid) {
-      const top4 = featuredBooks.slice(0, 4);
-      featuredGrid.innerHTML = top4.map(renderBookCard).join('');
-      attachBookCardListeners(featuredGrid, top4);
+  // Fetch and populate all three sections concurrently for maximum loading speed
+  const loadFeatured = async () => {
+    try {
+      const featuredBooks = await getFeaturedBooks();
+      const featuredGrid = root.querySelector('#home-featured-grid');
+      if (featuredGrid) {
+        const top4 = featuredBooks.slice(0, 4);
+        featuredGrid.innerHTML = top4.map(renderBookCard).join('');
+        attachBookCardListeners(featuredGrid, top4);
+      }
+    } catch (err) {
+      console.error('Failed to load featured books:', err);
+      const featuredGrid = root.querySelector('#home-featured-grid');
+      if (featuredGrid) {
+        featuredGrid.innerHTML = renderErrorState({
+          title: 'Could Not Load Featured Titles',
+          message: 'Could not connect to the Gutendex catalog. Please check your connection.',
+          retryActionId: 'btn-retry-featured'
+        });
+        initIcons(featuredGrid);
+        const retryBtn = featuredGrid.querySelector('#btn-retry-featured');
+        if (retryBtn) retryBtn.addEventListener('click', () => renderHome(root));
+      }
     }
-  } catch (err) {
-    console.error('Failed to load featured books:', err);
-    const featuredGrid = root.querySelector('#home-featured-grid');
-    if (featuredGrid) {
-      featuredGrid.innerHTML = renderErrorState({
-        title: 'Could Not Load Featured Titles',
-        message: 'Could not connect to the Gutendex catalog. Please check your connection.',
-        retryActionId: 'btn-retry-featured'
-      });
-      initIcons(featuredGrid);
-      const retryBtn = featuredGrid.querySelector('#btn-retry-featured');
-      if (retryBtn) retryBtn.addEventListener('click', () => renderHome(root));
-    }
-  }
+  };
 
-  // Fetch and populate Popular Books
-  try {
-    const popularData = await getBooks({ page: 1 });
-    const popularGrid = root.querySelector('#home-popular-grid');
-    if (popularGrid) {
-      // Pick 4 books that aren't already featured
-      const populars = popularData.books.slice(0, 4);
-      popularGrid.innerHTML = populars.map(renderBookCard).join('');
-      attachBookCardListeners(popularGrid, populars);
+  const loadPopular = async () => {
+    try {
+      const popularData = await getBooks({ page: 1 });
+      const popularGrid = root.querySelector('#home-popular-grid');
+      if (popularGrid && popularData.books && popularData.books.length > 0) {
+        const populars = popularData.books.slice(0, 4);
+        popularGrid.innerHTML = populars.map(renderBookCard).join('');
+        attachBookCardListeners(popularGrid, populars);
+      }
+    } catch (err) {
+      console.warn('Failed to load popular books:', err);
+      const popularGrid = root.querySelector('#home-popular-grid');
+      if (popularGrid) {
+        const fallback = searchCuratedCatalog({ sort: 'popular' }).books.slice(0, 4);
+        popularGrid.innerHTML = fallback.map(renderBookCard).join('');
+        attachBookCardListeners(popularGrid, fallback);
+      }
     }
-  } catch (err) {
-    console.warn('Failed to load popular books:', err);
-  }
+  };
 
-  // Fetch and populate Recent Additions
-  try {
-    const recentBooks = await getRecentAdditions();
-    const recentGrid = root.querySelector('#home-recent-grid');
-    if (recentGrid && recentBooks.length > 0) {
-      const recent4 = recentBooks.slice(0, 4);
-      recentGrid.innerHTML = recent4.map(renderBookCard).join('');
-      attachBookCardListeners(recentGrid, recent4);
+  const loadRecent = async () => {
+    try {
+      const recentBooks = await getRecentAdditions();
+      const recentGrid = root.querySelector('#home-recent-grid');
+      if (recentGrid && recentBooks.length > 0) {
+        const recent4 = recentBooks.slice(0, 4);
+        recentGrid.innerHTML = recent4.map(renderBookCard).join('');
+        attachBookCardListeners(recentGrid, recent4);
+      }
+    } catch (err) {
+      console.warn('Failed to load recent books:', err);
     }
-  } catch (err) {
-    console.warn('Failed to load recent books:', err);
-  }
+  };
+
+  // Run in parallel so sections populate immediately without blocking each other
+  Promise.allSettled([loadFeatured(), loadPopular(), loadRecent()]);
 }
 
