@@ -48,6 +48,25 @@ export async function renderBookDetails(root, bookId) {
       downloadLinks.push({ label: 'RDF Metadata', desc: 'Bibliographic XML record', url: book.formats.rdf, icon: 'info' });
     }
 
+    // Merge, clean, and deduplicate genres & topics
+    const rawGenres = [
+      ...(book.subjects || []),
+      ...(book.bookshelves || []).map(s => s.replace(/^Category:\s*/i, ''))
+    ];
+    const seenGenres = new Set();
+    const displayGenres = [];
+    for (const item of rawGenres) {
+      if (!item) continue;
+      const clean = item.trim();
+      if (clean.toLowerCase().includes('listings')) continue;
+      const lower = clean.toLowerCase();
+      if (!seenGenres.has(lower)) {
+        seenGenres.add(lower);
+        displayGenres.push(clean);
+      }
+    }
+    const limitedGenres = displayGenres.slice(0, 8);
+
     root.innerHTML = `
       <div class="space-y-12 pb-16">
         <!-- Top Navigation Breadcrumb -->
@@ -176,36 +195,18 @@ export async function renderBookDetails(root, bookId) {
               </div>
             </div>
 
-            <!-- Subjects & Tags -->
-            ${book.subjects && book.subjects.length > 0 ? `
+            <!-- Genres & Topics (Combined & Non-Clickable Badges) -->
+            ${limitedGenres.length > 0 ? `
               <div class="space-y-2">
                 <h3 class="text-xs uppercase font-bold tracking-wider text-stone-700 dark:text-stone-200 flex items-center gap-1.5">
-                  ${renderIcon('tag', 'w-3.5 h-3.5')}
-                  <span>Subjects & Classification</span>
+                  ${renderIcon('tag', 'w-3.5 h-3.5 text-amber-600 dark:text-amber-400')}
+                  <span>Genres & Topics</span>
                 </h3>
                 <div class="flex flex-wrap gap-1.5">
-                  ${book.subjects.map(subj => `
+                  ${limitedGenres.map(genre => `
                     <span 
-                      class="px-2.5 py-1 rounded-lg text-xs bg-stone-100 dark:bg-stone-800/90 text-stone-800 dark:text-stone-100 border border-stone-200 dark:border-stone-700 font-medium select-none">
-                      ${escapeHTML(subj)}
-                    </span>
-                  `).join('')}
-                </div>
-              </div>
-            ` : ''}
-
-            <!-- Bookshelves Tags -->
-            ${book.bookshelves && book.bookshelves.length > 0 ? `
-              <div class="space-y-2">
-                <h3 class="text-xs uppercase font-bold tracking-wider text-stone-700 dark:text-stone-200 flex items-center gap-1.5">
-                  ${renderIcon('layers', 'w-3.5 h-3.5')}
-                  <span>Project Gutenberg Bookshelves</span>
-                </h3>
-                <div class="flex flex-wrap gap-1.5">
-                  ${book.bookshelves.map(shelf => `
-                    <span 
-                      class="px-2.5 py-1 rounded-lg text-xs bg-stone-100 dark:bg-stone-800/90 text-stone-800 dark:text-stone-100 border border-stone-200 dark:border-stone-700 font-medium select-none">
-                      ${escapeHTML(shelf)}
+                      class="px-2.5 py-1 rounded-lg text-xs bg-stone-100 dark:bg-stone-800/90 text-stone-800 dark:text-stone-100 border border-stone-200 dark:border-stone-700 font-medium select-none shadow-xs">
+                      ${escapeHTML(genre)}
                     </span>
                   `).join('')}
                 </div>
