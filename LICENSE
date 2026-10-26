@@ -1,0 +1,88 @@
+Copyright (c) 2026–Present Evan Hendra Mulyadi. All rights reserved.
+
+OPENSHELF — PROPRIETARY LICENSE
+
+1. OWNERSHIP
+
+OpenShelf is an original software project created and developed by Evan Hendra Mulyadi.
+
+The original source code, interface design, layout, original written content, and other original project materials are protected by applicable intellectual property laws to the extent such rights belong to their respective rights holders.
+
+This license applies only to original project materials owned by or legally controlled by the applicable rights holder. It does not claim ownership of third-party software, APIs, book texts, illustrations, scans, metadata, trademarks, or other materials belonging to their respective owners.
+
+2. PUBLIC REPOSITORY ACCESS
+
+The public availability of the OpenShelf source code is intended for viewing, studying, and reviewing the project.
+
+Access to the public repository does not automatically grant permission to reproduce, modify, redistribute, republish, rebrand, sublicense, or commercially exploit the project's protected original materials.
+
+3. PERMITTED USE
+
+You may access the public repository to inspect the source code and study its implementation.
+
+Any reproduction, modification, redistribution, republication, or other use of protected original project materials beyond the permissions granted by applicable law requires prior written permission from the applicable rights holder, unless a separate applicable license expressly permits that use.
+
+4. RESTRICTIONS
+
+Unless prior written permission has been obtained from the applicable rights holder, the following activities are prohibited to the extent permitted by applicable law:
+
+* Copying or redistributing the protected original source code or substantial portions of the project.
+* Modifying or creating derivative works from protected original project materials.
+* Republishing, sublicensing, selling, or commercially exploiting protected original project materials.
+* Rebranding or renaming the project in a way that falsely implies ownership or authorization.
+* Removing or altering applicable copyright, attribution, or proprietary notices without authorization.
+* Claiming authorship or ownership of original work created by another person.
+
+Nothing in this section overrides rights or exceptions granted by applicable law or permissions granted under a separate applicable license.
+
+5. THIRD-PARTY SOFTWARE AND SERVICES
+
+OpenShelf uses third-party software, libraries, APIs, and services, including Vite, Tailwind CSS, Lucide Icons, Gutendex, Project Gutenberg, Open Library, and Vercel.
+
+Such third-party components and services remain subject to their respective licenses, terms of service, and applicable usage restrictions.
+
+This license does not supersede or replace any applicable third-party license. Users must independently comply with the relevant terms and licenses when using third-party components.
+
+6. PUBLIC-DOMAIN BOOKS AND DIGITAL MATERIALS
+
+OpenShelf provides access to e-books and related metadata obtained from external sources, including Project Gutenberg and Open Library.
+
+The copyright status, availability, and permitted uses of individual books, translations, illustrations, scans, and other digital materials may vary by work and jurisdiction.
+
+The public-domain status of a particular work does not automatically make every edition, translation, illustration, scan, cover image, or accompanying digital asset public domain.
+
+Users are responsible for verifying the applicable rights and restrictions before downloading, reproducing, redistributing, or otherwise using individual works or associated materials.
+
+Nothing in this license claims ownership over public-domain works or restricts rights that users independently hold under applicable law.
+
+7. NO WARRANTY
+
+OpenShelf is provided on an "AS IS" and "AS AVAILABLE" basis, to the extent permitted by applicable law.
+
+The project maintainer does not guarantee uninterrupted availability, error-free operation, the accuracy or completeness of third-party metadata, or the continued availability of external APIs and digital editions.
+
+Users are responsible for ensuring that their use of the application and downloaded materials complies with applicable laws and third-party terms.
+
+Nothing in this section excludes or limits liability that cannot legally be excluded or limited.
+
+8. LIMITATION OF PROJECT RESPONSIBILITY
+
+OpenShelf acts as a discovery and reading interface for digital books and related metadata made available through external sources.
+
+The project maintainer does not claim ownership of third-party content merely because it is displayed, linked, or made accessible through the application.
+
+Questions concerning the rights to individual books or third-party materials should be directed to the relevant rights holder or source provider.
+
+9. LEGAL RIGHTS
+
+Nothing in this license overrides applicable law, third-party licenses, or rights and exceptions that cannot legally be restricted.
+
+If any provision of this license is found unenforceable, the remaining provisions shall continue to apply to the extent permitted by applicable law.
+
+10. PERMISSION REQUESTS
+
+Requests to reproduce, modify, redistribute, or otherwise use protected original OpenShelf project materials beyond the permissions described above should be directed to Evan Hendra Mulyadi or the applicable rights holder.
+
+Prior written permission must be obtained for uses restricted by this license, unless otherwise permitted by applicable law or a separate applicable license.
+
+ALL RIGHTS NOT EXPRESSLY GRANTED ARE RESERVED, SUBJECT TO APPLICABLE LAW.
