@@ -2,7 +2,7 @@
   <img src="public/images/logo-openshelf.png" alt="OpenShelf Logo" width="100" style="border-radius: 20%;">
 </p>
 
-<h1 align="center">OpenShelf</h1>
+<h1 align="left">OpenShelf</h1>
 
 <p align="center">
   <strong>Digital Library</strong><br>
