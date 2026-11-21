@@ -15,7 +15,7 @@ export function renderFooter(container) {
         <div class="md:col-span-2 space-y-4">
           <div class="flex items-center gap-2.5">
             <img 
-              src="/images/logo-openshelf.png" 
+              src="/images/openshelf-logo.png" 
               alt="OpenShelf Logo" 
               class="w-8 h-8 object-contain rounded-[20%]" 
             />

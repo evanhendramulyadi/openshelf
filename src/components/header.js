@@ -42,7 +42,7 @@ export function renderHeader(container, currentPath = '#/') {
       <!-- Brand Logo -->
       <a href="#/" class="flex items-center gap-2.5 group" aria-label="OpenShelf Home">
         <img 
-          src="/images/logo-openshelf.png" 
+          src="/images/openshelf-logo.png" 
           alt="OpenShelf Logo" 
           class="w-9 h-9 object-contain rounded-[20%] transition-transform group-hover:scale-105" 
         />
