@@ -63,8 +63,8 @@ export async function handleRouting() {
     renderHeader(headerContainer, currentHash);
   }
 
-  // Scroll to top on navigation
-  scrollToTop();
+  // Scroll to top on navigation instantly
+  scrollToTop(false);
 
   // Focus management for accessibility
   main.focus();
@@ -121,9 +121,9 @@ export async function handleRouting() {
       break;
   }
 
-  // Ensure smooth animated scroll to top on page navigation
+  // Ensure instant scroll to top on page navigation
   requestAnimationFrame(() => {
-    scrollToTop(true);
+    scrollToTop(false);
   });
 }
 
@@ -131,6 +131,11 @@ export async function handleRouting() {
  * Initialize Client-Side Hash Router
  */
 export function initRouter() {
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  scrollToTop(false);
+
   window.addEventListener('hashchange', handleRouting);
   
   // Listen for storage changes to update header badges reactively

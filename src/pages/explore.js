@@ -235,14 +235,14 @@ export async function renderExplore(root, queryParams = {}) {
 
     if (prevBtn && data.previous) {
       prevBtn.addEventListener('click', () => {
-        scrollToTop();
+        scrollToTop(false);
         navigateWithFilters({ page: data.page - 1 });
       });
     }
 
     if (nextBtn && data.next) {
       nextBtn.addEventListener('click', () => {
-        scrollToTop();
+        scrollToTop(false);
         navigateWithFilters({ page: data.page + 1 });
       });
     }
