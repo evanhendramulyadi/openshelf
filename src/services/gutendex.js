@@ -6,7 +6,7 @@
 import { formatAuthorName, formatAuthorYears, formatNumber, formatLanguages, cleanSubject } from '../utils/formatters.js';
 import { CURATED_CATALOG } from '../data/curated-catalog.js';
 
-const BASE_URL = 'https://gutendex.com/books';
+const BASE_URL = 'https://gutendex.com/books/';
 
 // In-memory cache for active session
 const urlCache = new Map();
@@ -211,7 +211,7 @@ async function cachedFetch(url, cancellable = false) {
   timeoutId = setTimeout(() => {
     isTimedOut = true;
     controller.abort('timeout');
-  }, 3800);
+  }, 7500);
   signal = controller.signal;
 
   try {
@@ -588,28 +588,42 @@ export async function getBookById(id) {
     return sessionBook;
   }
 
-  // 3. Try direct single book endpoint
-  const url = `${BASE_URL}/${idStr}`;
+  // 3. Query Gutendex using the fast ?ids= endpoint (reliable and instant ~200ms)
   try {
-    const raw = await cachedFetch(url);
-    if (raw && raw.id) {
-      return normalizeBook(raw);
+    const idsUrl = `${BASE_URL}?ids=${idStr}`;
+    const data = await cachedFetch(idsUrl);
+    if (data && data.results && data.results.length > 0) {
+      const book = normalizeBook(data.results[0]);
+      if (book) {
+        bookCacheById.set(idStr, book);
+        setSessionItem(`${SESSION_BOOK_PREFIX}${idStr}`, book);
+        return book;
+      }
+    }
+    // If results is explicitly an empty array, the book does not exist in Gutenberg catalog
+    if (data && Array.isArray(data.results) && data.results.length === 0) {
+      return null;
     }
   } catch (err) {
-    // If it's a 404 from Gutendex, the book does not exist in Gutenberg
     if (err.message && err.message.includes('404')) {
       return null;
     }
+  }
 
-    // Try ids query fallback
-    try {
-      const fallbackUrl = `${BASE_URL}?ids=${idStr}`;
-      const data = await cachedFetch(fallbackUrl);
-      if (data && data.results && data.results.length > 0) {
-        return normalizeBook(data.results[0]);
+  // 4. Secondary fallback: direct single book endpoint
+  try {
+    const directUrl = `${BASE_URL}${idStr}/`;
+    const raw = await cachedFetch(directUrl);
+    if (raw && raw.id) {
+      const book = normalizeBook(raw);
+      if (book) {
+        bookCacheById.set(idStr, book);
+        setSessionItem(`${SESSION_BOOK_PREFIX}${idStr}`, book);
+        return book;
       }
-      return null;
-    } catch (fErr) {
+    }
+  } catch (err) {
+    if (err.message && err.message.includes('404')) {
       return null;
     }
   }
