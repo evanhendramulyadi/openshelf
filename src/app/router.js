@@ -95,11 +95,11 @@ export function renderMaintenancePage(root) {
       </div>
 
       <!-- Action Buttons -->
-      <div class="flex flex-row items-center justify-center gap-3 w-full max-w-md mx-auto">
+      <div class="grid grid-cols-2 gap-3 w-full max-w-md mx-auto">
         <button 
           id="btn-recheck-maintenance" 
           type="button" 
-          class="whitespace-nowrap px-4 py-2.5 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer flex-shrink-0">
+          class="w-full h-11 whitespace-nowrap px-3 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer">
           ${renderIcon('refresh-cw', 'w-3.5 h-3.5')}
           <span>Periksa Status Server</span>
         </button>
@@ -108,7 +108,7 @@ export function renderMaintenancePage(root) {
           href="https://www.gutenberg.org/" 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="whitespace-nowrap px-4 py-2.5 border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200 rounded-xl text-xs sm:text-sm font-medium transition-colors inline-flex items-center justify-center gap-1.5 flex-shrink-0">
+          class="w-full h-11 whitespace-nowrap px-3 border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200 rounded-xl text-xs sm:text-sm font-medium transition-colors inline-flex items-center justify-center gap-1.5">
           <span>Situs Resmi Gutenberg</span>
           ${renderIcon('external-link', 'w-3.5 h-3.5')}
         </a>
