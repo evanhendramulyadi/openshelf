@@ -36,11 +36,8 @@ export function renderMaintenancePage(root) {
   if (headerContainer) headerContainer.style.display = 'none';
   if (footerContainer) footerContainer.style.display = 'none';
 
-  // Ensure root fills screen with no scrolling
-  root.className = 'w-full max-w-xl mx-auto px-4 min-h-screen flex flex-col items-center justify-center py-2 focus:outline-none';
-  if (document.body) {
-    document.body.classList.add('overflow-y-hidden');
-  }
+  // Set clean centered container while allowing natural scrolling
+  root.className = 'w-full max-w-xl mx-auto px-4 min-h-[90vh] flex flex-col items-center justify-center py-8 focus:outline-none';
 
   const lastCheckedTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
@@ -164,12 +161,11 @@ export function renderMaintenancePage(root) {
         if (autoCheckTimer) clearInterval(autoCheckTimer);
         isMaintenanceActive = false;
         
-        // Restore nav, footer, and body overflow
+        // Restore nav and footer
         const header = document.getElementById('header-container');
         const footer = document.getElementById('footer-container');
         if (header) header.style.display = '';
         if (footer) footer.style.display = '';
-        if (document.body) document.body.classList.remove('overflow-y-hidden');
         root.className = 'flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 focus:outline-none';
 
         if (feedback) {
@@ -317,15 +313,12 @@ export async function handleRouting() {
     return;
   }
 
-  // When NOT in maintenance, ensure nav, footer, body overflow, and main className are restored
+  // When NOT in maintenance, ensure nav, footer, and main className are restored
   if (headerContainer) {
     headerContainer.style.display = '';
   }
   if (footerContainer) {
     footerContainer.style.display = '';
-  }
-  if (document.body) {
-    document.body.classList.remove('overflow-y-hidden');
   }
   main.className = 'flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 focus:outline-none';
 
