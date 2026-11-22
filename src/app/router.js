@@ -14,6 +14,7 @@ import { getStoredTheme, setStoredTheme } from '../utils/storage.js';
 
 let isMaintenanceActive = false;
 let isInitialCheckDone = false;
+let maintenanceTimer = null;
 
 export function getMaintenanceStatus() {
   return isMaintenanceActive;
@@ -156,7 +157,11 @@ export function renderMaintenancePage(root) {
   const feedback = root.querySelector('#maintenance-feedback');
   const timeDisplay = root.querySelector('#maintenance-checked-time');
 
-  let autoCheckTimer = null;
+  // Clean up any existing maintenance auto-check timer to prevent duplicate intervals
+  if (maintenanceTimer) {
+    clearInterval(maintenanceTimer);
+    maintenanceTimer = null;
+  }
 
   const performStatusCheck = async (isManual = false) => {
     if (isManual && btnRecheck) {
@@ -188,7 +193,10 @@ export function renderMaintenancePage(root) {
           initIcons(feedback);
         }
       } else {
-        if (autoCheckTimer) clearInterval(autoCheckTimer);
+        if (maintenanceTimer) {
+          clearInterval(maintenanceTimer);
+          maintenanceTimer = null;
+        }
         isMaintenanceActive = false;
         
         // Restore nav and footer
@@ -234,11 +242,14 @@ export function renderMaintenancePage(root) {
   }
 
   // Periodic background check every 30s to automatically unlock when Gutenberg finishes maintenance
-  autoCheckTimer = setInterval(() => {
+  maintenanceTimer = setInterval(() => {
     if (isMaintenanceActive) {
       performStatusCheck(false);
     } else {
-      clearInterval(autoCheckTimer);
+      if (maintenanceTimer) {
+        clearInterval(maintenanceTimer);
+        maintenanceTimer = null;
+      }
     }
   }, 30000);
 }
