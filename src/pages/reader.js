@@ -24,22 +24,25 @@ export async function renderReader(root, bookId) {
     const book = await getBookById(bookId);
     if (!book) {
       root.innerHTML = `
-        <div class="max-w-md mx-auto my-16 p-8 text-center bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl shadow-sm">
-          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 flex items-center justify-center">
-            ${renderIcon('help-circle', 'w-6 h-6')}
+        <div class="py-16 md:py-24 max-w-xl mx-auto px-4 text-center">
+          <div class="w-20 h-20 mx-auto mb-6 rounded-3xl bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 flex items-center justify-center shadow-inner">
+            ${renderIcon('book-x', 'w-10 h-10')}
           </div>
-          <h2 class="font-serif text-xl font-bold mb-2">Book Not Available to Read</h2>
-          <p class="text-sm text-stone-600 dark:text-stone-400 mb-6 leading-relaxed">
-            We couldn't find book #${escapeHTML(String(bookId))} in the Project Gutenberg catalog.
+          <span class="text-xs font-bold tracking-widest uppercase text-amber-600 dark:text-amber-400 mb-2 block">
+            Error 404
+          </span>
+          <h1 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-3 tracking-tight">
+            404 — Book Not Found
+          </h1>
+          <p class="text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed mb-8 max-w-md mx-auto">
+            Book <strong class="text-stone-800 dark:text-stone-200">#${escapeHTML(String(bookId))}</strong> could not be verified in the Project Gutenberg catalog.
           </p>
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href="#/explore" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold transition-colors shadow-sm">
+          <div class="flex items-center justify-center gap-3">
+            <a 
+              href="#/explore" 
+              class="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-sm font-semibold transition-all shadow-sm">
               ${renderIcon('compass', 'w-4 h-4')}
-              <span>Explore Books</span>
-            </a>
-            <a href="#/" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 text-sm font-semibold transition-colors border border-stone-200 dark:border-stone-700">
-              ${renderIcon('arrow-left', 'w-4 h-4')}
-              <span>Return Home</span>
+              <span>Back to Explore</span>
             </a>
           </div>
         </div>

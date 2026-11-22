@@ -41,11 +41,15 @@ import {
   Tag,
   Layers,
   ArrowUpRight,
-  RefreshCw
+  RefreshCw,
+  Home,
+  BookX
 } from 'lucide';
 
 // Icon mapping registry
 export const ICONS = {
+  Home,
+  BookX,
   BookOpen,
   BookMarked,
   Bookmark,

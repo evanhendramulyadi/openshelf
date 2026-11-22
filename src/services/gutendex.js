@@ -610,50 +610,11 @@ export async function getBookById(id) {
       }
       return null;
     } catch (fErr) {
-      if (fErr.message && fErr.message.includes('404')) {
-        return null;
-      }
+      return null;
     }
-
-    // Direct Gutenberg standard fallback only for plausible Gutenberg IDs on network error
-    const numId = Number(idStr);
-    if (!isNaN(numId) && numId > 0 && numId < 150000) {
-      const synthetic = {
-        id: numId,
-        title: `Project Gutenberg EBook #${numId}`,
-        authors: [{ name: 'Project Gutenberg Author', rawName: 'Project Gutenberg', years: '' }],
-        authorNames: 'Project Gutenberg Author',
-        primaryAuthor: { name: 'Project Gutenberg Author', years: '' },
-        subjects: ['Public Domain Literature'],
-        bookshelves: ['Project Gutenberg Classics'],
-        languages: ['en'],
-        languageFormatted: 'English',
-        copyright: false,
-        mediaType: 'Text',
-        downloadCount: 1000,
-        downloadCountFormatted: '1,000+',
-        downloadCountCompact: '1k+',
-        coverUrl: `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}.cover.medium.jpg`,
-        hasCover: true,
-        formats: {
-          html: `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}-images.html`,
-          epub: `https://www.gutenberg.org/ebooks/${numId}.epub3.images`,
-          kindle: `https://www.gutenberg.org/ebooks/${numId}.kf8.images`,
-          txt: `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}.txt.utf-8`,
-          cover: `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}.cover.medium.jpg`,
-          all: {}
-        },
-        canReadOnline: true,
-        readUrl: `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}-images.html`,
-        gutenbergUrl: `https://www.gutenberg.org/ebooks/${numId}`
-      };
-
-      bookCacheById.set(idStr, synthetic);
-      return synthetic;
-    }
-
-    return null;
   }
+
+  return null;
 }
 
 /**
