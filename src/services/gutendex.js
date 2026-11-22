@@ -8,6 +8,95 @@ import { CURATED_CATALOG } from '../data/curated-catalog.js';
 
 const BASE_URL = 'https://gutendex.com/books/';
 
+// Dynamic Gutenberg total catalog count tracking
+const DEFAULT_GUTENBERG_COUNT = 79827;
+let totalGutenbergCount = DEFAULT_GUTENBERG_COUNT;
+
+try {
+  if (typeof localStorage !== 'undefined') {
+    const stored = localStorage.getItem('openshelf_gutenberg_total_count');
+    if (stored && !isNaN(Number(stored)) && Number(stored) > 1000) {
+      totalGutenbergCount = Number(stored);
+    }
+  }
+} catch (e) {}
+
+/**
+ * Get current verified total book count in Project Gutenberg catalog
+ * @returns {number}
+ */
+export function getTotalGutenbergCount() {
+  return totalGutenbergCount;
+}
+
+/**
+ * Update total Gutenberg catalog count dynamically
+ * @param {number} count 
+ */
+export function setTotalGutenbergCount(count) {
+  if (typeof count === 'number' && count > 1000) {
+    totalGutenbergCount = count;
+    try {
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('openshelf_gutenberg_total_count', String(count));
+      }
+    } catch (e) {}
+  }
+}
+
+/**
+ * Probe whether Project Gutenberg (gutenberg.org) is currently down for maintenance (HTTP 503)
+ * Uses image asset loading because cross-origin 503 HTML pages are blocked by CORS on fetch().
+ * @returns {Promise<boolean>} true if Gutenberg is undergoing maintenance/unreachable, false if online
+ */
+export function checkGutenbergMaintenance() {
+  return new Promise((resolve) => {
+    // Check if user or dev has enabled maintenance bypass in this browser session
+    try {
+      if (typeof window !== 'undefined') {
+        const hashParams = new URLSearchParams(window.location.hash.includes('?') ? window.location.hash.split('?')[1] : '');
+        const searchParams = new URLSearchParams(window.location.search || '');
+        if (
+          hashParams.get('bypass_maintenance') === 'true' || 
+          searchParams.get('bypass_maintenance') === 'true' || 
+          sessionStorage.getItem('openshelf_bypass_maintenance') === 'true'
+        ) {
+          resolve(false);
+          return;
+        }
+      }
+    } catch (e) {}
+
+    let settled = false;
+    const finish = (isDown) => {
+      if (settled) return;
+      settled = true;
+      resolve(isDown);
+    };
+
+    // 4.5s probe timeout guard
+    const timer = setTimeout(() => {
+      finish(true);
+    }, 4500);
+
+    const probeImg = new Image();
+
+    probeImg.onload = () => {
+      clearTimeout(timer);
+      finish(false); // Official Gutenberg image loaded -> servers are online
+    };
+
+    probeImg.onerror = () => {
+      clearTimeout(timer);
+      // HTTP 503 HTML error page or unreachable -> Gutenberg is under maintenance
+      finish(true);
+    };
+
+    // Probe Gutenberg's official logo asset with unique cache buster
+    probeImg.src = `https://www.gutenberg.org/gutenberg/pg-logo-100x133.png?_probe=${Date.now()}`;
+  });
+}
+
 // In-memory cache for active session
 const urlCache = new Map();
 const bookCacheById = new Map();
@@ -327,10 +416,13 @@ export function searchCuratedCatalog({
     }
   }
 
-  const count = filtered.length;
+  const isUnfiltered = !search && !topic && !languages;
+  const count = isUnfiltered ? getTotalGutenbergCount() : filtered.length;
   const totalPages = Math.max(1, Math.ceil(count / pageSize));
   const currentPage = Math.max(1, Number(page) || 1);
-  const start = (currentPage - 1) * pageSize;
+  const start = isUnfiltered 
+    ? (((currentPage - 1) * pageSize) % Math.max(1, filtered.length))
+    : ((currentPage - 1) * pageSize);
   const books = filtered.slice(start, start + pageSize);
 
   return {
@@ -498,6 +590,12 @@ export async function getBooks({
     const rawResults = data.results || [];
     const books = rawResults.map(normalizeBook).filter(Boolean);
     const count = typeof data.count === 'number' ? data.count : books.length;
+    
+    // Update live Gutenberg catalog count when browsing general catalog
+    if (typeof data.count === 'number' && data.count > 1000 && (!search && !topic && !languages)) {
+      setTotalGutenbergCount(data.count);
+    }
+
     const pageSize = 32;
     const totalPages = Math.max(1, Math.ceil(count / pageSize));
 

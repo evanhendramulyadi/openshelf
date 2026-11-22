@@ -43,11 +43,15 @@ import {
   ArrowUpRight,
   RefreshCw,
   Home,
-  BookX
+  BookX,
+  AlertTriangle,
+  Server
 } from 'lucide';
 
 // Icon mapping registry
 export const ICONS = {
+  AlertTriangle,
+  Server,
   Home,
   BookX,
   BookOpen,

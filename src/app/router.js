@@ -8,6 +8,191 @@ import { renderAbout } from '../pages/about.js';
 import { renderHeader } from '../components/header.js';
 import { renderIcon, initIcons } from '../utils/icons.js';
 import { scrollToTop } from '../utils/dom.js';
+import { checkGutenbergMaintenance } from '../services/book-service.js';
+
+let isMaintenanceActive = false;
+let isInitialCheckDone = false;
+
+export function getMaintenanceStatus() {
+  return isMaintenanceActive;
+}
+
+export function setMaintenanceStatus(status) {
+  isMaintenanceActive = Boolean(status);
+}
+
+/**
+ * Render Full-Page Gutenberg Maintenance Mode View
+ * Completely locks the application while Project Gutenberg is undergoing maintenance (HTTP 503)
+ * @param {HTMLElement} root 
+ */
+export function renderMaintenancePage(root) {
+  if (!root) return;
+
+  const lastCheckedTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+  root.innerHTML = `
+    <div class="py-12 sm:py-20 max-w-2xl mx-auto px-4 text-center">
+      <!-- Animated Server Warning Icon with pulse ring -->
+      <div class="relative w-24 h-24 mx-auto mb-8 flex items-center justify-center">
+        <div class="absolute inset-0 rounded-3xl bg-amber-500/20 dark:bg-amber-400/10 animate-ping opacity-60"></div>
+        <div class="relative w-20 h-20 rounded-3xl bg-gradient-to-br from-amber-500/20 to-orange-600/30 dark:from-amber-950/80 dark:to-orange-950/60 border border-amber-500/30 text-amber-600 dark:text-amber-400 flex items-center justify-center shadow-lg">
+          ${renderIcon('server', 'w-10 h-10')}
+        </div>
+      </div>
+
+      <!-- Maintenance Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 mb-4 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+        <span>Server Status: Gutenberg Down for Maintenance (HTTP 503)</span>
+      </div>
+
+      <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 dark:text-stone-100 mb-4 tracking-tight">
+        Akses Perpustakaan Ditangguhkan
+      </h1>
+
+      <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base leading-relaxed mb-6 max-w-lg mx-auto">
+        Server pusat <strong class="font-semibold text-stone-900 dark:text-stone-100">Project Gutenberg (gutenberg.org)</strong> saat ini sedang dalam proses pemeliharaan darurat (<em>Maintenance Mode — 503 Service Unavailable</em>).
+      </p>
+
+      <div class="bg-amber-50 dark:bg-stone-900/90 border border-amber-200 dark:border-amber-900/60 rounded-2xl p-5 mb-8 text-left max-w-lg mx-auto shadow-sm space-y-3">
+        <div class="flex items-start gap-3">
+          <div class="text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0">
+            ${renderIcon('alert-triangle', 'w-5 h-5')}
+          </div>
+          <div class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 space-y-1.5 leading-relaxed">
+            <p class="font-semibold text-stone-900 dark:text-stone-100">
+              Mengapa Halaman Dikunci?
+            </p>
+            <p>
+              Demi menjaga integritas bacaan dan mencegah galat (<em>cover gambar hilang, kegagalan unduh EPUB/MOBI, teks buku 404</em>), seluruh rute navigasi OpenShelf dikunci secara protektif hingga server Gutenberg kembali pulih.
+            </p>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-amber-200/60 dark:border-stone-800 grid grid-cols-2 gap-2 text-xs text-stone-500 dark:text-stone-400">
+          <div>Status Gutenberg: <strong class="text-amber-600 dark:text-amber-400 font-mono">503 Maintenance</strong></div>
+          <div>Mode Proteksi: <strong class="text-emerald-600 dark:text-emerald-400 font-mono">Routing Locked</strong></div>
+          <div class="col-span-2">Pemeriksaan Terakhir: <span id="maintenance-checked-time" class="font-mono text-stone-700 dark:text-stone-300">${lastCheckedTime}</span></div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+        <button 
+          id="btn-recheck-maintenance" 
+          type="button" 
+          class="w-full sm:w-auto px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-sm font-semibold transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer">
+          ${renderIcon('refresh-cw', 'w-4 h-4')}
+          <span>Periksa Ulang Status Server</span>
+        </button>
+
+        <a 
+          href="https://www.gutenberg.org/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full sm:w-auto px-5 py-3 border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200 rounded-xl text-sm font-medium transition-colors flex items-center justify-center gap-2">
+          <span>Situs Resmi Gutenberg</span>
+          ${renderIcon('external-link', 'w-3.5 h-3.5')}
+        </a>
+      </div>
+
+      <!-- Live Feedback Message Area -->
+      <div id="maintenance-feedback" class="mt-4 min-h-[1.5rem]"></div>
+
+      <!-- Subtle Preview Bypass for Inspection -->
+      <div class="mt-12 pt-6 border-t border-stone-200 dark:border-stone-800 text-xs text-stone-400 dark:text-stone-500">
+        <span>Ingin melihat pratinjau katalog lokal? </span>
+        <button 
+          id="btn-bypass-maintenance" 
+          type="button" 
+          class="underline hover:text-stone-700 dark:hover:text-stone-300 cursor-pointer transition-colors">
+          Buka Mode Pratinjau Terbatas (Offline Cache)
+        </button>
+      </div>
+    </div>
+  `;
+
+  initIcons(root);
+
+  // Bind Re-check Action
+  const btnRecheck = root.querySelector('#btn-recheck-maintenance');
+  const feedback = root.querySelector('#maintenance-feedback');
+  const timeDisplay = root.querySelector('#maintenance-checked-time');
+
+  if (btnRecheck) {
+    btnRecheck.addEventListener('click', async () => {
+      btnRecheck.disabled = true;
+      btnRecheck.classList.add('opacity-75', 'cursor-wait');
+      btnRecheck.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+        </svg>
+        <span>Menghubungi Gutenberg…</span>
+      `;
+
+      try {
+        const isDown = await checkGutenbergMaintenance();
+        const nowTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        if (timeDisplay) timeDisplay.textContent = nowTime;
+
+        if (isDown) {
+          isMaintenanceActive = true;
+          if (feedback) {
+            feedback.innerHTML = `
+              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs font-medium">
+                ${renderIcon('alert-triangle', 'w-3.5 h-3.5')}
+                <span>Server Gutenberg masih berstatus 503 Maintenance (${nowTime}). Akses tetap terkunci.</span>
+              </div>
+            `;
+            initIcons(feedback);
+          }
+        } else {
+          isMaintenanceActive = false;
+          if (feedback) {
+            feedback.innerHTML = `
+              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">
+                ${renderIcon('check', 'w-3.5 h-3.5')}
+                <span>Server Gutenberg telah pulih! Membuka perpustakaan…</span>
+              </div>
+            `;
+            initIcons(feedback);
+          }
+          setTimeout(() => {
+            handleRouting();
+          }, 900);
+          return;
+        }
+      } catch (err) {
+        if (feedback) {
+          feedback.innerHTML = `<span class="text-xs text-stone-500">Gagal menghubungi server. Status tetap dalam pemeliharaan.</span>`;
+        }
+      } finally {
+        btnRecheck.disabled = false;
+        btnRecheck.classList.remove('opacity-75', 'cursor-wait');
+        btnRecheck.innerHTML = `
+          ${renderIcon('refresh-cw', 'w-4 h-4')}
+          <span>Periksa Ulang Status Server</span>
+        `;
+        initIcons(btnRecheck);
+      }
+    });
+  }
+
+  // Bind Bypass Action
+  const btnBypass = root.querySelector('#btn-bypass-maintenance');
+  if (btnBypass) {
+    btnBypass.addEventListener('click', (e) => {
+      e.preventDefault();
+      try {
+        sessionStorage.setItem('openshelf_bypass_maintenance', 'true');
+      } catch (err) {}
+      isMaintenanceActive = false;
+      handleRouting();
+    });
+  }
+}
 
 /**
  * Render 404 Page Not Found view
@@ -97,6 +282,16 @@ export async function handleRouting() {
   if (!main) return;
 
   const currentHash = window.location.hash || '#/';
+
+  // Strict maintenance lockdown: whenever Gutenberg is in maintenance, intercept all routes!
+  if (isMaintenanceActive) {
+    if (headerContainer) {
+      renderHeader(headerContainer, currentHash);
+    }
+    renderMaintenancePage(main);
+    return;
+  }
+
   const { path, id, params } = parseHash(currentHash);
 
   // Update Header active link & counters
@@ -161,7 +356,7 @@ export async function handleRouting() {
 /**
  * Initialize Client-Side Hash Router
  */
-export function initRouter() {
+export async function initRouter() {
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
@@ -176,6 +371,33 @@ export function initRouter() {
       renderHeader(headerContainer, window.location.hash);
     }
   });
+
+  const main = document.getElementById('app-main');
+  const headerContainer = document.getElementById('header-container');
+
+  // Pre-flight check: right from the beginning, check if Gutenberg is in maintenance
+  if (!isInitialCheckDone) {
+    isInitialCheckDone = true;
+    
+    try {
+      const isDown = await checkGutenbergMaintenance();
+      if (isDown) {
+        isMaintenanceActive = true;
+        if (headerContainer) {
+          renderHeader(headerContainer, window.location.hash || '#/');
+        }
+        renderMaintenancePage(main);
+        return;
+      }
+    } catch (e) {
+      isMaintenanceActive = true;
+      if (headerContainer) {
+        renderHeader(headerContainer, window.location.hash || '#/');
+      }
+      renderMaintenancePage(main);
+      return;
+    }
+  }
 
   // Initial route
   handleRouting();

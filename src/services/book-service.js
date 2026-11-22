@@ -158,7 +158,10 @@ export const {
   getRecentAdditions,
   searchCuratedCatalog,
   fetchOpenLibraryGutenbergBooks,
-  normalizeBook
+  normalizeBook,
+  getTotalGutenbergCount,
+  setTotalGutenbergCount,
+  checkGutenbergMaintenance
 } = gutendex;
 
 export const {

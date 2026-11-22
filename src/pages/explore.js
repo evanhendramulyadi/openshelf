@@ -3,7 +3,7 @@ import { escapeHTML, scrollToTop } from '../utils/dom.js';
 import { renderSearchBar, attachSearchListeners } from '../components/search-bar.js';
 import { renderBookCard, attachBookCardListeners } from '../components/book-card.js';
 import { renderBookSkeletons, renderErrorState, renderEmptyState } from '../components/loading-state.js';
-import { getBooks, searchCuratedCatalog, CATEGORIES } from '../services/book-service.js';
+import { getBooks, searchCuratedCatalog, getTotalGutenbergCount, CATEGORIES } from '../services/book-service.js';
 
 /**
  * Render Explore Page with Instant Search & Progressive Archive Loading
@@ -42,18 +42,20 @@ export async function renderExplore(root, queryParams = {}) {
     { value: 'ascending', label: 'Oldest Catalog IDs' }
   ];
 
-  // Check 0ms instant local curated matches upfront
-  const instantMatch = (currentSearch || currentTopic)
-    ? searchCuratedCatalog({
-        search: currentSearch,
-        topic: currentTopic,
-        languages: currentLang,
-        sort: currentSort,
-        page: currentPage
-      })
-    : null;
+  // Always retrieve instant local curated matches upfront (0ms render)
+  const instantMatch = searchCuratedCatalog({
+    search: currentSearch,
+    topic: currentTopic,
+    languages: currentLang,
+    sort: currentSort,
+    page: currentPage
+  });
 
   const hasInstantBooks = Boolean(instantMatch && instantMatch.books && instantMatch.books.length > 0);
+  const isGeneralBrowsing = !currentSearch && !currentTopic && !currentLang;
+  const initialTotalCount = isGeneralBrowsing ? getTotalGutenbergCount() : instantMatch.count;
+  const initialStartNum = ((currentPage - 1) * 32) + 1;
+  const initialEndNum = Math.min(currentPage * 32, initialTotalCount);
 
   root.innerHTML = `
     <div class="space-y-8 pb-16">
@@ -145,7 +147,10 @@ export async function renderExplore(root, queryParams = {}) {
         <div class="text-sm text-stone-600 dark:text-stone-400">
           <span id="results-count-text">
             ${hasInstantBooks 
-              ? `Showing <strong class="text-stone-900 dark:text-stone-100">${instantMatch.books.length}</strong> matching books <span class="text-xs text-amber-600 dark:text-amber-400 font-normal animate-pulse ml-2">Searching full catalog…</span>`
+              ? (isGeneralBrowsing
+                  ? `Showing <strong class="text-stone-900 dark:text-stone-100">${initialStartNum}–${initialEndNum}</strong> of <strong class="text-stone-900 dark:text-stone-100">${new Intl.NumberFormat('en-US').format(initialTotalCount)}</strong> books <span class="text-xs text-amber-600 dark:text-amber-400 font-normal animate-pulse ml-2">Connecting to Gutenberg…</span>`
+                  : `Showing <strong class="text-stone-900 dark:text-stone-100">${instantMatch.books.length}</strong> matching books <span class="text-xs text-amber-600 dark:text-amber-400 font-normal animate-pulse ml-2">Searching full catalog…</span>`
+                )
               : 'Searching Gutenberg catalog…'}
           </span>
         </div>
@@ -309,11 +314,16 @@ export async function renderExplore(root, queryParams = {}) {
 
       console.warn('Explore background query notice:', err);
 
-      // If we already rendered instant matches, do not destroy them with an error box
+      // If we already rendered instant matches, keep them cleanly visible
       const existingBooks = grid.querySelectorAll('.book-card');
       if (existingBooks.length > 0) {
         if (headerCount) {
-          headerCount.innerHTML = `Showing <strong class="text-stone-900 dark:text-stone-100">${existingBooks.length}</strong> books`;
+          const totalCount = (!searchQuery && !topicQuery && !langQuery) 
+            ? getTotalGutenbergCount() 
+            : existingBooks.length;
+          const sNum = ((pageNum - 1) * 32) + 1;
+          const eNum = Math.min(pageNum * 32, totalCount);
+          headerCount.innerHTML = `Showing <strong class="text-stone-900 dark:text-stone-100">${sNum}–${eNum}</strong> of <strong class="text-stone-900 dark:text-stone-100">${new Intl.NumberFormat('en-US').format(totalCount)}</strong> books`;
         }
         return;
       }

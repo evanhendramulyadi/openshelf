@@ -37,6 +37,11 @@ export function renderHeader(container, currentPath = '#/') {
 
   const activeBase = normalizePath(currentPath);
 
+  let isBypassActive = false;
+  try {
+    isBypassActive = typeof sessionStorage !== 'undefined' && sessionStorage.getItem('openshelf_bypass_maintenance') === 'true';
+  } catch (e) {}
+
   container.innerHTML = `
     <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <!-- Brand Logo -->
@@ -81,6 +86,17 @@ export function renderHeader(container, currentPath = '#/') {
 
       <!-- Right Actions: Theme Toggle & Mobile Menu -->
       <div class="flex items-center gap-2">
+        ${isBypassActive ? `
+          <button 
+            id="btn-relock-maintenance"
+            type="button"
+            title="Kembali ke status Maintenance Gutenberg"
+            class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30 hover:bg-amber-500/30 transition-colors cursor-pointer">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            <span>Gutenberg 503 (Mode Pratinjau)</span>
+          </button>
+        ` : ''}
+
         <!-- Theme Toggle Button -->
         <button 
           id="btn-theme-toggle" 
@@ -132,6 +148,17 @@ export function renderHeader(container, currentPath = '#/') {
   `;
 
   initIcons(container);
+
+  // Setup Relock Maintenance Event if bypass was active
+  const relockBtn = container.querySelector('#btn-relock-maintenance');
+  if (relockBtn) {
+    relockBtn.addEventListener('click', () => {
+      try {
+        sessionStorage.removeItem('openshelf_bypass_maintenance');
+      } catch (e) {}
+      window.location.reload();
+    });
+  }
 
   // Setup Theme Toggle Event
   const themeBtn = container.querySelector('#btn-theme-toggle');
