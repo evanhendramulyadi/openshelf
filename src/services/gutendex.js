@@ -51,22 +51,6 @@ export function setTotalGutenbergCount(count) {
  */
 export function checkGutenbergMaintenance() {
   return new Promise((resolve) => {
-    // Check if user or dev has enabled maintenance bypass in this browser session
-    try {
-      if (typeof window !== 'undefined') {
-        const hashParams = new URLSearchParams(window.location.hash.includes('?') ? window.location.hash.split('?')[1] : '');
-        const searchParams = new URLSearchParams(window.location.search || '');
-        if (
-          hashParams.get('bypass_maintenance') === 'true' || 
-          searchParams.get('bypass_maintenance') === 'true' || 
-          sessionStorage.getItem('openshelf_bypass_maintenance') === 'true'
-        ) {
-          resolve(false);
-          return;
-        }
-      }
-    } catch (e) {}
-
     let settled = false;
     const finish = (isDown) => {
       if (settled) return;

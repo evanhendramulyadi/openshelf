@@ -78,38 +78,18 @@ export function renderMaintenancePage(root) {
       </div>
 
       <!-- Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+      <div class="flex items-center justify-center max-w-xs mx-auto">
         <button 
           id="btn-recheck-maintenance" 
           type="button" 
-          class="w-full sm:w-auto px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-sm font-semibold transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer">
+          class="w-full px-6 py-3.5 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-sm font-semibold transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
           ${renderIcon('refresh-cw', 'w-4 h-4')}
           <span>Periksa Ulang Status Server</span>
         </button>
-
-        <a 
-          href="https://www.gutenberg.org/" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="w-full sm:w-auto px-5 py-3 border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200 rounded-xl text-sm font-medium transition-colors flex items-center justify-center gap-2">
-          <span>Situs Resmi Gutenberg</span>
-          ${renderIcon('external-link', 'w-3.5 h-3.5')}
-        </a>
       </div>
 
       <!-- Live Feedback Message Area -->
       <div id="maintenance-feedback" class="mt-4 min-h-[1.5rem]"></div>
-
-      <!-- Subtle Preview Bypass for Inspection -->
-      <div class="mt-12 pt-6 border-t border-stone-200 dark:border-stone-800 text-xs text-stone-400 dark:text-stone-500">
-        <span>Ingin melihat pratinjau katalog lokal? </span>
-        <button 
-          id="btn-bypass-maintenance" 
-          type="button" 
-          class="underline hover:text-stone-700 dark:hover:text-stone-300 cursor-pointer transition-colors">
-          Buka Mode Pratinjau Terbatas (Offline Cache)
-        </button>
-      </div>
     </div>
   `;
 
@@ -120,8 +100,10 @@ export function renderMaintenancePage(root) {
   const feedback = root.querySelector('#maintenance-feedback');
   const timeDisplay = root.querySelector('#maintenance-checked-time');
 
-  if (btnRecheck) {
-    btnRecheck.addEventListener('click', async () => {
+  let autoCheckTimer = null;
+
+  const performStatusCheck = async (isManual = false) => {
+    if (isManual && btnRecheck) {
       btnRecheck.disabled = true;
       btnRecheck.classList.add('opacity-75', 'cursor-wait');
       btnRecheck.innerHTML = `
@@ -131,44 +113,47 @@ export function renderMaintenancePage(root) {
         </svg>
         <span>Menghubungi Gutenberg…</span>
       `;
+    }
 
-      try {
-        const isDown = await checkGutenbergMaintenance();
-        const nowTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-        if (timeDisplay) timeDisplay.textContent = nowTime;
+    try {
+      const isDown = await checkGutenbergMaintenance();
+      const nowTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      if (timeDisplay) timeDisplay.textContent = nowTime;
 
-        if (isDown) {
-          isMaintenanceActive = true;
-          if (feedback) {
-            feedback.innerHTML = `
-              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs font-medium">
-                ${renderIcon('alert-triangle', 'w-3.5 h-3.5')}
-                <span>Server Gutenberg masih berstatus 503 Maintenance (${nowTime}). Akses tetap terkunci.</span>
-              </div>
-            `;
-            initIcons(feedback);
-          }
-        } else {
-          isMaintenanceActive = false;
-          if (feedback) {
-            feedback.innerHTML = `
-              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">
-                ${renderIcon('check', 'w-3.5 h-3.5')}
-                <span>Server Gutenberg telah pulih! Membuka perpustakaan…</span>
-              </div>
-            `;
-            initIcons(feedback);
-          }
-          setTimeout(() => {
-            handleRouting();
-          }, 900);
-          return;
+      if (isDown) {
+        isMaintenanceActive = true;
+        if (feedback && isManual) {
+          feedback.innerHTML = `
+            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs font-medium">
+              ${renderIcon('alert-triangle', 'w-3.5 h-3.5')}
+              <span>Server Gutenberg masih dalam pemeliharaan (${nowTime}). Akses tetap terkunci.</span>
+            </div>
+          `;
+          initIcons(feedback);
         }
-      } catch (err) {
+      } else {
+        if (autoCheckTimer) clearInterval(autoCheckTimer);
+        isMaintenanceActive = false;
         if (feedback) {
-          feedback.innerHTML = `<span class="text-xs text-stone-500">Gagal menghubungi server. Status tetap dalam pemeliharaan.</span>`;
+          feedback.innerHTML = `
+            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">
+              ${renderIcon('check', 'w-3.5 h-3.5')}
+              <span>Server Gutenberg telah pulih! Membuka perpustakaan…</span>
+            </div>
+          `;
+          initIcons(feedback);
         }
-      } finally {
+        setTimeout(() => {
+          handleRouting();
+        }, 900);
+        return;
+      }
+    } catch (err) {
+      if (feedback && isManual) {
+        feedback.innerHTML = `<span class="text-xs text-stone-500">Gagal menghubungi server. Status tetap dalam pemeliharaan.</span>`;
+      }
+    } finally {
+      if (isManual && btnRecheck) {
         btnRecheck.disabled = false;
         btnRecheck.classList.remove('opacity-75', 'cursor-wait');
         btnRecheck.innerHTML = `
@@ -177,21 +162,21 @@ export function renderMaintenancePage(root) {
         `;
         initIcons(btnRecheck);
       }
-    });
+    }
+  };
+
+  if (btnRecheck) {
+    btnRecheck.addEventListener('click', () => performStatusCheck(true));
   }
 
-  // Bind Bypass Action
-  const btnBypass = root.querySelector('#btn-bypass-maintenance');
-  if (btnBypass) {
-    btnBypass.addEventListener('click', (e) => {
-      e.preventDefault();
-      try {
-        sessionStorage.setItem('openshelf_bypass_maintenance', 'true');
-      } catch (err) {}
-      isMaintenanceActive = false;
-      handleRouting();
-    });
-  }
+  // Periodic background check every 30s to automatically unlock when Gutenberg finishes maintenance
+  autoCheckTimer = setInterval(() => {
+    if (isMaintenanceActive) {
+      performStatusCheck(false);
+    } else {
+      clearInterval(autoCheckTimer);
+    }
+  }, 30000);
 }
 
 /**
