@@ -54,9 +54,9 @@ function setItem(key, value) {
 
 export function getStoredTheme() {
   try {
-    return localStorage.getItem(STORAGE_KEYS.THEME) || 'system';
+    return localStorage.getItem(STORAGE_KEYS.THEME) || 'dark';
   } catch (e) {
-    return 'system';
+    return 'dark';
   }
 }
 
@@ -65,7 +65,7 @@ export function setStoredTheme(theme) {
     localStorage.setItem(STORAGE_KEYS.THEME, theme);
   } catch (e) {}
   
-  const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const isDark = theme !== 'light';
   if (isDark) {
     document.documentElement.classList.add('dark');
   } else {
@@ -235,7 +235,7 @@ export function updateReadingProgress(bookOrId, percent) {
 // ------------------- Reader Preferences -------------------
 
 const DEFAULT_READER_PREFS = {
-  theme: 'day', // 'day', 'sepia', 'dark', 'oled'
+  theme: 'dark', // 'day', 'sepia', 'dark', 'oled'
   fontSize: 'md', // 'sm', 'md', 'lg', 'xl'
 };
 
