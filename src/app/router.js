@@ -98,20 +98,20 @@ export function renderMaintenancePage(root) {
       </div>
 
       <!-- Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 w-full max-w-sm mx-auto">
+      <div class="flex flex-row items-center justify-center gap-3 w-full max-w-md mx-auto">
         <button 
           id="btn-recheck-maintenance" 
           type="button" 
-          class="w-full sm:w-auto px-5 py-2.5 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
+          class="whitespace-nowrap px-4 py-2.5 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer flex-shrink-0">
           ${renderIcon('refresh-cw', 'w-3.5 h-3.5')}
-          <span>Periksa Ulang Status Server</span>
+          <span>Periksa Status Server</span>
         </button>
 
         <a 
           href="https://www.gutenberg.org/" 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="w-full sm:w-auto px-4 py-2.5 border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200 rounded-xl text-xs sm:text-sm font-medium transition-colors flex items-center justify-center gap-1.5">
+          class="whitespace-nowrap px-4 py-2.5 border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200 rounded-xl text-xs sm:text-sm font-medium transition-colors inline-flex items-center justify-center gap-1.5 flex-shrink-0">
           <span>Situs Resmi Gutenberg</span>
           ${renderIcon('external-link', 'w-3.5 h-3.5')}
         </a>
@@ -140,7 +140,7 @@ export function renderMaintenancePage(root) {
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
         </svg>
-        <span>Menghubungi Gutenberg…</span>
+        <span class="whitespace-nowrap">Memeriksa Server…</span>
       `;
     }
 
@@ -196,7 +196,7 @@ export function renderMaintenancePage(root) {
         btnRecheck.classList.remove('opacity-75', 'cursor-wait');
         btnRecheck.innerHTML = `
           ${renderIcon('refresh-cw', 'w-3.5 h-3.5')}
-          <span>Periksa Ulang Status Server</span>
+          <span class="whitespace-nowrap">Periksa Status Server</span>
         `;
         initIcons(btnRecheck);
       }
