@@ -90,7 +90,7 @@
   background: linear-gradient(90deg, rgba(255,255,255,0.12) 0%, rgba(0,0,0,0.25) 70%, transparent 100%);
 }
 
-/* Universal Light Mode High Contrast Rules (prevents text & cards washing out / nyatu) */
+/* Universal Light Mode High Contrast Rules (prevents text & cards washing out / blending) */
 :root:not(.dark) body {
   background-color: #f7f5ef; /* Distinct warm paper canvas */
   color: #171614; /* Deep rich ink */
@@ -153,7 +153,7 @@
   color: #7d7565;
 }
 
-/* Universal Dark Mode High Contrast Rules (prevents text blending/nyaruh) */
+/* Universal Dark Mode High Contrast Rules (prevents text blending / low contrast) */
 .dark .text-stone-600,
 .dark .text-stone-500 {
   color: #d6d3d1; /* High legibility contrast against dark backgrounds */
