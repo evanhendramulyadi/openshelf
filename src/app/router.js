@@ -36,13 +36,13 @@ export function renderMaintenancePage(root) {
   if (headerContainer) headerContainer.style.display = 'none';
   if (footerContainer) footerContainer.style.display = 'none';
 
-  // Set clean centered container while allowing natural scrolling
-  root.className = 'w-full max-w-xl mx-auto px-4 min-h-[90vh] flex flex-col items-center justify-center py-8 focus:outline-none';
+  // Set perfectly centered container with equal top & bottom space
+  root.className = 'w-full max-w-xl mx-auto px-4 min-h-screen min-h-[100dvh] flex flex-col items-center justify-center py-0 focus:outline-none';
 
   const lastCheckedTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
   root.innerHTML = `
-    <div class="w-full flex flex-col items-center justify-center text-center my-auto">
+    <div class="w-full flex flex-col items-center justify-center text-center py-4 sm:py-6">
       <!-- Minimalist Brand Header -->
       <div class="inline-flex items-center gap-2 mb-3">
         <img 
@@ -115,7 +115,7 @@ export function renderMaintenancePage(root) {
       </div>
 
       <!-- Live Feedback Message Area -->
-      <div id="maintenance-feedback" class="mt-2.5 min-h-[1.25rem]"></div>
+      <div id="maintenance-feedback" class="w-full max-w-md mx-auto"></div>
     </div>
   `;
 
@@ -150,7 +150,7 @@ export function renderMaintenancePage(root) {
         isMaintenanceActive = true;
         if (feedback && isManual) {
           feedback.innerHTML = `
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 text-[11px] font-medium">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 text-[11px] font-medium mt-2.5">
               ${renderIcon('alert-triangle', 'w-3 h-3')}
               <span>Server Gutenberg masih dalam pemeliharaan (${nowTime}). Akses tetap terkunci.</span>
             </div>
@@ -170,7 +170,7 @@ export function renderMaintenancePage(root) {
 
         if (feedback) {
           feedback.innerHTML = `
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-[11px] font-semibold">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-[11px] font-semibold mt-2.5">
               ${renderIcon('check', 'w-3 h-3')}
               <span>Server Gutenberg telah pulih! Membuka perpustakaan…</span>
             </div>
