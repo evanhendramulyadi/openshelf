@@ -26,11 +26,12 @@ Experience the live application here:
 - **Direct Format Downloads**: One-click downloads for verified EPUB (Apple Books, Kobo), Kindle (MOBI/KF8), and plain text formats sourced directly from Project Gutenberg.
 - **Personal Library & Tracking**: Maintain local Want to Read, Currently Reading, and Finished lists with percentage progress tracking and JSON backup/restore.
 - **Dynamic Fallback Covers**: Automatically generates tasteful typographic book covers with debossed borders when historical scans lack original cover images.
+- **Upstream Maintenance Protection & Auto-Recovery**: Intelligent real-time detection of Project Gutenberg server outages or periodic maintenance (HTTP 503). Gracefully enters a dedicated responsive maintenance view, completely decouples normal web layouts and views from the DOM and memory via dynamic code-splitting, provides live manual re-checks, and auto-restores normal browsing the moment upstream servers recover.
 - **Private & Client-Side**: Operates entirely in the browser using the `localStorage` API—no registration, no subscriptions, and zero tracking.
 
 ## 🛠️ Tech Stack
 
-- **JavaScript (ES6+ Modules)**: Pure modular vanilla JavaScript for hash routing, API integration, and reactive state management.
+- **JavaScript (ES6+ Modules)**: Pure modular vanilla JavaScript with hash routing, dynamic imports for on-demand code-splitting, API resilience, and reactive state management.
 - **Vite**: Ultra-fast frontend development server and production bundler.
 - **Tailwind CSS (v4)**: Modern responsive design system with custom typography, dark mode, and warm editorial palette.
 - **Lucide Icons**: Clean, accessible SVG iconography.
