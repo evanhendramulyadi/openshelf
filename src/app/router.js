@@ -56,11 +56,10 @@ export function renderMaintenancePage(root) {
         </span>
       </div>
 
-      <!-- Animated Server Warning Icon with subtle contained signal pulse -->
+      <!-- Animated Server Warning Icon with subtle contained ripple wave -->
       <div class="relative w-14 h-14 mx-auto mb-3 flex items-center justify-center">
-        <!-- Contained subtle beacon glow (no large bursting ping that overlaps text) -->
-        <div class="absolute -inset-1 rounded-2xl bg-amber-500/25 dark:bg-amber-400/20 animate-pulse blur-[2px]"></div>
-        <div class="absolute inset-0 rounded-2xl border border-amber-500/30 dark:border-amber-400/30 animate-pulse opacity-75"></div>
+        <!-- Soft expanding ripple wave (no outline border, perfectly sized) -->
+        <div class="absolute inset-0 rounded-2xl bg-amber-500/30 dark:bg-amber-400/25 animate-ping-subtle pointer-events-none"></div>
         <div class="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-600/30 dark:from-amber-950/80 dark:to-orange-950/60 border border-amber-500/40 text-amber-600 dark:text-amber-400 flex items-center justify-center shadow-md">
           ${renderIcon('server', 'w-6 h-6')}
         </div>
