@@ -1,5 +1,4 @@
 import './style.css';
-import { renderFooter } from './components/footer.js';
 import { initRouter } from './app/router.js';
 
 // Ensure browser scroll restoration is disabled so refreshing always lands at top instantly without animation
@@ -13,13 +12,7 @@ if (typeof window !== 'undefined') {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Render persistent site footer
-  const footerContainer = document.getElementById('footer-container');
-  if (footerContainer) {
-    renderFooter(footerContainer);
-  }
-
-  // Initialize Hash Router
+  // Initialize Hash Router (renders views & headers/footers based on live maintenance state)
   initRouter();
 });
 

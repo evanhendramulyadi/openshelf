@@ -6,6 +6,7 @@ import { renderReader } from '../pages/reader.js';
 import { renderMyLibrary } from '../pages/my-library.js';
 import { renderAbout } from '../pages/about.js';
 import { renderHeader } from '../components/header.js';
+import { renderFooter } from '../components/footer.js';
 import { renderIcon, initIcons } from '../utils/icons.js';
 import { scrollToTop } from '../utils/dom.js';
 import { checkGutenbergMaintenance } from '../services/book-service.js';
@@ -313,22 +314,21 @@ export async function handleRouting() {
     return;
   }
 
-  // When NOT in maintenance, ensure nav, footer, and main className are restored
-  if (headerContainer) {
-    headerContainer.style.display = '';
-  }
-  if (footerContainer) {
-    footerContainer.style.display = '';
-  }
-  main.className = 'flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 focus:outline-none';
-
   const currentHash = window.location.hash || '#/';
   const { path, id, params } = parseHash(currentHash);
 
-  // Update Header active link & counters
+  // When NOT in maintenance, ensure nav and footer are shown & rendered
   if (headerContainer) {
+    headerContainer.style.display = '';
     renderHeader(headerContainer, currentHash);
   }
+  if (footerContainer) {
+    footerContainer.style.display = '';
+    if (!footerContainer.hasChildNodes() || footerContainer.innerHTML.trim() === '') {
+      renderFooter(footerContainer);
+    }
+  }
+  main.className = 'flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 focus:outline-none';
 
   // Scroll to top on navigation instantly
   scrollToTop(false);
