@@ -1,12 +1,3 @@
-import { renderHome } from '../pages/home.js';
-import { renderExplore } from '../pages/explore.js';
-import { renderCategories } from '../pages/categories.js';
-import { renderBookDetails } from '../pages/book-details.js';
-import { renderReader } from '../pages/reader.js';
-import { renderMyLibrary } from '../pages/my-library.js';
-import { renderAbout } from '../pages/about.js';
-import { renderHeader } from '../components/header.js';
-import { renderFooter } from '../components/footer.js';
 import { renderIcon, initIcons } from '../utils/icons.js';
 import { scrollToTop } from '../utils/dom.js';
 import { checkGutenbergMaintenance } from '../services/book-service.js';
@@ -15,6 +6,65 @@ import { getStoredTheme, setStoredTheme } from '../utils/storage.js';
 let isMaintenanceActive = false;
 let isInitialCheckDone = false;
 let maintenanceTimer = null;
+
+// Dynamic module loaders - code chunks are ONLY downloaded & loaded into browser memory when Gutenberg is in normal mode
+const loadHeader = () => import('../components/header.js').then(m => m.renderHeader);
+const loadFooter = () => import('../components/footer.js').then(m => m.renderFooter);
+const loadHome = () => import('../pages/home.js').then(m => m.renderHome);
+const loadExplore = () => import('../pages/explore.js').then(m => m.renderExplore);
+const loadCategories = () => import('../pages/categories.js').then(m => m.renderCategories);
+const loadBookDetails = () => import('../pages/book-details.js').then(m => m.renderBookDetails);
+const loadReader = () => import('../pages/reader.js').then(m => m.renderReader);
+const loadLibrary = () => import('../pages/my-library.js').then(m => m.renderMyLibrary);
+const loadAbout = () => import('../pages/about.js').then(m => m.renderAbout);
+
+/**
+ * Remove normal web layout (header & footer) completely from DOM during maintenance mode
+ */
+export function removeNormalLayout() {
+  const header = document.getElementById('header-container');
+  const footer = document.getElementById('footer-container');
+  if (header) header.remove();
+  if (footer) footer.remove();
+}
+
+/**
+ * Ensure normal web layout (header & footer) exists in DOM during normal mode
+ */
+export function ensureNormalLayout() {
+  const root = document.getElementById('app-root') || document.body;
+  const main = document.getElementById('app-main');
+
+  let header = document.getElementById('header-container');
+  if (!header) {
+    header = document.createElement('div');
+    header.id = 'header-container';
+    header.className = 'sticky top-0 z-40 w-full backdrop-blur-md bg-stone-50/90 dark:bg-stone-950/90 border-b border-stone-200 dark:border-stone-800 transition-colors';
+    if (main && main.parentNode) {
+      main.parentNode.insertBefore(header, main);
+    } else {
+      root.prepend(header);
+    }
+  }
+
+  let footer = document.getElementById('footer-container');
+  if (!footer) {
+    footer = document.createElement('div');
+    footer.id = 'footer-container';
+    footer.className = 'mt-auto border-t border-stone-200 dark:border-stone-800 bg-stone-100/60 dark:bg-stone-900/60';
+    if (main && main.parentNode) {
+      main.parentNode.appendChild(footer);
+    } else {
+      root.appendChild(footer);
+    }
+  }
+
+  if (main) {
+    main.className = 'flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 focus:outline-none';
+  }
+
+  return { header, footer };
+}
 
 export function getMaintenanceStatus() {
   return isMaintenanceActive;
@@ -27,17 +77,14 @@ export function setMaintenanceStatus(status) {
 /**
  * Render Full-Page Gutenberg Maintenance Mode View
  * Completely locks the application while Project Gutenberg is undergoing maintenance (HTTP 503)
- * Fits perfectly in 1 screen height on laptops with zero vertical scroll
+ * Normal web pages and layout nodes are completely excluded from the DOM.
  * @param {HTMLElement} root 
  */
 export function renderMaintenancePage(root) {
   if (!root) return;
 
-  // Hide nav and footer during maintenance mode
-  const headerContainer = document.getElementById('header-container');
-  const footerContainer = document.getElementById('footer-container');
-  if (headerContainer) headerContainer.style.display = 'none';
-  if (footerContainer) footerContainer.style.display = 'none';
+  // Completely wipe normal layout nodes from DOM
+  removeNormalLayout();
 
   // Set perfectly centered container with equal top & bottom space, responsive on small mobile & desktop
   root.className = 'w-full max-w-xl mx-auto px-4 min-h-screen min-h-[100dvh] flex flex-col items-center justify-center py-6 sm:py-8 focus:outline-none';
@@ -199,12 +246,8 @@ export function renderMaintenancePage(root) {
         }
         isMaintenanceActive = false;
         
-        // Restore nav and footer
-        const header = document.getElementById('header-container');
-        const footer = document.getElementById('footer-container');
-        if (header) header.style.display = '';
-        if (footer) footer.style.display = '';
-        root.className = 'flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 focus:outline-none';
+        // Restore nav and footer dynamically into DOM
+        ensureNormalLayout();
 
         if (feedback) {
           feedback.innerHTML = `
@@ -338,8 +381,6 @@ export function parseHash(hash = window.location.hash) {
  */
 export async function handleRouting() {
   const main = document.getElementById('app-main');
-  const headerContainer = document.getElementById('header-container');
-  const footerContainer = document.getElementById('footer-container');
   if (!main) return;
 
   // Strict maintenance lockdown
@@ -348,27 +389,26 @@ export async function handleRouting() {
     if (window.location.hash && window.location.hash !== '#/' && window.location.hash !== '#') {
       history.replaceState(null, '', '#/');
     }
-    if (headerContainer) headerContainer.style.display = 'none';
-    if (footerContainer) footerContainer.style.display = 'none';
+    removeNormalLayout();
     renderMaintenancePage(main);
     return;
   }
 
+  // Ensure header and footer containers exist in DOM
+  const { header, footer } = ensureNormalLayout();
+
   const currentHash = window.location.hash || '#/';
   const { path, id, params } = parseHash(currentHash);
 
-  // When NOT in maintenance, ensure nav and footer are shown & rendered
-  if (headerContainer) {
-    headerContainer.style.display = '';
-    renderHeader(headerContainer, currentHash);
+  // Dynamically load and render header
+  const renderHeader = await loadHeader();
+  renderHeader(header, currentHash);
+
+  // Dynamically load and render footer if not already populated
+  if (!footer.hasChildNodes() || footer.innerHTML.trim() === '') {
+    const renderFooter = await loadFooter();
+    renderFooter(footer);
   }
-  if (footerContainer) {
-    footerContainer.style.display = '';
-    if (!footerContainer.hasChildNodes() || footerContainer.innerHTML.trim() === '') {
-      renderFooter(footerContainer);
-    }
-  }
-  main.className = 'flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 focus:outline-none';
 
   // Scroll to top on navigation instantly
   scrollToTop(false);
@@ -377,41 +417,55 @@ export async function handleRouting() {
   main.focus();
 
   switch (path) {
-    case '/':
+    case '/': {
+      const renderHome = await loadHome();
       await renderHome(main);
       break;
+    }
 
-    case '/explore':
+    case '/explore': {
+      const renderExplore = await loadExplore();
       await renderExplore(main, params);
       break;
+    }
 
-    case '/categories':
+    case '/categories': {
+      const renderCategories = await loadCategories();
       await renderCategories(main, params);
       break;
+    }
 
-    case '/book/:id':
+    case '/book/:id': {
       if (id) {
+        const renderBookDetails = await loadBookDetails();
         await renderBookDetails(main, id);
       } else {
         renderNotFound(main);
       }
       break;
+    }
 
-    case '/read/:id':
+    case '/read/:id': {
       if (id) {
+        const renderReader = await loadReader();
         await renderReader(main, id);
       } else {
         renderNotFound(main);
       }
       break;
+    }
 
-    case '/library':
+    case '/library': {
+      const renderMyLibrary = await loadLibrary();
       renderMyLibrary(main, params);
       break;
+    }
 
-    case '/about':
+    case '/about': {
+      const renderAbout = await loadAbout();
       renderAbout(main);
       break;
+    }
 
     default:
       renderNotFound(main);
@@ -436,16 +490,15 @@ export async function initRouter() {
   window.addEventListener('hashchange', handleRouting);
   
   // Listen for storage changes to update header badges reactively
-  window.addEventListener('openshelf:state-changed', () => {
+  window.addEventListener('openshelf:state-changed', async () => {
     const headerContainer = document.getElementById('header-container');
     if (headerContainer && !isMaintenanceActive) {
+      const renderHeader = await loadHeader();
       renderHeader(headerContainer, window.location.hash);
     }
   });
 
   const main = document.getElementById('app-main');
-  const headerContainer = document.getElementById('header-container');
-  const footerContainer = document.getElementById('footer-container');
 
   // Pre-flight check: right from the beginning, check if Gutenberg is in maintenance
   if (!isInitialCheckDone) {
@@ -459,8 +512,7 @@ export async function initRouter() {
         if (window.location.hash && window.location.hash !== '#/' && window.location.hash !== '#') {
           history.replaceState(null, '', '#/');
         }
-        if (headerContainer) headerContainer.style.display = 'none';
-        if (footerContainer) footerContainer.style.display = 'none';
+        removeNormalLayout();
         renderMaintenancePage(main);
         return;
       }
@@ -469,8 +521,7 @@ export async function initRouter() {
       if (window.location.hash && window.location.hash !== '#/' && window.location.hash !== '#') {
         history.replaceState(null, '', '#/');
       }
-      if (headerContainer) headerContainer.style.display = 'none';
-      if (footerContainer) footerContainer.style.display = 'none';
+      removeNormalLayout();
       renderMaintenancePage(main);
       return;
     }

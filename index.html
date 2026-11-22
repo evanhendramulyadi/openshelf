@@ -51,11 +51,9 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body class="bg-stone-50 text-stone-900 dark:bg-stone-950 dark:text-stone-100 transition-colors duration-200">
-    <div id="header-container" style="display: none;" class="sticky top-0 z-40 w-full backdrop-blur-md bg-stone-50/90 dark:bg-stone-950/90 border-b border-stone-200 dark:border-stone-800 transition-colors"></div>
-    
-    <main id="app-main" class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 focus:outline-none" tabindex="-1" role="main"></main>
-    
-    <div id="footer-container" style="display: none;" class="mt-auto border-t border-stone-200 dark:border-stone-800 bg-stone-100/60 dark:bg-stone-900/60"></div>
+    <div id="app-root" class="min-h-screen flex flex-col">
+      <main id="app-main" class="flex-grow w-full focus:outline-none" tabindex="-1" role="main"></main>
+    </div>
     
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none max-w-md w-full px-4" aria-live="polite" role="status"></div>
     
