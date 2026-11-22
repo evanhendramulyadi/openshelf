@@ -26,8 +26,17 @@ Experience the live application here:
 - **Direct Format Downloads**: One-click downloads for verified EPUB (Apple Books, Kobo), Kindle (MOBI/KF8), and plain text formats sourced directly from Project Gutenberg.
 - **Personal Library & Tracking**: Maintain local Want to Read, Currently Reading, and Finished lists with percentage progress tracking and JSON backup/restore.
 - **Dynamic Fallback Covers**: Automatically generates tasteful typographic book covers with debossed borders when historical scans lack original cover images.
-- **Upstream Maintenance Protection & Auto-Recovery**: Intelligent real-time detection of Project Gutenberg server outages or periodic maintenance (HTTP 503). Gracefully enters a dedicated responsive maintenance view, completely decouples normal web layouts and views from the DOM and memory via dynamic code-splitting, provides live manual re-checks, and auto-restores normal browsing the moment upstream servers recover.
+- **Upstream Maintenance Protection & Auto-Recovery**: Real-time detection of Project Gutenberg server outages or periodic maintenance (HTTP 503), automatically locking the interface into a maintenance view and restoring browsing the instant upstream servers recover.
 - **Private & Client-Side**: Operates entirely in the browser using the `localStorage` API—no registration, no subscriptions, and zero tracking.
+
+### 🛡️ Upstream Maintenance & Zero-Footprint Architecture
+
+OpenShelf implements an intelligent failsafe mechanism synchronized directly with Project Gutenberg's live server health:
+
+- **Automatic Maintenance Synchronization**: When Project Gutenberg undergoes periodic server maintenance (HTTP 503 Service Unavailable), OpenShelf immediately and automatically enters **Maintenance Mode** to protect user experience and prevent broken reader/download states.
+- **Complete DOM & Memory Purge (Clean Behind the Scenes)**: During maintenance mode, the normal website layout (`#header-container`, `#footer-container`, search bar, book grids, and catalog views) is **completely removed from the DOM** and **never loaded into browser memory**. Thanks to dynamic module imports (`import()`), normal page chunks are never fetched across the network during an outage.
+- **Strict Mode Separation**: The normal website structure **only exists and is only requested when Gutenberg is fully active**. Direct URL hash manipulation (e.g., `#explore`, `#book/84`) during maintenance is automatically intercepted and reset.
+- **Self-Healing & Auto-Recovery**: Includes a real-time server check button as well as automated background health polling every 30 seconds. As soon as Project Gutenberg finishes maintenance, OpenShelf automatically mounts the normal web layout and dynamically imports the views without needing a manual browser refresh.
 
 ## 🛠️ Tech Stack
 
