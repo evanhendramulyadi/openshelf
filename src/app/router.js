@@ -29,12 +29,30 @@ export function setMaintenanceStatus(status) {
 export function renderMaintenancePage(root) {
   if (!root) return;
 
+  // Hide nav and footer during maintenance mode
+  const headerContainer = document.getElementById('header-container');
+  const footerContainer = document.getElementById('footer-container');
+  if (headerContainer) headerContainer.style.display = 'none';
+  if (footerContainer) footerContainer.style.display = 'none';
+
   const lastCheckedTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
   root.innerHTML = `
-    <div class="py-12 sm:py-20 max-w-2xl mx-auto px-4 text-center">
+    <div class="min-h-[85vh] flex flex-col items-center justify-center py-12 sm:py-16 max-w-2xl mx-auto px-4 text-center">
+      <!-- Minimalist Brand Header -->
+      <div class="inline-flex items-center gap-2.5 mb-8">
+        <img 
+          src="/images/openshelf-logo.png" 
+          alt="OpenShelf Logo" 
+          class="w-8 h-8 object-contain rounded-[20%]" 
+        />
+        <span class="font-serif font-bold text-xl text-stone-900 dark:text-stone-100 tracking-tight">
+          OpenShelf
+        </span>
+      </div>
+
       <!-- Animated Server Warning Icon with pulse ring -->
-      <div class="relative w-24 h-24 mx-auto mb-8 flex items-center justify-center">
+      <div class="relative w-24 h-24 mx-auto mb-6 flex items-center justify-center">
         <div class="absolute inset-0 rounded-3xl bg-amber-500/20 dark:bg-amber-400/10 animate-ping opacity-60"></div>
         <div class="relative w-20 h-20 rounded-3xl bg-gradient-to-br from-amber-500/20 to-orange-600/30 dark:from-amber-950/80 dark:to-orange-950/60 border border-amber-500/30 text-amber-600 dark:text-amber-400 flex items-center justify-center shadow-lg">
           ${renderIcon('server', 'w-10 h-10')}
@@ -55,7 +73,7 @@ export function renderMaintenancePage(root) {
         Server pusat <strong class="font-semibold text-stone-900 dark:text-stone-100">Project Gutenberg (gutenberg.org)</strong> saat ini sedang dalam proses pemeliharaan darurat (<em>Maintenance Mode — 503 Service Unavailable</em>).
       </p>
 
-      <div class="bg-amber-50 dark:bg-stone-900/90 border border-amber-200 dark:border-amber-900/60 rounded-2xl p-5 mb-8 text-left max-w-lg mx-auto shadow-sm space-y-3">
+      <div class="w-full bg-amber-50 dark:bg-stone-900/90 border border-amber-200 dark:border-amber-900/60 rounded-2xl p-5 mb-8 text-left max-w-lg mx-auto shadow-sm space-y-3">
         <div class="flex items-start gap-3">
           <div class="text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0">
             ${renderIcon('alert-triangle', 'w-5 h-5')}
@@ -78,14 +96,23 @@ export function renderMaintenancePage(root) {
       </div>
 
       <!-- Action Buttons -->
-      <div class="flex items-center justify-center max-w-xs mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md mx-auto">
         <button 
           id="btn-recheck-maintenance" 
           type="button" 
-          class="w-full px-6 py-3.5 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-sm font-semibold transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
+          class="w-full sm:w-auto px-6 py-3.5 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-sm font-semibold transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
           ${renderIcon('refresh-cw', 'w-4 h-4')}
           <span>Periksa Ulang Status Server</span>
         </button>
+
+        <a 
+          href="https://www.gutenberg.org/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full sm:w-auto px-5 py-3.5 border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200 rounded-xl text-sm font-medium transition-colors flex items-center justify-center gap-2">
+          <span>Situs Resmi Gutenberg</span>
+          ${renderIcon('external-link', 'w-3.5 h-3.5')}
+        </a>
       </div>
 
       <!-- Live Feedback Message Area -->
@@ -134,6 +161,13 @@ export function renderMaintenancePage(root) {
       } else {
         if (autoCheckTimer) clearInterval(autoCheckTimer);
         isMaintenanceActive = false;
+        
+        // Restore nav and footer
+        const header = document.getElementById('header-container');
+        const footer = document.getElementById('footer-container');
+        if (header) header.style.display = '';
+        if (footer) footer.style.display = '';
+
         if (feedback) {
           feedback.innerHTML = `
             <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">
@@ -264,19 +298,30 @@ export function parseHash(hash = window.location.hash) {
 export async function handleRouting() {
   const main = document.getElementById('app-main');
   const headerContainer = document.getElementById('header-container');
+  const footerContainer = document.getElementById('footer-container');
   if (!main) return;
 
-  const currentHash = window.location.hash || '#/';
-
-  // Strict maintenance lockdown: whenever Gutenberg is in maintenance, intercept all routes!
+  // Strict maintenance lockdown
   if (isMaintenanceActive) {
-    if (headerContainer) {
-      renderHeader(headerContainer, currentHash);
+    // If link is manipulated during maintenance, redirect immediately to default home '#/'
+    if (window.location.hash && window.location.hash !== '#/' && window.location.hash !== '#') {
+      history.replaceState(null, '', '#/');
     }
+    if (headerContainer) headerContainer.style.display = 'none';
+    if (footerContainer) footerContainer.style.display = 'none';
     renderMaintenancePage(main);
     return;
   }
 
+  // When NOT in maintenance, ensure nav and footer are shown
+  if (headerContainer) {
+    headerContainer.style.display = '';
+  }
+  if (footerContainer) {
+    footerContainer.style.display = '';
+  }
+
+  const currentHash = window.location.hash || '#/';
   const { path, id, params } = parseHash(currentHash);
 
   // Update Header active link & counters
@@ -352,13 +397,14 @@ export async function initRouter() {
   // Listen for storage changes to update header badges reactively
   window.addEventListener('openshelf:state-changed', () => {
     const headerContainer = document.getElementById('header-container');
-    if (headerContainer) {
+    if (headerContainer && !isMaintenanceActive) {
       renderHeader(headerContainer, window.location.hash);
     }
   });
 
   const main = document.getElementById('app-main');
   const headerContainer = document.getElementById('header-container');
+  const footerContainer = document.getElementById('footer-container');
 
   // Pre-flight check: right from the beginning, check if Gutenberg is in maintenance
   if (!isInitialCheckDone) {
@@ -368,17 +414,22 @@ export async function initRouter() {
       const isDown = await checkGutenbergMaintenance();
       if (isDown) {
         isMaintenanceActive = true;
-        if (headerContainer) {
-          renderHeader(headerContainer, window.location.hash || '#/');
+        // If user entered with any other link during maintenance, reset to default home '#/'
+        if (window.location.hash && window.location.hash !== '#/' && window.location.hash !== '#') {
+          history.replaceState(null, '', '#/');
         }
+        if (headerContainer) headerContainer.style.display = 'none';
+        if (footerContainer) footerContainer.style.display = 'none';
         renderMaintenancePage(main);
         return;
       }
     } catch (e) {
       isMaintenanceActive = true;
-      if (headerContainer) {
-        renderHeader(headerContainer, window.location.hash || '#/');
+      if (window.location.hash && window.location.hash !== '#/' && window.location.hash !== '#') {
+        history.replaceState(null, '', '#/');
       }
+      if (headerContainer) headerContainer.style.display = 'none';
+      if (footerContainer) footerContainer.style.display = 'none';
       renderMaintenancePage(main);
       return;
     }
