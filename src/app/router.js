@@ -24,6 +24,7 @@ export function setMaintenanceStatus(status) {
 /**
  * Render Full-Page Gutenberg Maintenance Mode View
  * Completely locks the application while Project Gutenberg is undergoing maintenance (HTTP 503)
+ * Fits perfectly in 1 screen height on laptops with zero vertical scroll
  * @param {HTMLElement} root 
  */
 export function renderMaintenancePage(root) {
@@ -35,60 +36,61 @@ export function renderMaintenancePage(root) {
   if (headerContainer) headerContainer.style.display = 'none';
   if (footerContainer) footerContainer.style.display = 'none';
 
+  // Ensure root fills screen with no scrolling
+  root.className = 'w-full max-w-xl mx-auto px-4 min-h-screen flex flex-col items-center justify-center py-2 focus:outline-none';
+  if (document.body) {
+    document.body.classList.add('overflow-y-hidden');
+  }
+
   const lastCheckedTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
   root.innerHTML = `
-    <div class="min-h-[85vh] flex flex-col items-center justify-center py-12 sm:py-16 max-w-2xl mx-auto px-4 text-center">
+    <div class="w-full flex flex-col items-center justify-center text-center my-auto">
       <!-- Minimalist Brand Header -->
-      <div class="inline-flex items-center gap-2.5 mb-8">
+      <div class="inline-flex items-center gap-2 mb-3">
         <img 
           src="/images/openshelf-logo.png" 
           alt="OpenShelf Logo" 
-          class="w-8 h-8 object-contain rounded-[20%]" 
+          class="w-6 h-6 object-contain rounded-[20%]" 
         />
-        <span class="font-serif font-bold text-xl text-stone-900 dark:text-stone-100 tracking-tight">
+        <span class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100 tracking-tight leading-none">
           OpenShelf
         </span>
       </div>
 
       <!-- Animated Server Warning Icon with pulse ring -->
-      <div class="relative w-24 h-24 mx-auto mb-6 flex items-center justify-center">
-        <div class="absolute inset-0 rounded-3xl bg-amber-500/20 dark:bg-amber-400/10 animate-ping opacity-60"></div>
-        <div class="relative w-20 h-20 rounded-3xl bg-gradient-to-br from-amber-500/20 to-orange-600/30 dark:from-amber-950/80 dark:to-orange-950/60 border border-amber-500/30 text-amber-600 dark:text-amber-400 flex items-center justify-center shadow-lg">
-          ${renderIcon('server', 'w-10 h-10')}
+      <div class="relative w-14 h-14 mx-auto mb-3 flex items-center justify-center">
+        <div class="absolute inset-0 rounded-2xl bg-amber-500/20 dark:bg-amber-400/10 animate-ping opacity-60"></div>
+        <div class="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-600/30 dark:from-amber-950/80 dark:to-orange-950/60 border border-amber-500/30 text-amber-600 dark:text-amber-400 flex items-center justify-center shadow-md">
+          ${renderIcon('server', 'w-6 h-6')}
         </div>
       </div>
 
       <!-- Maintenance Badge -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 mb-4 shadow-sm">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 mb-2.5 shadow-sm">
         <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-        <span>Server Status: Gutenberg Down for Maintenance (HTTP 503)</span>
+        <span>Project Gutenberg Down for Maintenance (HTTP 503)</span>
       </div>
 
-      <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 dark:text-stone-100 mb-4 tracking-tight">
+      <h1 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2 tracking-tight">
         Akses Perpustakaan Ditangguhkan
       </h1>
 
-      <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base leading-relaxed mb-6 max-w-lg mx-auto">
-        Server pusat <strong class="font-semibold text-stone-900 dark:text-stone-100">Project Gutenberg (gutenberg.org)</strong> saat ini sedang dalam proses pemeliharaan darurat (<em>Maintenance Mode — 503 Service Unavailable</em>).
+      <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed mb-4 max-w-md mx-auto">
+        Server pusat <strong class="font-semibold text-stone-900 dark:text-stone-100">Project Gutenberg (gutenberg.org)</strong> sedang dalam proses pemeliharaan darurat. Akses e-book, cover, dan pembacaan teks online ditangguhkan sementara.
       </p>
 
-      <div class="w-full bg-amber-50 dark:bg-stone-900/90 border border-amber-200 dark:border-amber-900/60 rounded-2xl p-5 mb-8 text-left max-w-lg mx-auto shadow-sm space-y-3">
-        <div class="flex items-start gap-3">
+      <div class="w-full bg-amber-50 dark:bg-stone-900/90 border border-amber-200 dark:border-amber-900/60 rounded-xl p-3.5 mb-5 text-left max-w-md mx-auto shadow-sm space-y-2">
+        <div class="flex items-start gap-2.5">
           <div class="text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0">
-            ${renderIcon('alert-triangle', 'w-5 h-5')}
+            ${renderIcon('alert-triangle', 'w-4 h-4')}
           </div>
-          <div class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 space-y-1.5 leading-relaxed">
-            <p class="font-semibold text-stone-900 dark:text-stone-100">
-              Mengapa Halaman Dikunci?
-            </p>
-            <p>
-              Demi menjaga integritas bacaan dan mencegah galat (<em>cover gambar hilang, kegagalan unduh EPUB/MOBI, teks buku 404</em>), seluruh rute navigasi OpenShelf dikunci secara protektif hingga server Gutenberg kembali pulih.
-            </p>
-          </div>
+          <p class="text-[11px] sm:text-xs text-stone-700 dark:text-stone-300 leading-relaxed">
+            Seluruh rute navigasi OpenShelf dikunci sementara demi mencegah galat tautan dan menjaga integritas data hingga pemeliharaan server Gutenberg selesai.
+          </p>
         </div>
 
-        <div class="pt-3 border-t border-amber-200/60 dark:border-stone-800 grid grid-cols-2 gap-2 text-xs text-stone-500 dark:text-stone-400">
+        <div class="pt-2 border-t border-amber-200/60 dark:border-stone-800 grid grid-cols-2 gap-1 text-[11px] text-stone-500 dark:text-stone-400">
           <div>Status Gutenberg: <strong class="text-amber-600 dark:text-amber-400 font-mono">503 Maintenance</strong></div>
           <div>Mode Proteksi: <strong class="text-emerald-600 dark:text-emerald-400 font-mono">Routing Locked</strong></div>
           <div class="col-span-2">Pemeriksaan Terakhir: <span id="maintenance-checked-time" class="font-mono text-stone-700 dark:text-stone-300">${lastCheckedTime}</span></div>
@@ -96,12 +98,12 @@ export function renderMaintenancePage(root) {
       </div>
 
       <!-- Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 w-full max-w-sm mx-auto">
         <button 
           id="btn-recheck-maintenance" 
           type="button" 
-          class="w-full sm:w-auto px-6 py-3.5 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-sm font-semibold transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
-          ${renderIcon('refresh-cw', 'w-4 h-4')}
+          class="w-full sm:w-auto px-5 py-2.5 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer">
+          ${renderIcon('refresh-cw', 'w-3.5 h-3.5')}
           <span>Periksa Ulang Status Server</span>
         </button>
 
@@ -109,14 +111,14 @@ export function renderMaintenancePage(root) {
           href="https://www.gutenberg.org/" 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="w-full sm:w-auto px-5 py-3.5 border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200 rounded-xl text-sm font-medium transition-colors flex items-center justify-center gap-2">
+          class="w-full sm:w-auto px-4 py-2.5 border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200 rounded-xl text-xs sm:text-sm font-medium transition-colors flex items-center justify-center gap-1.5">
           <span>Situs Resmi Gutenberg</span>
           ${renderIcon('external-link', 'w-3.5 h-3.5')}
         </a>
       </div>
 
       <!-- Live Feedback Message Area -->
-      <div id="maintenance-feedback" class="mt-4 min-h-[1.5rem]"></div>
+      <div id="maintenance-feedback" class="mt-2.5 min-h-[1.25rem]"></div>
     </div>
   `;
 
@@ -134,7 +136,7 @@ export function renderMaintenancePage(root) {
       btnRecheck.disabled = true;
       btnRecheck.classList.add('opacity-75', 'cursor-wait');
       btnRecheck.innerHTML = `
-        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <svg class="animate-spin -ml-1 mr-2 h-3.5 w-3.5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
         </svg>
@@ -151,8 +153,8 @@ export function renderMaintenancePage(root) {
         isMaintenanceActive = true;
         if (feedback && isManual) {
           feedback.innerHTML = `
-            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs font-medium">
-              ${renderIcon('alert-triangle', 'w-3.5 h-3.5')}
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 text-[11px] font-medium">
+              ${renderIcon('alert-triangle', 'w-3 h-3')}
               <span>Server Gutenberg masih dalam pemeliharaan (${nowTime}). Akses tetap terkunci.</span>
             </div>
           `;
@@ -162,16 +164,18 @@ export function renderMaintenancePage(root) {
         if (autoCheckTimer) clearInterval(autoCheckTimer);
         isMaintenanceActive = false;
         
-        // Restore nav and footer
+        // Restore nav, footer, and body overflow
         const header = document.getElementById('header-container');
         const footer = document.getElementById('footer-container');
         if (header) header.style.display = '';
         if (footer) footer.style.display = '';
+        if (document.body) document.body.classList.remove('overflow-y-hidden');
+        root.className = 'flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 focus:outline-none';
 
         if (feedback) {
           feedback.innerHTML = `
-            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">
-              ${renderIcon('check', 'w-3.5 h-3.5')}
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-[11px] font-semibold">
+              ${renderIcon('check', 'w-3 h-3')}
               <span>Server Gutenberg telah pulih! Membuka perpustakaan…</span>
             </div>
           `;
@@ -184,14 +188,14 @@ export function renderMaintenancePage(root) {
       }
     } catch (err) {
       if (feedback && isManual) {
-        feedback.innerHTML = `<span class="text-xs text-stone-500">Gagal menghubungi server. Status tetap dalam pemeliharaan.</span>`;
+        feedback.innerHTML = `<span class="text-[11px] text-stone-500">Gagal menghubungi server. Status tetap dalam pemeliharaan.</span>`;
       }
     } finally {
       if (isManual && btnRecheck) {
         btnRecheck.disabled = false;
         btnRecheck.classList.remove('opacity-75', 'cursor-wait');
         btnRecheck.innerHTML = `
-          ${renderIcon('refresh-cw', 'w-4 h-4')}
+          ${renderIcon('refresh-cw', 'w-3.5 h-3.5')}
           <span>Periksa Ulang Status Server</span>
         `;
         initIcons(btnRecheck);
@@ -313,13 +317,17 @@ export async function handleRouting() {
     return;
   }
 
-  // When NOT in maintenance, ensure nav and footer are shown
+  // When NOT in maintenance, ensure nav, footer, body overflow, and main className are restored
   if (headerContainer) {
     headerContainer.style.display = '';
   }
   if (footerContainer) {
     footerContainer.style.display = '';
   }
+  if (document.body) {
+    document.body.classList.remove('overflow-y-hidden');
+  }
+  main.className = 'flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8 focus:outline-none';
 
   const currentHash = window.location.hash || '#/';
   const { path, id, params } = parseHash(currentHash);
