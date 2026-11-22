@@ -154,6 +154,45 @@ function resolveSingleSegment(segment) {
 }
 
 /**
+ * Sanitize and extract a clean book ID or text query from route parameter
+ * @param {string|null} rawId 
+ * @returns {{ validId: string|null, queryText: string|null }}
+ */
+export function sanitizeBookId(rawId) {
+  if (!rawId) return { validId: null, queryText: null };
+  const str = String(rawId).trim().toLowerCase();
+
+  // Filter out literal null / undefined / object artifacts
+  if (['undefined', 'null', 'nan', '[object object]'].includes(str)) {
+    return { validId: null, queryText: null };
+  }
+
+  // Filter out negative numbers and zero (Gutenberg IDs are positive integers)
+  if (str.startsWith('-') || str === '0') {
+    return { validId: null, queryText: null };
+  }
+
+  // Exact positive integer ID
+  if (/^\d+$/.test(str) && Number(str) > 0) {
+    return { validId: str, queryText: null };
+  }
+
+  // Embedded number e.g. "id-1342" or "1342-pride"
+  const digitsMatch = str.match(/\d+/);
+  if (digitsMatch && Number(digitsMatch[0]) > 0) {
+    return { validId: digitsMatch[0], queryText: null };
+  }
+
+  // Words or queries e.g. "sherlock" or "alice"
+  const cleanWord = str.replace(/[^\w\s-]/g, '').trim();
+  if (cleanWord.length >= 2) {
+    return { validId: null, queryText: cleanWord };
+  }
+
+  return { validId: null, queryText: null };
+}
+
+/**
  * Determine closest valid route for an unrecognized URL hash
  * @param {string} hash - e.g. '#/explor?search=pride'
  * @returns {string} - e.g. '#/explore?search=pride'
@@ -174,9 +213,23 @@ export function findClosestRoute(hash = window.location.hash) {
     const seg1 = pathParts[1];
 
     if (BOOK_ALIASES.includes(seg0) || levenshteinDistance(seg0, 'book') <= 2) {
-      targetPath = `/book/${encodeURIComponent(seg1)}`;
+      const { validId, queryText } = sanitizeBookId(seg1);
+      if (validId) {
+        targetPath = `/book/${validId}`;
+      } else if (queryText) {
+        return `#/explore?search=${encodeURIComponent(queryText)}`;
+      } else {
+        targetPath = '/explore';
+      }
     } else if (READ_ALIASES.includes(seg0) || levenshteinDistance(seg0, 'read') <= 2) {
-      targetPath = `/read/${encodeURIComponent(seg1)}`;
+      const { validId, queryText } = sanitizeBookId(seg1);
+      if (validId) {
+        targetPath = `/read/${validId}`;
+      } else if (queryText) {
+        return `#/explore?search=${encodeURIComponent(queryText)}`;
+      } else {
+        targetPath = '/explore';
+      }
     } else {
       targetPath = resolveSingleSegment(seg0);
     }
@@ -279,21 +332,37 @@ export async function handleRouting() {
       await renderCategories(main, params);
       break;
 
-    case '/book/:id':
-      if (id) {
-        await renderBookDetails(main, id);
+    case '/book/:id': {
+      const { validId, queryText } = sanitizeBookId(id);
+      if (validId) {
+        if (validId !== id) {
+          window.location.replace(`#/book/${validId}`);
+          return;
+        }
+        await renderBookDetails(main, validId);
+      } else if (queryText) {
+        window.location.replace(`#/explore?search=${encodeURIComponent(queryText)}`);
       } else {
         window.location.replace('#/explore');
       }
       break;
+    }
 
-    case '/read/:id':
-      if (id) {
-        await renderReader(main, id);
+    case '/read/:id': {
+      const { validId, queryText } = sanitizeBookId(id);
+      if (validId) {
+        if (validId !== id) {
+          window.location.replace(`#/read/${validId}`);
+          return;
+        }
+        await renderReader(main, validId);
+      } else if (queryText) {
+        window.location.replace(`#/explore?search=${encodeURIComponent(queryText)}`);
       } else {
         window.location.replace('#/explore');
       }
       break;
+    }
 
     case '/library':
       renderMyLibrary(main, params);

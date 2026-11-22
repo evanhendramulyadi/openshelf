@@ -565,11 +565,16 @@ export async function getBooks({
 /**
  * Fetch a single book by ID (instant 0ms from cache, synthetic fallback if network fails)
  * @param {number|string} id 
- * @returns {Promise<Object>}
+ * @returns {Promise<Object|null>}
  */
 export async function getBookById(id) {
-  if (!id) throw new Error('Book ID is required');
-  const idStr = String(id);
+  if (!id) return null;
+  const idStr = String(id).trim();
+
+  // Validate that ID is a positive integer
+  if (!/^\d+$/.test(idStr) || Number(idStr) <= 0) {
+    return null;
+  }
 
   // 1. Instant check from in-memory normalized cache (0ms)
   if (bookCacheById.has(idStr)) {
@@ -584,55 +589,70 @@ export async function getBookById(id) {
   }
 
   // 3. Try direct single book endpoint
-  const url = `${BASE_URL}/${id}`;
+  const url = `${BASE_URL}/${idStr}`;
   try {
     const raw = await cachedFetch(url);
-    return normalizeBook(raw);
+    if (raw && raw.id) {
+      return normalizeBook(raw);
+    }
   } catch (err) {
-    // Try ids query fallback
-    try {
-      const fallbackUrl = `${BASE_URL}?ids=${id}`;
-      const data = await cachedFetch(fallbackUrl);
-      if (data.results && data.results.length > 0) {
-        return normalizeBook(data.results[0]);
-      }
-    } catch (fErr) {
-      // Continue to synthetic fallback
+    // If it's a 404 from Gutendex, the book does not exist in Gutenberg
+    if (err.message && err.message.includes('404')) {
+      return null;
     }
 
-    // Direct Gutenberg standard fallback
-    const synthetic = {
-      id: Number(id),
-      title: `Project Gutenberg EBook #${id}`,
-      authors: [{ name: 'Project Gutenberg Author', rawName: 'Project Gutenberg', years: '' }],
-      authorNames: 'Project Gutenberg Author',
-      primaryAuthor: { name: 'Project Gutenberg Author', years: '' },
-      subjects: ['Public Domain Literature'],
-      bookshelves: ['Project Gutenberg Classics'],
-      languages: ['en'],
-      languageFormatted: 'English',
-      copyright: false,
-      mediaType: 'Text',
-      downloadCount: 1000,
-      downloadCountFormatted: '1,000+',
-      downloadCountCompact: '1k+',
-      coverUrl: `https://www.gutenberg.org/cache/epub/${id}/pg${id}.cover.medium.jpg`,
-      hasCover: true,
-      formats: {
-        html: `https://www.gutenberg.org/cache/epub/${id}/pg${id}-images.html`,
-        epub: `https://www.gutenberg.org/ebooks/${id}.epub3.images`,
-        kindle: `https://www.gutenberg.org/ebooks/${id}.kf8.images`,
-        txt: `https://www.gutenberg.org/cache/epub/${id}/pg${id}.txt.utf-8`,
-        cover: `https://www.gutenberg.org/cache/epub/${id}/pg${id}.cover.medium.jpg`,
-        all: {}
-      },
-      canReadOnline: true,
-      readUrl: `https://www.gutenberg.org/cache/epub/${id}/pg${id}-images.html`,
-      gutenbergUrl: `https://www.gutenberg.org/ebooks/${id}`
-    };
+    // Try ids query fallback
+    try {
+      const fallbackUrl = `${BASE_URL}?ids=${idStr}`;
+      const data = await cachedFetch(fallbackUrl);
+      if (data && data.results && data.results.length > 0) {
+        return normalizeBook(data.results[0]);
+      }
+      return null;
+    } catch (fErr) {
+      if (fErr.message && fErr.message.includes('404')) {
+        return null;
+      }
+    }
 
-    bookCacheById.set(idStr, synthetic);
-    return synthetic;
+    // Direct Gutenberg standard fallback only for plausible Gutenberg IDs on network error
+    const numId = Number(idStr);
+    if (!isNaN(numId) && numId > 0 && numId < 150000) {
+      const synthetic = {
+        id: numId,
+        title: `Project Gutenberg EBook #${numId}`,
+        authors: [{ name: 'Project Gutenberg Author', rawName: 'Project Gutenberg', years: '' }],
+        authorNames: 'Project Gutenberg Author',
+        primaryAuthor: { name: 'Project Gutenberg Author', years: '' },
+        subjects: ['Public Domain Literature'],
+        bookshelves: ['Project Gutenberg Classics'],
+        languages: ['en'],
+        languageFormatted: 'English',
+        copyright: false,
+        mediaType: 'Text',
+        downloadCount: 1000,
+        downloadCountFormatted: '1,000+',
+        downloadCountCompact: '1k+',
+        coverUrl: `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}.cover.medium.jpg`,
+        hasCover: true,
+        formats: {
+          html: `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}-images.html`,
+          epub: `https://www.gutenberg.org/ebooks/${numId}.epub3.images`,
+          kindle: `https://www.gutenberg.org/ebooks/${numId}.kf8.images`,
+          txt: `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}.txt.utf-8`,
+          cover: `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}.cover.medium.jpg`,
+          all: {}
+        },
+        canReadOnline: true,
+        readUrl: `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}-images.html`,
+        gutenbergUrl: `https://www.gutenberg.org/ebooks/${numId}`
+      };
+
+      bookCacheById.set(idStr, synthetic);
+      return synthetic;
+    }
+
+    return null;
   }
 }
 

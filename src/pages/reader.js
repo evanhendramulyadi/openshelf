@@ -22,7 +22,31 @@ export async function renderReader(root, bookId) {
 
   try {
     const book = await getBookById(bookId);
-    if (!book) throw new Error('Book not found');
+    if (!book) {
+      root.innerHTML = `
+        <div class="max-w-md mx-auto my-16 p-8 text-center bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl shadow-sm">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 flex items-center justify-center">
+            ${renderIcon('help-circle', 'w-6 h-6')}
+          </div>
+          <h2 class="font-serif text-xl font-bold mb-2">Book Not Available to Read</h2>
+          <p class="text-sm text-stone-600 dark:text-stone-400 mb-6 leading-relaxed">
+            We couldn't find book #${escapeHTML(String(bookId))} in the Project Gutenberg catalog.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="#/explore" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold transition-colors shadow-sm">
+              ${renderIcon('compass', 'w-4 h-4')}
+              <span>Explore Books</span>
+            </a>
+            <a href="#/" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 text-sm font-semibold transition-colors border border-stone-200 dark:border-stone-700">
+              ${renderIcon('arrow-left', 'w-4 h-4')}
+              <span>Return Home</span>
+            </a>
+          </div>
+        </div>
+      `;
+      initIcons(root);
+      return;
+    }
 
     if (!book.canReadOnline) {
       root.innerHTML = `
