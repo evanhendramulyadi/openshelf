@@ -5,9 +5,198 @@ import { renderBookDetails } from '../pages/book-details.js';
 import { renderReader } from '../pages/reader.js';
 import { renderMyLibrary } from '../pages/my-library.js';
 import { renderAbout } from '../pages/about.js';
-import { renderEmptyState } from '../components/loading-state.js';
 import { renderHeader } from '../components/header.js';
 import { scrollToTop } from '../utils/dom.js';
+
+/**
+ * Calculate Levenshtein distance between two strings
+ * @param {string} a 
+ * @param {string} b 
+ * @returns {number}
+ */
+export function levenshteinDistance(a, b) {
+  const m = a.length;
+  const n = b.length;
+  const dp = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+
+  for (let i = 0; i <= m; i++) dp[i][0] = i;
+  for (let j = 0; j <= n; j++) dp[0][j] = j;
+
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (a[i - 1] === b[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1];
+      } else {
+        dp[i][j] = Math.min(
+          dp[i - 1][j] + 1,
+          dp[i][j - 1] + 1,
+          dp[i - 1][j - 1] + 1
+        );
+      }
+    }
+  }
+  return dp[m][n];
+}
+
+const ROUTE_ALIASES = {
+  // Home
+  home: '/',
+  index: '/',
+  main: '/',
+  beranda: '/',
+  depan: '/',
+  awal: '/',
+
+  // Explore
+  explore: '/explore',
+  explor: '/explore',
+  explorer: '/explore',
+  explores: '/explore',
+  search: '/explore',
+  catalog: '/explore',
+  catalogue: '/explore',
+  browse: '/explore',
+  books: '/explore',
+  cari: '/explore',
+  katalog: '/explore',
+  temukan: '/explore',
+
+  // Categories
+  categories: '/categories',
+  category: '/categories',
+  kategori: '/categories',
+  genres: '/categories',
+  genre: '/categories',
+  topics: '/categories',
+  topic: '/categories',
+  subjects: '/categories',
+  subject: '/categories',
+  topik: '/categories',
+
+  // Library
+  library: '/library',
+  librari: '/library',
+  libary: '/library',
+  lib: '/library',
+  mylibrary: '/library',
+  'my-library': '/library',
+  bookmarks: '/library',
+  bookmark: '/library',
+  saved: '/library',
+  favorites: '/library',
+  favorite: '/library',
+  favorit: '/library',
+  koleksi: '/library',
+  perpustakaan: '/library',
+
+  // About
+  about: '/about',
+  'about-us': '/about',
+  tentang: '/about',
+  info: '/about',
+  faq: '/about',
+  help: '/about',
+  bantuan: '/about'
+};
+
+const BOOK_ALIASES = ['book', 'books', 'detail', 'details', 'b', 'buku'];
+const READ_ALIASES = ['read', 'reader', 'reading', 'read-book', 'baca', 'r'];
+
+const TARGET_ROUTES = [
+  { name: 'explore', path: '/explore' },
+  { name: 'categories', path: '/categories' },
+  { name: 'library', path: '/library' },
+  { name: 'about', path: '/about' },
+  { name: 'home', path: '/' }
+];
+
+/**
+ * Resolve single segment to closest known route
+ * @param {string} segment 
+ * @returns {string}
+ */
+function resolveSingleSegment(segment) {
+  if (!segment) return '/';
+  const seg = segment.toLowerCase().trim();
+
+  // 1. Direct alias dictionary lookup
+  if (ROUTE_ALIASES[seg]) {
+    return ROUTE_ALIASES[seg];
+  }
+
+  // 2. Prefix / containment match
+  for (const route of TARGET_ROUTES) {
+    if (route.name.startsWith(seg) || (seg.length >= 3 && route.name.includes(seg)) || (seg.length >= 3 && seg.startsWith(route.name))) {
+      return route.path;
+    }
+  }
+
+  // 3. Levenshtein distance match
+  let bestRoute = '/';
+  let minDistance = Infinity;
+
+  for (const route of TARGET_ROUTES) {
+    const dist = levenshteinDistance(seg, route.name);
+    if (dist < minDistance) {
+      minDistance = dist;
+      bestRoute = route.path;
+    }
+  }
+
+  // Within reasonable edit distance (<= 3 edits or <= half length of word)
+  const maxAllowedDistance = Math.max(2, Math.floor(seg.length / 2));
+  if (minDistance <= maxAllowedDistance) {
+    return bestRoute;
+  }
+
+  // 4. Default fallback: Home
+  return '/';
+}
+
+/**
+ * Determine closest valid route for an unrecognized URL hash
+ * @param {string} hash - e.g. '#/explor?search=pride'
+ * @returns {string} - e.g. '#/explore?search=pride'
+ */
+export function findClosestRoute(hash = window.location.hash) {
+  let cleanHash = (hash || '').replace(/^#+/, '').trim();
+  if (!cleanHash || cleanHash === '/') {
+    return '#/';
+  }
+
+  const [rawPath, rawQuery] = cleanHash.split('?');
+  const pathParts = (rawPath || '').split('/').filter(Boolean);
+
+  let targetPath = '/';
+
+  if (pathParts.length >= 2) {
+    const seg0 = pathParts[0].toLowerCase();
+    const seg1 = pathParts[1];
+
+    if (BOOK_ALIASES.includes(seg0) || levenshteinDistance(seg0, 'book') <= 2) {
+      targetPath = `/book/${encodeURIComponent(seg1)}`;
+    } else if (READ_ALIASES.includes(seg0) || levenshteinDistance(seg0, 'read') <= 2) {
+      targetPath = `/read/${encodeURIComponent(seg1)}`;
+    } else {
+      targetPath = resolveSingleSegment(seg0);
+    }
+  } else if (pathParts.length === 1) {
+    const seg0 = pathParts[0].toLowerCase();
+    // If user navigates to /book or /read without ID, redirect to catalog (/explore)
+    if (BOOK_ALIASES.includes(seg0) || READ_ALIASES.includes(seg0)) {
+      targetPath = '/explore';
+    } else {
+      targetPath = resolveSingleSegment(seg0);
+    }
+  }
+
+  const queryPart = rawQuery ? `?${rawQuery}` : '';
+  if (targetPath === '/') {
+    return queryPart ? `#/?${rawQuery}` : '#/';
+  }
+
+  return `#${targetPath}${queryPart}`;
+}
 
 /**
  * Parse URL hash into route path and query parameters
@@ -15,7 +204,7 @@ import { scrollToTop } from '../utils/dom.js';
  * @returns {{ path: string, params: Object, id: string|null }}
  */
 export function parseHash(hash = window.location.hash) {
-  let cleanHash = hash.replace(/^#/, '').trim();
+  let cleanHash = (hash || '').replace(/^#+/, '').trim();
   if (!cleanHash || cleanHash === '/') {
     return { path: '/', params: {}, id: null };
   }
@@ -31,8 +220,8 @@ export function parseHash(hash = window.location.hash) {
   }
 
   // Handle parameterized routes like /book/84 or /read/84
-  const pathParts = rawPath.split('/').filter(Boolean);
-  if (pathParts.length === 2 && (pathParts[0] === 'book' || pathParts[0] === 'read')) {
+  const pathParts = (rawPath || '').split('/').filter(Boolean);
+  if (pathParts.length >= 2 && (pathParts[0] === 'book' || pathParts[0] === 'read')) {
     return {
       path: `/${pathParts[0]}/:id`,
       id: pathParts[1],
@@ -40,8 +229,16 @@ export function parseHash(hash = window.location.hash) {
     };
   }
 
+  if (pathParts.length === 1) {
+    return {
+      path: `/${pathParts[0]}`,
+      id: null,
+      params
+    };
+  }
+
   return {
-    path: rawPath.startsWith('/') ? rawPath : `/${rawPath}`,
+    path: rawPath ? (rawPath.startsWith('/') ? rawPath : `/${rawPath}`) : '/',
     id: null,
     params
   };
@@ -86,7 +283,7 @@ export async function handleRouting() {
       if (id) {
         await renderBookDetails(main, id);
       } else {
-        window.location.hash = '#/explore';
+        window.location.replace('#/explore');
       }
       break;
 
@@ -94,7 +291,7 @@ export async function handleRouting() {
       if (id) {
         await renderReader(main, id);
       } else {
-        window.location.hash = '#/explore';
+        window.location.replace('#/explore');
       }
       break;
 
@@ -106,19 +303,15 @@ export async function handleRouting() {
       renderAbout(main);
       break;
 
-    default:
-      main.innerHTML = `
-        <div class="py-16">
-          ${renderEmptyState({
-            title: '404 — Page Not Found',
-            message: 'The page you requested does not exist in the OpenShelf library directory.',
-            icon: 'help-circle',
-            actionText: 'Return to Library Home',
-            actionHash: '#/'
-          })}
-        </div>
-      `;
+    default: {
+      const closestHash = findClosestRoute(currentHash);
+      if (closestHash && closestHash !== currentHash) {
+        window.location.replace(closestHash);
+      } else {
+        window.location.replace('#/');
+      }
       break;
+    }
   }
 
   // Ensure instant scroll to top on page navigation
@@ -149,4 +342,3 @@ export function initRouter() {
   // Initial route
   handleRouting();
 }
-
