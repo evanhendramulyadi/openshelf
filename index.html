@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenShelf — Digital Library</title>
     <meta name="description" content="OpenShelf — Digital Library. Discover, read online, and download free e-books legally accessible from public-domain archives." />
+
+    <!-- Theme pre-init: immediate execution before fonts/CSS to prevent flicker and guarantee mode persistence across refreshes -->
+    <script>
+      (function() {
+        try {
+          var raw = localStorage.getItem('openshelf_theme');
+          var theme = 'dark';
+          if (raw) {
+            try { raw = JSON.parse(raw); } catch (e) {}
+            if (raw === 'light' || raw === 'dark') {
+              theme = raw;
+            }
+          } else {
+            localStorage.setItem('openshelf_theme', 'dark');
+          }
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="icon" type="image/png" href="/images/openshelf-logo.png" />
@@ -21,22 +47,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    
-    <!-- Theme pre-init to avoid light/dark flicker (default is dark) -->
-    <script>
-      (function() {
-        try {
-          const storedTheme = localStorage.getItem('openshelf_theme');
-          if (storedTheme === 'light') {
-            document.documentElement.classList.remove('dark');
-          } else {
-            document.documentElement.classList.add('dark');
-          }
-        } catch (e) {
-          document.documentElement.classList.add('dark');
-        }
-      })();
-    </script>
     
     <link rel="stylesheet" href="/src/style.css" />
   </head>

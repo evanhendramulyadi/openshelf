@@ -10,6 +10,7 @@ import { renderFooter } from '../components/footer.js';
 import { renderIcon, initIcons } from '../utils/icons.js';
 import { scrollToTop } from '../utils/dom.js';
 import { checkGutenbergMaintenance } from '../services/book-service.js';
+import { getStoredTheme, setStoredTheme } from '../utils/storage.js';
 
 let isMaintenanceActive = false;
 let isInitialCheckDone = false;
@@ -41,8 +42,21 @@ export function renderMaintenancePage(root) {
   root.className = 'w-full max-w-xl mx-auto px-4 min-h-screen min-h-[100dvh] flex flex-col items-center justify-center py-0 focus:outline-none';
 
   const lastCheckedTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  const isDark = document.documentElement.classList.contains('dark');
 
   root.innerHTML = `
+    <!-- Floating Theme Toggle for Maintenance Screen -->
+    <div class="fixed top-4 right-4 sm:top-6 sm:right-6 z-50">
+      <button 
+        id="btn-maintenance-theme-toggle" 
+        type="button" 
+        aria-label="Toggle dark/light theme"
+        title="Toggle dark/light theme"
+        class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center text-stone-600 dark:text-stone-300 hover:bg-stone-200/70 dark:hover:bg-stone-800 transition-colors border border-stone-200 dark:border-stone-800 bg-stone-100/90 dark:bg-stone-900/90 backdrop-blur-md cursor-pointer shadow-sm">
+        ${renderIcon(isDark ? 'sun' : 'moon', 'w-4 h-4')}
+      </button>
+    </div>
+
     <div class="w-full flex flex-col items-center justify-center text-center py-4 sm:py-6">
       <!-- Minimalist Brand Header -->
       <div class="inline-flex items-center gap-2 mb-3">
@@ -122,6 +136,18 @@ export function renderMaintenancePage(root) {
   `;
 
   initIcons(root);
+
+  // Bind Maintenance Theme Toggle Action
+  const themeToggle = root.querySelector('#btn-maintenance-theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isCurrentlyDark = document.documentElement.classList.contains('dark');
+      const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+      setStoredTheme(nextTheme);
+      themeToggle.innerHTML = renderIcon(nextTheme === 'dark' ? 'sun' : 'moon', 'w-4 h-4');
+      initIcons(themeToggle);
+    });
+  }
 
   // Bind Re-check Action
   const btnRecheck = root.querySelector('#btn-recheck-maintenance');

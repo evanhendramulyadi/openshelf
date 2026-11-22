@@ -54,25 +54,31 @@ function setItem(key, value) {
 
 export function getStoredTheme() {
   try {
-    return localStorage.getItem(STORAGE_KEYS.THEME) || 'dark';
+    let raw = localStorage.getItem(STORAGE_KEYS.THEME);
+    if (raw) {
+      try { raw = JSON.parse(raw); } catch (e) {}
+      if (raw === 'light' || raw === 'dark') return raw;
+    }
+    return 'dark';
   } catch (e) {
     return 'dark';
   }
 }
 
 export function setStoredTheme(theme) {
+  const cleanTheme = theme === 'light' ? 'light' : 'dark';
   try {
-    localStorage.setItem(STORAGE_KEYS.THEME, theme);
+    localStorage.setItem(STORAGE_KEYS.THEME, cleanTheme);
   } catch (e) {}
   
-  const isDark = theme !== 'light';
+  const isDark = cleanTheme === 'dark';
   if (isDark) {
     document.documentElement.classList.add('dark');
   } else {
     document.documentElement.classList.remove('dark');
   }
 
-  window.dispatchEvent(new CustomEvent('openshelf:theme-changed', { detail: { theme, isDark } }));
+  window.dispatchEvent(new CustomEvent('openshelf:theme-changed', { detail: { theme: cleanTheme, isDark } }));
 }
 
 // ------------------- Favorites Management -------------------
