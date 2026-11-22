@@ -706,8 +706,70 @@ export async function getBookById(id) {
     }
   } catch (err) {
     if (err.message && err.message.includes('404')) {
-      return null;
+      // Don't return null immediately, try Open Library lookup first
     }
+  }
+
+  // 5. Tertiary resilient fallback: Open Library Gutenberg index lookup
+  try {
+    const olUrl = `https://openlibrary.org/search.json?id_project_gutenberg=${idStr}&limit=1`;
+    const olRes = await fetch(olUrl, {
+      signal: AbortSignal.timeout ? AbortSignal.timeout(3500) : undefined,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (olRes.ok) {
+      const olData = await olRes.json();
+      if (olData.docs && olData.docs.length > 0) {
+        const doc = olData.docs[0];
+        const numId = Number(idStr);
+        const authors = (doc.author_name || []).map(name => ({
+          name: formatAuthorName(name),
+          rawName: name,
+          birthYear: null,
+          deathYear: null,
+          years: doc.first_publish_year ? `First pub. ${doc.first_publish_year}` : ''
+        }));
+        const coverUrl = doc.cover_i
+          ? `https://covers.openlibrary.org/b/id/${doc.cover_i}-M.jpg`
+          : `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}.cover.medium.jpg`;
+
+        const fallbackBook = {
+          id: numId,
+          title: doc.title || `Gutenberg Book #${numId}`,
+          authors,
+          authorNames: authors.map(a => a.name).join(', ') || 'Unknown Author',
+          primaryAuthor: authors[0] || { name: 'Unknown Author', years: '' },
+          subjects: (doc.subject || []).slice(0, 8).map(cleanSubject).filter(Boolean),
+          bookshelves: [],
+          languages: doc.language || ['en'],
+          languageFormatted: formatLanguages(doc.language || ['en']),
+          copyright: false,
+          mediaType: 'Text',
+          downloadCount: 1500,
+          downloadCountFormatted: '1,500+',
+          downloadCountCompact: '1.5k',
+          coverUrl,
+          hasCover: Boolean(coverUrl),
+          formats: {
+            html: `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}-images.html`,
+            epub: `https://www.gutenberg.org/ebooks/${numId}.epub3.images`,
+            kindle: `https://www.gutenberg.org/ebooks/${numId}.kf8.images`,
+            txt: `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}.txt.utf-8`,
+            cover: coverUrl,
+            all: {}
+          },
+          canReadOnline: true,
+          readUrl: `https://www.gutenberg.org/cache/epub/${numId}/pg${numId}-images.html`,
+          gutenbergUrl: `https://www.gutenberg.org/ebooks/${numId}`
+        };
+
+        bookCacheById.set(idStr, fallbackBook);
+        setSessionItem(`${SESSION_BOOK_PREFIX}${idStr}`, fallbackBook);
+        return fallbackBook;
+      }
+    }
+  } catch (olErr) {
+    // Non-critical fallback failure
   }
 
   return null;
