@@ -38,15 +38,15 @@ export function renderMaintenancePage(root) {
   if (headerContainer) headerContainer.style.display = 'none';
   if (footerContainer) footerContainer.style.display = 'none';
 
-  // Set perfectly centered container with equal top & bottom space
-  root.className = 'w-full max-w-xl mx-auto px-4 min-h-screen min-h-[100dvh] flex flex-col items-center justify-center py-0 focus:outline-none';
+  // Set perfectly centered container with equal top & bottom space, responsive on small mobile & desktop
+  root.className = 'w-full max-w-xl mx-auto px-4 min-h-screen min-h-[100dvh] flex flex-col items-center justify-center py-6 sm:py-8 focus:outline-none';
 
   const lastCheckedTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
   const isDark = document.documentElement.classList.contains('dark');
 
   root.innerHTML = `
     <!-- Floating Theme Toggle for Maintenance Screen -->
-    <div class="fixed top-4 right-4 sm:top-6 sm:right-6 z-50">
+    <div class="fixed top-3.5 right-3.5 sm:top-5 sm:right-5 z-50">
       <button 
         id="btn-maintenance-theme-toggle" 
         type="button" 
@@ -57,44 +57,44 @@ export function renderMaintenancePage(root) {
       </button>
     </div>
 
-    <div class="w-full flex flex-col items-center justify-center text-center py-4 sm:py-6">
+    <div class="w-full flex flex-col items-center justify-center text-center py-2 sm:py-6">
       <!-- Minimalist Brand Header -->
-      <div class="inline-flex items-center gap-2 mb-3">
+      <div class="inline-flex items-center gap-2 mb-2.5 sm:mb-3">
         <img 
           src="/images/openshelf-logo.png" 
           alt="OpenShelf Logo" 
-          class="w-6 h-6 object-contain rounded-[20%]" 
+          class="w-6 h-6 sm:w-7 sm:h-7 object-contain rounded-[20%]" 
         />
-        <span class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100 tracking-tight leading-none">
+        <span class="font-serif font-bold text-lg sm:text-xl text-stone-900 dark:text-stone-100 tracking-tight leading-none">
           OpenShelf
         </span>
       </div>
 
       <!-- Animated Server Warning Icon with subtle contained ripple wave -->
-      <div class="relative w-14 h-14 mx-auto mb-3 flex items-center justify-center">
+      <div class="relative w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-2.5 sm:mb-3 flex items-center justify-center">
         <!-- Soft expanding ripple wave (no outline border, perfectly sized) -->
         <div class="absolute inset-0 rounded-2xl bg-amber-500/30 dark:bg-amber-400/25 animate-ping-subtle pointer-events-none"></div>
-        <div class="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-600/30 dark:from-amber-950/80 dark:to-orange-950/60 border border-amber-500/40 text-amber-600 dark:text-amber-400 flex items-center justify-center shadow-md">
-          ${renderIcon('server', 'w-6 h-6')}
+        <div class="relative w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-600/30 dark:from-amber-950/80 dark:to-orange-950/60 border border-amber-500/40 text-amber-600 dark:text-amber-400 flex items-center justify-center shadow-md">
+          ${renderIcon('server', 'w-5 h-5 sm:w-6 sm:h-6')}
         </div>
       </div>
 
       <!-- Maintenance Badge -->
-      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 mb-2.5 shadow-sm">
-        <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-        <span>Project Gutenberg Down for Maintenance (HTTP 503)</span>
+      <div class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30 mb-2 sm:mb-2.5 shadow-sm max-w-full text-center leading-tight">
+        <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse flex-shrink-0"></span>
+        <span class="truncate sm:whitespace-normal">Project Gutenberg Down for Maintenance (HTTP 503)</span>
       </div>
 
-      <h1 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2 tracking-tight">
+      <h1 class="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-stone-900 dark:text-stone-100 mb-2 tracking-tight px-2">
         Akses Perpustakaan Ditangguhkan
       </h1>
 
-      <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed mb-4 max-w-md mx-auto">
+      <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm leading-relaxed mb-3.5 sm:mb-4 max-w-md mx-auto px-2">
         Server pusat <strong class="font-semibold text-stone-900 dark:text-stone-100">Project Gutenberg (gutenberg.org)</strong> sedang dalam proses pemeliharaan darurat. Akses e-book, cover, dan pembacaan teks online ditangguhkan sementara.
       </p>
 
-      <div class="w-full bg-amber-50 dark:bg-stone-900/90 border border-amber-200 dark:border-amber-900/60 rounded-xl p-3.5 mb-5 text-left max-w-md mx-auto shadow-sm space-y-2">
-        <div class="flex items-start gap-2.5">
+      <div class="w-full bg-amber-50/80 dark:bg-stone-900/90 border border-amber-200 dark:border-amber-900/60 rounded-xl p-3 sm:p-3.5 mb-4 sm:mb-5 text-left max-w-md mx-auto shadow-sm space-y-2">
+        <div class="flex items-start gap-2 sm:gap-2.5">
           <div class="text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0">
             ${renderIcon('alert-triangle', 'w-4 h-4')}
           </div>
@@ -103,30 +103,32 @@ export function renderMaintenancePage(root) {
           </p>
         </div>
 
-        <div class="pt-2 border-t border-amber-200/60 dark:border-stone-800 grid grid-cols-2 gap-1 text-[11px] text-stone-500 dark:text-stone-400">
+        <div class="pt-2 border-t border-amber-200/60 dark:border-stone-800 grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-1 text-[11px] text-stone-500 dark:text-stone-400">
           <div>Status Gutenberg: <strong class="text-amber-600 dark:text-amber-400 font-mono">503 Maintenance</strong></div>
           <div>Mode Proteksi: <strong class="text-emerald-600 dark:text-emerald-400 font-mono">Routing Locked</strong></div>
-          <div class="col-span-2">Pemeriksaan Terakhir: <span id="maintenance-checked-time" class="font-mono text-stone-700 dark:text-stone-300">${lastCheckedTime}</span></div>
+          <div class="col-span-1 sm:col-span-2">Pemeriksaan Terakhir: <span id="maintenance-checked-time" class="font-mono text-stone-700 dark:text-stone-300">${lastCheckedTime}</span></div>
         </div>
       </div>
 
       <!-- Action Buttons -->
-      <div class="grid grid-cols-2 gap-3 w-full max-w-md mx-auto">
+      <div class="grid grid-cols-2 gap-2 sm:gap-3 w-full max-w-md mx-auto">
         <button 
           id="btn-recheck-maintenance" 
           type="button" 
-          class="w-full h-11 whitespace-nowrap px-3 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer">
-          ${renderIcon('refresh-cw', 'w-3.5 h-3.5')}
-          <span>Periksa Status Server</span>
+          title="Periksa Status Server"
+          class="w-full h-10 sm:h-11 px-2 sm:px-3 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-[11px] sm:text-xs md:text-sm font-semibold transition-all shadow-md inline-flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer">
+          ${renderIcon('refresh-cw', 'w-3.5 h-3.5 flex-shrink-0')}
+          <span class="truncate">Periksa Status Server</span>
         </button>
 
         <a 
           href="https://www.gutenberg.org/" 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="w-full h-11 whitespace-nowrap px-3 border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200 rounded-xl text-xs sm:text-sm font-medium transition-colors inline-flex items-center justify-center gap-1.5">
-          <span>Situs Resmi Gutenberg</span>
-          ${renderIcon('external-link', 'w-3.5 h-3.5')}
+          title="Situs Resmi Gutenberg"
+          class="w-full h-10 sm:h-11 px-2 sm:px-3 border border-stone-300 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-200 rounded-xl text-[11px] sm:text-xs md:text-sm font-medium transition-colors inline-flex items-center justify-center gap-1 sm:gap-1.5">
+          <span class="truncate">Situs Resmi Gutenberg</span>
+          ${renderIcon('external-link', 'w-3.5 h-3.5 flex-shrink-0')}
         </a>
       </div>
 

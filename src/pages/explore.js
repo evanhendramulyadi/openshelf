@@ -157,7 +157,7 @@ export async function renderExplore(root, queryParams = {}) {
       </div>
 
       <!-- Books Grid Container -->
-      <div id="explore-books-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div id="explore-books-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
         ${hasInstantBooks 
           ? instantMatch.books.map(renderBookCard).join('') 
           : renderBookSkeletons(12)}
@@ -289,7 +289,7 @@ export async function renderExplore(root, queryParams = {}) {
       }
 
       // Render Books
-      grid.className = 'grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6';
+      grid.className = 'grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6';
       grid.innerHTML = data.books.map(renderBookCard).join('');
       attachBookCardListeners(grid, data.books);
 
@@ -364,14 +364,14 @@ export async function renderExplore(root, queryParams = {}) {
       });
 
       if (instant.books.length > 0) {
-        grid.className = 'grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6';
+        grid.className = 'grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6';
         grid.innerHTML = instant.books.map(renderBookCard).join('');
         attachBookCardListeners(grid, instant.books);
         if (headerCount) {
           headerCount.innerHTML = `Showing <strong class="text-stone-900 dark:text-stone-100">${instant.books.length}</strong> matching books <span class="text-xs text-amber-600 dark:text-amber-400 font-normal animate-pulse ml-2">Searching full catalog…</span>`;
         }
       } else if (query.trim().length > 0) {
-        grid.className = 'grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6';
+        grid.className = 'grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6';
         grid.innerHTML = renderBookSkeletons(8);
         if (headerCount) {
           headerCount.innerHTML = `<span class="text-xs text-stone-500 dark:text-stone-400 animate-pulse">Searching Gutenberg catalog for “${escapeHTML(query)}”…</span>`;

@@ -92,42 +92,42 @@ export async function renderReader(root, bookId) {
     }
 
     root.innerHTML = `
-      <div id="reader-wrapper" class="flex flex-col h-[calc(100vh-4.5rem)] -my-6 -mx-4 sm:-mx-6 lg:-mx-8 transition-colors duration-200">
+      <div id="reader-wrapper" class="flex flex-col h-[calc(100vh-4.5rem)] h-[calc(100dvh-4.5rem)] -my-6 -mx-4 sm:-mx-6 lg:-mx-8 transition-colors duration-200">
         <!-- Top Thin Accent Progress Bar -->
         <div class="w-full h-1 bg-stone-300/40 dark:bg-stone-700/40 overflow-hidden relative z-30">
           <div id="reader-top-progress-bar" class="h-full bg-amber-600 transition-all duration-300" style="width: ${currentProgress}%"></div>
         </div>
 
         <!-- Reader Navigation & Control Bar -->
-        <header class="reader-toolbar flex-shrink-0 px-3 sm:px-6 py-2.5 border-b border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 shadow-sm flex items-center justify-between gap-3 z-20 select-none transition-colors">
+        <header class="reader-toolbar flex-shrink-0 px-2.5 sm:px-6 py-2 sm:py-2.5 border-b border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 shadow-sm flex items-center justify-between gap-2 sm:gap-3 z-20 select-none transition-colors">
           <!-- Left: Return to details & Book Title -->
           <div class="flex items-center gap-2 sm:gap-4 min-w-0">
             <a 
               href="#/book/${book.id}" 
               title="Return to Book Details"
-              class="reader-nav-back flex-shrink-0 px-2.5 py-1.5 rounded-xl transition-colors flex items-center gap-1.5 text-xs font-semibold border border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-700 shadow-xs">
+              class="reader-nav-back flex-shrink-0 px-2 sm:px-2.5 py-1.5 rounded-xl transition-colors flex items-center gap-1.5 text-xs font-semibold border border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-700 shadow-xs">
               ${renderIcon('arrow-left', 'w-3.5 h-3.5')}
               <span class="hidden sm:inline">Details</span>
             </a>
 
-            <div class="min-w-0">
+            <div class="min-w-0 max-w-[120px] xs:max-w-[180px] sm:max-w-xs md:max-w-md">
               <h2 class="font-serif font-bold text-xs sm:text-sm truncate leading-snug">
                 ${escapeHTML(book.title)}
               </h2>
-              <p class="text-[11px] font-medium text-stone-600 dark:text-stone-300 truncate leading-none mt-0.5">
+              <p class="text-[10px] sm:text-[11px] font-medium text-stone-600 dark:text-stone-300 truncate leading-none mt-0.5">
                 ${escapeHTML(book.authorNames)}
               </p>
             </div>
           </div>
 
           <!-- Right: Progress Control & Actions -->
-          <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <div class="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
             <!-- Reading Progress Widget with Dropdown Modal -->
             <div class="relative">
               <button 
                 id="btn-toggle-progress-panel" 
                 type="button" 
-                class="reader-progress-btn px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 border border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-700 transition-all shadow-xs"
+                class="reader-progress-btn px-2 sm:px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1 sm:gap-1.5 border border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-700 transition-all shadow-xs"
                 title="Set reading progress">
                 ${renderIcon('bookmark', 'w-3.5 h-3.5 text-amber-600')}
                 <span id="reader-progress-label">${currentProgress}% Read</span>
@@ -137,7 +137,7 @@ export async function renderReader(root, bookId) {
               <!-- Progress Popover Panel -->
               <div 
                 id="reader-progress-panel" 
-                class="hidden absolute right-0 top-full mt-2 w-72 p-4 rounded-2xl shadow-xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 z-50 animate-in fade-in zoom-in-95 duration-150">
+                class="hidden absolute right-0 top-full mt-2 w-64 sm:w-72 max-w-[calc(100vw-2rem)] p-3.5 sm:p-4 rounded-2xl shadow-xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 z-50 animate-in fade-in zoom-in-95 duration-150">
                 <div class="flex items-center justify-between mb-3 border-b border-stone-100 dark:border-stone-800 pb-2">
                   <span class="font-serif font-bold text-xs uppercase tracking-wider text-stone-800 dark:text-stone-100">
                     Reading Progress

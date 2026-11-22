@@ -119,7 +119,7 @@ export async function renderBookDetails(root, bookId) {
         </nav>
 
         <!-- Main Book Header Card -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 p-6 sm:p-8 rounded-3xl bg-white dark:bg-stone-900 border border-stone-200/90 dark:border-stone-800 shadow-sm">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-8 rounded-3xl bg-white dark:bg-stone-900 border border-stone-200/90 dark:border-stone-800 shadow-sm">
           <!-- Book Cover Column -->
           <div class="md:col-span-5 lg:col-span-4 flex flex-col items-center">
             <div class="w-full max-w-[280px] sm:max-w-[320px] rounded-2xl overflow-hidden book-cover-shadow bg-stone-100 dark:bg-stone-800 border border-stone-200/80 dark:border-stone-700/80">
@@ -313,7 +313,7 @@ export async function renderBookDetails(root, bookId) {
             </p>
           </div>
 
-          <div id="detail-related-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div id="detail-related-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
             <div class="col-span-full py-8 text-center text-xs text-stone-400 animate-pulse">
               Finding related literature…
             </div>

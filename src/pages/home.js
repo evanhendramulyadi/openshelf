@@ -88,7 +88,7 @@ export async function renderHome(root) {
 
       <!-- Featured Curated Classics Section -->
       <section class="space-y-6">
-        <div class="flex items-end justify-between border-b border-stone-200 dark:border-stone-800 pb-4">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-4 border-b border-stone-200 dark:border-stone-800 pb-4">
           <div>
             <span class="text-xs uppercase tracking-wider font-semibold text-amber-700 dark:text-amber-400">
               Curated Selection
@@ -99,13 +99,13 @@ export async function renderHome(root) {
           </div>
           <a 
             href="#/explore" 
-            class="text-xs sm:text-sm font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-400 inline-flex items-center gap-1 transition-colors">
+            class="text-xs sm:text-sm font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-400 inline-flex items-center gap-1 transition-colors self-start sm:self-auto">
             <span>View All</span>
             ${renderIcon('arrow-right', 'w-4 h-4')}
           </a>
         </div>
 
-        <div id="home-featured-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div id="home-featured-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
           ${renderBookSkeletons(4)}
         </div>
       </section>
@@ -155,7 +155,7 @@ export async function renderHome(root) {
 
       <!-- Popular Catalog Books (by actual downloads) -->
       <section class="space-y-6">
-        <div class="flex items-end justify-between border-b border-stone-200 dark:border-stone-800 pb-4">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-4 border-b border-stone-200 dark:border-stone-800 pb-4">
           <div>
             <span class="text-xs uppercase tracking-wider font-semibold text-amber-700 dark:text-amber-400">
               Reader Favorites
@@ -169,20 +169,20 @@ export async function renderHome(root) {
           </div>
           <a 
             href="#/explore?sort=popular" 
-            class="text-xs sm:text-sm font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-400 inline-flex items-center gap-1 transition-colors">
+            class="text-xs sm:text-sm font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-400 inline-flex items-center gap-1 transition-colors self-start sm:self-auto">
             <span>Explore More</span>
             ${renderIcon('arrow-right', 'w-4 h-4')}
           </a>
         </div>
 
-        <div id="home-popular-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div id="home-popular-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
           ${renderBookSkeletons(4)}
         </div>
       </section>
 
       <!-- Recently Added or Catalog Discoveries -->
       <section class="space-y-6">
-        <div class="flex items-end justify-between border-b border-stone-200 dark:border-stone-800 pb-4">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-4 border-b border-stone-200 dark:border-stone-800 pb-4">
           <div>
             <span class="text-xs uppercase tracking-wider font-semibold text-amber-700 dark:text-amber-400">
               Catalog Additions
@@ -196,13 +196,13 @@ export async function renderHome(root) {
           </div>
           <a 
             href="#/explore?sort=descending" 
-            class="text-xs sm:text-sm font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-400 inline-flex items-center gap-1 transition-colors">
+            class="text-xs sm:text-sm font-semibold text-stone-700 dark:text-stone-300 hover:text-amber-700 dark:hover:text-amber-400 inline-flex items-center gap-1 transition-colors self-start sm:self-auto">
             <span>Browse Newest</span>
             ${renderIcon('arrow-right', 'w-4 h-4')}
           </a>
         </div>
 
-        <div id="home-recent-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div id="home-recent-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
           ${renderBookSkeletons(4)}
         </div>
       </section>

@@ -91,8 +91,8 @@ export function renderMyLibrary(root, queryParams = {}) {
       </div>
 
       <!-- Tab Navigation -->
-      <div class="flex items-center justify-between border-b border-stone-200 dark:border-stone-800">
-        <nav class="flex items-center gap-1 sm:gap-4 -mb-px" aria-label="Library Tabs">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-stone-200 dark:border-stone-800 gap-2">
+        <nav class="flex items-center gap-1 sm:gap-4 -mb-px overflow-x-auto no-scrollbar whitespace-nowrap min-w-max" aria-label="Library Tabs">
           <a 
             href="#/library?tab=reading_list" 
             class="py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors flex items-center gap-1.5 ${
@@ -129,7 +129,7 @@ export function renderMyLibrary(root, queryParams = {}) {
 
         ${currentTab === 'reading_list' && readingListItems.length > 0 ? `
           <!-- Sub filter buttons -->
-          <div class="hidden sm:flex items-center gap-1 text-xs">
+          <div class="flex items-center gap-1 text-xs overflow-x-auto no-scrollbar whitespace-nowrap pb-2 sm:pb-0">
             <a 
               href="#/library?tab=reading_list&sub=all" 
               class="px-2.5 py-1 rounded-lg ${subFilter === 'all' ? 'bg-stone-200 dark:bg-stone-800 font-bold text-stone-900 dark:text-stone-100' : 'text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white'}">

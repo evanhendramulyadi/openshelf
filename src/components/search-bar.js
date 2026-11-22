@@ -36,31 +36,31 @@ export function renderSearchBar({
           placeholder="${placeholder}"
           autocomplete="off"
           spellcheck="false"
-          class="w-full ${isLarge ? 'py-4 pl-12 pr-28 text-base sm:text-lg' : 'py-2.5 pl-11 pr-24 text-sm'} bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 rounded-2xl shadow-sm text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-amber-600/50 focus:border-amber-600 transition-all"
+          class="w-full ${isLarge ? 'py-3.5 sm:py-4 pl-10 sm:pl-12 pr-20 sm:pr-28 text-sm sm:text-base md:text-lg' : 'py-2.5 pl-9 sm:pl-11 pr-20 sm:pr-24 text-xs sm:text-sm'} bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 rounded-2xl shadow-sm text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-amber-600/50 focus:border-amber-600 transition-all"
         />
 
         <!-- Right actions: Clear button and Submit button -->
-        <div class="absolute right-2 flex items-center gap-1">
+        <div class="absolute right-1.5 sm:right-2 flex items-center gap-1">
           <button 
             type="button" 
             id="search-clear-btn" 
             aria-label="Clear search input"
-            class="${value ? 'flex' : 'hidden'} items-center justify-center w-7 h-7 text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 rounded-full transition-colors">
-            ${renderIcon('x', 'w-4 h-4')}
+            class="${value ? 'flex' : 'hidden'} items-center justify-center w-6 h-6 sm:w-7 sm:h-7 text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 rounded-full transition-colors">
+            ${renderIcon('x', 'w-3.5 h-3.5 sm:w-4 sm:h-4')}
           </button>
           
           <button 
             type="submit" 
             id="search-submit-btn" 
             aria-label="Submit search"
-            class="${isLarge ? 'px-4 py-2 text-sm' : 'px-3 py-1.5 text-xs'} bg-stone-900 dark:bg-stone-100 hover:bg-stone-800 dark:hover:bg-white text-stone-100 dark:text-stone-900 font-medium rounded-xl transition-all shadow-sm flex items-center gap-1.5">
+            class="${isLarge ? 'px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm' : 'px-2.5 sm:px-3 py-1.5 text-xs'} bg-stone-900 dark:bg-stone-100 hover:bg-stone-800 dark:hover:bg-white text-stone-100 dark:text-stone-900 font-medium rounded-xl transition-all shadow-sm flex items-center gap-1.5">
             <span>Search</span>
           </button>
         </div>
       </form>
 
       ${showPills ? `
-        <div class="mt-3 flex items-center flex-wrap gap-1.5 text-xs">
+        <div class="mt-3 flex items-center justify-center sm:justify-start flex-wrap gap-1.5 text-xs">
           <span class="text-stone-500 dark:text-stone-400 font-medium mr-1 flex items-center gap-1">
             ${renderIcon('sparkles', 'w-3 h-3 text-amber-600 dark:text-amber-400')}
             Popular searches:

@@ -27,7 +27,7 @@ export function renderBookGrid(books = [], {
   return `
     <div 
       id="${gridId}" 
-      class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+      class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
       ${books.map(renderBookCard).join('')}
     </div>
   `;

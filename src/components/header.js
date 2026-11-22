@@ -144,18 +144,25 @@ export function renderHeader(container, currentPath = '#/') {
     });
   }
 
-  // Setup Mobile Menu Toggle
+  // Setup Mobile Menu Toggle with dynamic icon state and auto-close
   const mobileBtn = container.querySelector('#btn-mobile-menu');
   const drawer = container.querySelector('#mobile-nav-drawer');
   if (mobileBtn && drawer) {
+    const updateMenuIcon = (isOpen) => {
+      mobileBtn.innerHTML = renderIcon(isOpen ? 'x' : 'menu', 'w-5 h-5');
+      initIcons(mobileBtn);
+    };
+
     mobileBtn.addEventListener('click', () => {
       const isOpen = !drawer.classList.contains('hidden');
       if (isOpen) {
         drawer.classList.add('hidden');
         mobileBtn.setAttribute('aria-expanded', 'false');
+        updateMenuIcon(false);
       } else {
         drawer.classList.remove('hidden');
         mobileBtn.setAttribute('aria-expanded', 'true');
+        updateMenuIcon(true);
       }
     });
 
@@ -164,8 +171,19 @@ export function renderHeader(container, currentPath = '#/') {
       link.addEventListener('click', () => {
         drawer.classList.add('hidden');
         mobileBtn.setAttribute('aria-expanded', 'false');
+        updateMenuIcon(false);
       });
     });
+
+    // Close drawer when brand logo clicked
+    const brandLink = container.querySelector('a[aria-label="OpenShelf Home"]');
+    if (brandLink) {
+      brandLink.addEventListener('click', () => {
+        drawer.classList.add('hidden');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        updateMenuIcon(false);
+      });
+    }
   }
 }
 
